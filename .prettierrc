@@ -1,0 +1,14 @@
+{
+  "semi": false,
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "options": {
+        "semi": true,
+        "useTabs": false,
+        "singleQuote": true
+      }
+    }
+  ]
+}
