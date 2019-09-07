@@ -1,0 +1,11 @@
+{
+  "name": "component",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@types/styled-components": "^4.1.18",
+    "styled-components": "^4.3.2"
+  }
+}
