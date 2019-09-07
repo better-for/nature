@@ -1,35 +1,45 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import Nav from '../components/nav';
-import { HeaderTitle, Hero, Title, Description, Row, Card } from './style';
-import { nextSampleData } from '../temporaryData/index'
+import {
+  TitleSection,
+  Main,
+  Title,
+  Point,
+  Description,
+  Row,
+  Card,
+  ItemTitle,
+  ItemDescription
+} from './style';
+import { LINK_LIST } from '../temporaryData/index';
+import { OGHome } from './OG/index';
 
 const Home = () => (
   <>
     <Head>
-      <title>Home</title>
+      <OGHome />
     </Head>
-
-    <Nav />
-
-    <Hero>
-      <Title>Better For</Title>
-      <HeaderTitle>Nature</HeaderTitle>
+    <Main>
+      <TitleSection>
+        <Title>
+          Better For <Point>Nature</Point>
+        </Title>
+      </TitleSection>
       <Description>
-        <code>Save the World, Save the Yourself</code>.
+        <code>SAVE THE WORLD, SAVE THE YOURSELF.</code>
       </Description>
       <Row>
-        {nextSampleData.map((sampleData,i) => (
-          <Link href={sampleData.link} key={i}>
+        {LINK_LIST.map(({ link, title, description }) => (
+          <Link href={link} key={title}>
             <Card>
-              <h3>{sampleData.h3} &rarr;</h3>
-              <p>{sampleData.p}</p>
+              <ItemTitle>{title} &rarr;</ItemTitle>
+              <ItemDescription>{description}</ItemDescription>
             </Card>
           </Link>
         ))}
       </Row>
-    </Hero>
+    </Main>
   </>
 );
 
