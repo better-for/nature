@@ -1,4 +1,21 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  body.light-mode {
+    background-color: #fff;
+    & h1, h2, p{
+      color: #333;
+    }
+    transition: background-color 0.3s ease;
+  }
+
+  body.dark-mode {
+    background-color: #1a1919;
+  & h1, h2, p{
+      color: #ccc;
+    }
+  }
+`;
 
 export const Main = styled.div`
   width: 100%;

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import {
+  GlobalStyle,
   TitleSection,
   Main,
   Title,
@@ -14,12 +15,15 @@ import {
 } from './style';
 import { LINK_LIST } from '../temporaryData/index';
 import { OGHome } from './OG/index';
+import { DarkModeToggleBox } from '../components/DarkModeToggle/darkNav';
 
 const Home = () => (
   <>
     <Head>
       <OGHome />
     </Head>
+    <GlobalStyle />
+    <DarkModeToggleBox />
     <Main>
       <TitleSection>
         <Title>
