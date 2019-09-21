@@ -1,5 +1,4 @@
 import RootStore from '../RootStore';
-import { observable, action } from 'mobx';
 import Navigation from './Navigation';
 
 class UIStore {
