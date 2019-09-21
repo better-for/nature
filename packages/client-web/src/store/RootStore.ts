@@ -1,12 +1,12 @@
-import UiStore from './UiStore';
+import UIStore from './UIStore';
 import AuthStore from './AuthStore';
 
 class RootStore {
-  uiStore: UiStore;
+  uiStore: UIStore;
   authStore: AuthStore;
 
   constructor() {
-    this.uiStore = new UiStore(this);
+    this.uiStore = new UIStore(this);
     this.authStore = new AuthStore(this);
   }
 }

@@ -2,7 +2,7 @@ import RootStore from '../RootStore';
 import { observable, action } from 'mobx';
 import Navigation from './Navigation';
 
-class UiStore {
+class UIStore {
   rootStore: RootStore;
   navigation: Navigation;
 
@@ -12,4 +12,4 @@ class UiStore {
   }
 }
 
-export default UiStore;
+export default UIStore;
