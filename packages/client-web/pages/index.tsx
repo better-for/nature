@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import {
+  GlobalStyle,
   TitleSection,
   Main,
   Title,
@@ -14,6 +15,8 @@ import {
 } from './style';
 import { LINK_LIST } from '../temporaryData/index';
 import { OGHome } from './OG/index';
+import { DarkModeToggleBox } from '../components/DarkModeToggle/darkNav';
+
 import Nav from '../components/Nav/Nav';
 import { useStore } from '../src/utils/storeUtils';
 import { observer } from 'mobx-react';
@@ -27,6 +30,8 @@ const Home = observer(() => {
       <Head>
         <OGHome />
       </Head>
+      <GlobalStyle />
+      <DarkModeToggleBox />
       <Main>
         <button onClick={navigation.toggle}>🍔</button>
         {navigation.opened && <Nav />}

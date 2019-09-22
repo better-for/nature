@@ -13,7 +13,7 @@ export const OGHome: FC = () => {
       <meta key="og:type" name="og:type" content={`website`} />
       <meta key="og:title" name="og:title" content={title} />
       <meta key="og:description" name="og:description" content={description} />
-      <meta key="og:url" name="og:url" content={'url'} /> //TODO: Change
+      <meta key="og:url" name="og:url" content={'url'} /*TODO: Change*/ />
       <meta key="og:image" name="og:image" content={image} />
     </>
   );
