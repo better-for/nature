@@ -7,7 +7,7 @@ const links: { href: string; label: string }[] = [
   { href: 'https://github.com/zeit/next.js', label: 'GitHub' }
 ];
 
-const Nav: FC = () => (
+export const Nav: FC = () => (
   <NavBar>
     <Ul>
       <Li>
@@ -46,5 +46,3 @@ const Anchor = styled.a`
   text-decoration: none;
   font-size: 13px;
 `;
-
-export default Nav;
