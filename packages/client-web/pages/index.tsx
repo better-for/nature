@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
 import {
   GlobalStyle,
   TitleSection,
@@ -13,15 +12,19 @@ import {
   ItemTitle,
   ItemDescription
 } from './style';
-import { LINK_LIST } from '../temporaryData/index';
-import { OGHome } from './OG/index';
-import { DarkModeToggleBox } from '../components/DarkModeToggle/darkNav';
+import { LINK_LIST } from '../temporaryData';
+import { OGHeader } from '../components/OG';
+import { DarkModeToggleBox } from '../components/DarkModeSelector';
 
-const Home = () => (
+const Home: FC = () => (
   <>
-    <Head>
-      <OGHome />
-    </Head>
+    <OGHeader
+      title={`Better for`}
+      description={`SAVE THE WORLD, SAVE THE YOURSELF.`}
+      image={
+        'https://postfiles.pstatic.net/MjAxOTA5MDdfMjc5/MDAxNTY3ODYxODA1MTIz.LpUixWaK3qEzhKA23EjEThjN0C81uwl6Ec9ii0-CGQAg.OFNWw1kvH1ugW_dZV_vqdK9Odnedcr9dpLXj-j5Jg7Ig.PNG.ggijnd/swsy_ver_2.png?type=w966'
+      }
+    />
     <GlobalStyle />
     <DarkModeToggleBox />
     <Main>
