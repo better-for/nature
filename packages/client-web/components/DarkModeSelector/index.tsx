@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import useDarkMode from 'use-dark-mode';
 import {
   DarkModeToggle,
@@ -8,7 +8,12 @@ import {
   StyledLabel
 } from './style';
 
-export const DarkModeToggleBox = () => {
+interface ToggleProps {
+  checked: boolean;
+  onChange: () => void;
+}
+
+export const DarkModeToggleBox: FC = () => {
   const darkMode = useDarkMode(false);
   return (
     <DarkModeToggle>
@@ -19,13 +24,7 @@ export const DarkModeToggleBox = () => {
   );
 };
 
-const Toggle = ({
-  checked,
-  onChange
-}: {
-  checked: boolean;
-  onChange: () => void;
-}) => (
+const Toggle: FC<ToggleProps> = ({ checked, onChange }) => (
   <ToggleControl>
     <StyledInput
       type="checkbox"

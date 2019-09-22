@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
-import Head from 'next/head';
+import { observer } from 'mobx-react';
 import {
   GlobalStyle,
   TitleSection,
@@ -13,23 +13,20 @@ import {
   ItemTitle,
   ItemDescription
 } from './style';
-import { LINK_LIST } from '../temporaryData/index';
-import { OGHome } from './OG/index';
-import { DarkModeToggleBox } from '../components/DarkModeToggle/darkNav';
-
-import Nav from '../components/Nav/Nav';
+import { LINK_LIST, ogHeader } from '../dataContent';
+import { OGHeader } from '../components/OG';
+import { DarkModeToggleBox } from '../components/DarkModeSelector';
+import { Nav } from '../components/Nav';
 import { useStore } from '../src/utils/storeUtils';
-import { observer } from 'mobx-react';
 
-const Home = observer(() => {
+const Home: FC = observer(() => {
   const { uiStore } = useStore();
   const { navigation } = uiStore;
+  const { title, description, image } = ogHeader;
 
   return (
     <>
-      <Head>
-        <OGHome />
-      </Head>
+      <OGHeader title={title} description={description} image={image} />
       <GlobalStyle />
       <DarkModeToggleBox />
       <Main>
