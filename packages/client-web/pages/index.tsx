@@ -17,34 +17,45 @@ import { LINK_LIST } from '../temporaryData/index';
 import { OGHome } from './OG/index';
 import { DarkModeToggleBox } from '../components/DarkModeToggle/darkNav';
 
-const Home = () => (
-  <>
-    <Head>
-      <OGHome />
-    </Head>
-    <GlobalStyle />
-    <DarkModeToggleBox />
-    <Main>
-      <TitleSection>
-        <Title>
-          Better For <Point>Nature</Point>
-        </Title>
-      </TitleSection>
-      <Description>
-        <code>SAVE THE WORLD, SAVE THE YOURSELF.</code>
-      </Description>
-      <Row>
-        {LINK_LIST.map(({ link, title, description }) => (
-          <Link href={link} key={title}>
-            <Card>
-              <ItemTitle>{title} &rarr;</ItemTitle>
-              <ItemDescription>{description}</ItemDescription>
-            </Card>
-          </Link>
-        ))}
-      </Row>
-    </Main>
-  </>
-);
+import Nav from '../components/Nav/Nav';
+import { useStore } from '../src/utils/storeUtils';
+import { observer } from 'mobx-react';
+
+const Home = observer(() => {
+  const { uiStore } = useStore();
+  const { navigation } = uiStore;
+
+  return (
+    <>
+      <Head>
+        <OGHome />
+      </Head>
+      <GlobalStyle />
+      <DarkModeToggleBox />
+      <Main>
+        <button onClick={navigation.toggle}>🍔</button>
+        {navigation.opened && <Nav />}
+        <TitleSection>
+          <Title>
+            Better For <Point>Nature</Point>
+          </Title>
+        </TitleSection>
+        <Description>
+          <code>SAVE THE WORLD, SAVE THE YOURSELF.</code>
+        </Description>
+        <Row>
+          {LINK_LIST.map(({ link, title, description }) => (
+            <Link href={link} key={title}>
+              <Card>
+                <ItemTitle>{title} &rarr;</ItemTitle>
+                <ItemDescription>{description}</ItemDescription>
+              </Card>
+            </Link>
+          ))}
+        </Row>
+      </Main>
+    </>
+  );
+});
 
 export default Home;
