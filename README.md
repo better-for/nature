@@ -8,17 +8,17 @@
     - [Client](#client)
     - [Server](#server)
   - [Colors](#colors)
-  - [Fonts](#fonts)
+  - [Font](#font)
     - [Hero](#hero)
-    - [title](#title)
-    - [subtitle](#subtitle)
-    - [본문](#%eb%b3%b8%eb%ac%b8)
+    - [Subhero](#subhero)
+    - [Title](#title)
+    - [Subtitle](#subtitle)
+    - [Paragraph](#paragraph)
     - [Label](#label)
-    - [font size](#font-size)
   - [Unit](#unit)
   - [Viewport](#viewport)
-  - [필터링](#%ed%95%84%ed%84%b0%eb%a7%81)
-  - [카드](#%ec%b9%b4%eb%93%9c)
+  - [Filters](#filters)
+  - [Card](#card)
 
 ## Dev Stack
 
@@ -52,75 +52,88 @@
 - secondary: #067DF7
 - secondary-variant: #045EB8
 
-## Fonts
+## Font
 
-font-family: Noto Sans KR
+- font-family: Noto Sans KR
 
 ### Hero
 
-size:
-weight: regular, bold
-line-height: 1.1
+```
+size: 48px | 40px;
+weight: regular | bold;
+line-height: 1.1;
+```
 
-### title
+### SubHero
 
-size:
-weight: regular, bold
-line-height: 1.1
+```
+size: 36px | 32px;
+weight: regular | bold;
+line-height: 1.1;
+```
 
-### subtitle
+### Title
 
-size:
-weight: regular, bold
-line-height: 1.1
+```
+size: 24px | 22px;
+weight: regular | bold;
+line-height: 1.1;
+```
 
-### 본문
+### Subtitle
 
-size:
-weight: regular, bold
-line-height: 1.3
+```
+size: 20px | 18px;
+weight: regular, bold;
+line-height: 1.1;
+```
+
+### Paragraph
+
+```
+size: 18px | 16px;
+weight: regular | bold;
+line-height: 1.3;
+```
 
 ### Label
 
-weight: regular, bold
-line-height: 1.1
-
-### font size
-
-- 16px -> Label / 14px
-- 18px -> 본문 / 16px
-- 20px -> subtitle / 18px
-- 24px -> title / 22px
-- 36px -> ?여분 // 32px
-- 48px -> hero /// 40px
+```
+size: 16px | 14px;
+weight: regular | bold;
+line-height: 1.3;
+```
 
 ## Unit
 
+```
 - Leaf: 4px (padding, margin)
 - Grass: 8px (dimension)
+```
 
 ## Viewport
 
-- 768px 기준
-  - 미만이면 Mobile
-  - 이상이면 Desktop
+```
+- ~768px Mobile
+- 768px~ Desktop
+```
 
-## 필터링
+## Filters
 
-- 채식 유형
-- 거리
-- 시간
-- 글루텐, 카제인, 슈가 프리
+- Types of Vegetarians
+- Distance
+- Open
+- Ingredient(gluten-free, casein-free, sugar-free)
 
-## 카드
+## Card
 
-- 채식 종류
+- Types of Vegetarians
   - ☘️
   - 🥛
   - 🥚
   - 🐟
   - 🐥
-- 거리
+- Distance
   - 🚶‍
   - 🚴‍
   - 🚌
