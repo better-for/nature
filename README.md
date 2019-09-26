@@ -107,8 +107,8 @@ line-height: 1.3;
 ## Unit
 
 ```
-- Leaf: 4px (padding, margin)
-- Grass: 8px (dimension)
+- Leaf: 4px (padding, margin)(1 ~ 8)
+- Grass: 8px (dimension)(1 ~ 60)
 ```
 
 ## Viewport
