@@ -28,7 +28,6 @@ const Home: FC = observer(() => {
     <>
       <OGHeader title={title} description={description} image={image} />
       <GlobalStyle />
-      <DarkModeToggleBox />
       <Main>
         <button onClick={navigation.toggle}>🍔</button>
         {navigation.opened && <Nav />}
@@ -51,6 +50,7 @@ const Home: FC = observer(() => {
           ))}
         </Row>
       </Main>
+      <DarkModeToggleBox />
     </>
   );
 });

@@ -2,7 +2,9 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "dev": "lerna run dev"
+    "dev": "lerna run dev",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "lerna": "^3.16.4"

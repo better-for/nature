@@ -1,0 +1,28 @@
+{
+  "name": "stories",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@storybook/addon-info": "^5.2.1",
+    "@storybook/react": "^5.2.1",
+    "@types/jest": "^24.0.18",
+    "@types/storybook__react": "^4.0.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "react-docgen-typescript-loader": "^3.2.1",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@types/storybook__addon-actions": "^3.4.3",
+    "@types/storybook__addon-links": "^3.3.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
