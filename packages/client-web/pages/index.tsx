@@ -18,6 +18,7 @@ import { OGHeader } from '../components/OG';
 import { DarkModeToggleBox } from '../components/DarkModeSelector';
 import { Nav } from '../components/Nav';
 import { useStore } from '../src/utils/storeUtils';
+import { SampleButton } from '@nature/component/Sample/Button';
 
 const Home: FC = observer(() => {
   const { uiStore } = useStore();
@@ -40,6 +41,7 @@ const Home: FC = observer(() => {
           <code>SAVE THE WORLD, SAVE THE YOURSELF.</code>
         </Description>
         <Row>
+          <SampleButton num={2} />
           {LINK_LIST.map(({ link, title, description }) => (
             <Link href={link} key={title}>
               <Card>
