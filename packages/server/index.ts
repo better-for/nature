@@ -1,10 +1,8 @@
-import express from "express";
-const app = express();
+import prepareApp from './src/prepareApp';
+import { createConn } from './src/util/createConn';
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.listen(5000, () => {
-  console.log("Example app listening on port 5000!");
+createConn().then(conn => {
+  prepareApp(conn).listen(5000, () => {
+    console.log('Example app listening on port 5000!');
+  });
 });
