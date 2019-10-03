@@ -7,7 +7,8 @@
     "isolatedModules": false,
     "noEmit": false,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "typeRoots": ["./src/@types"]
   },
   "include": ["**/*.ts"]
 }
