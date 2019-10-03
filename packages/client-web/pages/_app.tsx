@@ -1,6 +1,8 @@
 import React from 'react';
 import App from 'next/app';
 import { StoreProvider } from '../src/utils/storeUtils';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '@nature/element';
 
 class MyApp extends App {
   // Only uncomment this method if you have blocking data requirements for
@@ -19,7 +21,9 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <StoreProvider>
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </StoreProvider>
     );
   }
