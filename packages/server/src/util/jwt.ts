@@ -10,7 +10,7 @@ interface JWTPayload {
  * @param id User ID
  */
 export const generateJWT = (id: string) => {
-  return jwt.sign({ id } as JWTPayload, 'SOME_SECRET');
+  return jwt.sign({ id } as JWTPayload, process.env.SECRET_KEY);
 };
 
 /**
@@ -19,5 +19,5 @@ export const generateJWT = (id: string) => {
  * @param JWT User AccessToken
  */
 export const verifyJWT = (JWT: string) => {
-  return jwt.verify(JWT, 'SOME_SECRET') as JWTPayload;
+  return jwt.verify(JWT, process.env.SECRET_KEY) as JWTPayload;
 };
