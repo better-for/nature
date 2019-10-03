@@ -5,14 +5,32 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "nodemon"
+    "init_env": "sh ./init_env.sh",
+    "dev": "NODE_ENV=development nodemon",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
+    "@types/node": "^12.7.9",
+    "bcrypt": "^3.0.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.17.1",
     "nodemon": "^1.19.2",
-    "ts-node": "^8.3.0"
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.4.1",
+    "typeorm": "^0.2.19"
   },
   "devDependencies": {
     "typescript": "^3.6.2"
+  },
+  "workspaces": {
+    "nohoist": [
+      "typeorm/**",
+      "typeorm",
+      "mysql",
+      "mysql/**"
+    ]
   }
 }
