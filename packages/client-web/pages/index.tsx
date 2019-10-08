@@ -11,7 +11,8 @@ import {
   Row,
   Card,
   ItemTitle,
-  ItemDescription
+  ItemDescription,
+  StyledParagraph
 } from './style';
 import { LINK_LIST, ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';
@@ -50,6 +51,12 @@ const Home: FC = observer(() => {
           ))}
         </Row>
       </Main>
+      <StyledParagraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo dolore
+        non sequi eius quod cupiditate nemo praesentium doloribus minus. Quasi
+        eveniet molestiae laborum officia assumenda atque tempore non dolore?
+        Officia.
+      </StyledParagraph>
       <DarkModeToggleBox />
     </>
   );

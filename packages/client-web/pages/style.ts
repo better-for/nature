@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { styled } from '@nature/element';
+import { Paragraph } from '../components/common/paragraph';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -60,7 +61,8 @@ export const Row = styled.div`
 `;
 
 export const Card = styled.a`
-  padding: ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._5};
+  padding: ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._4}
+    ${p => p.theme.unit.leaf._5};
   width: ${p => p.theme.unit.glass._26};
   text-align: left;
   text-decoration: none;
@@ -81,4 +83,17 @@ export const ItemDescription = styled.p`
   padding: ${p => p.theme.unit.leaf._3} 0 0;
   ${p => p.theme.typography.labelNormal};
   color: ${p => p.theme.color.black};
+`;
+
+export const StyledParagraph = styled(Paragraph)`
+  width: ${p => p.theme.unit.glass._47};
+  color: ${p => p.theme.color.primaryVariant};
+  margin: ${p => p.theme.unit.glass._7} ${p => p.theme.unit.leaf._4}
+    ${p => p.theme.unit.leaf._8};
+  // padding: ${p => p.theme.unit.leaf._4};
+  word-break: break-all;
+  &:hover {
+    box-shadow: 0 0 0 1px ${p => p.theme.color.primaryVariant};
+  }
+  /* background-color: red; */
 `;
