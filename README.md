@@ -10,7 +10,7 @@
   - [Colors](#colors)
   - [Font](#font)
     - [Hero](#hero)
-    - [Subhero](#subhero)
+    - [SubHero](#subhero)
     - [Title](#title)
     - [Subtitle](#subtitle)
     - [Paragraph](#paragraph)
@@ -19,6 +19,7 @@
   - [Viewport](#viewport)
   - [Filters](#filters)
   - [Card](#card)
+  - [API](#api)
 
 ## Dev Stack
 
@@ -139,3 +140,7 @@ line-height: 1.3;
   - 🚴‍
   - 🚌
   - 🚙
+
+## API
+
+[API doc](./docs/API)
