@@ -5,11 +5,15 @@
 - query
   - lat
   - lng
-  - distanceIn (m)
+  - distanceBetween: [1000, 1500]
   - typeCodes: []
   - dayOfWeeks: []
   - startMin
   - endMin
+- sortBy: distanceIn
+- orderBy: desc | asc
+- limit: 10
+- offset: 10
 
 ### Request
 
