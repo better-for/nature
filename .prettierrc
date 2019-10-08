@@ -1,7 +1,6 @@
 {
   "semi": false,
   "singleQuote": false,
-  "printWidth": 120,
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
