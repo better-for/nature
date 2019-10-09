@@ -7,7 +7,6 @@ const req = require.context('../src', true, /\.stories\.tsx$/);
 function loadStories() {
   req.keys().forEach(req);
 }
-// addDecorator(withInfo);
 addDecorator(withThemesProvider([theme]));
 
 configure(loadStories, module);

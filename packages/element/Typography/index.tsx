@@ -19,7 +19,7 @@ export const typography = {
   subHeroBold: SubHeroBold,
   subHeroNormal: SubHeroNormal,
   titleBold: TitleBold,
-  TitleNormal: TitleNormal,
+  titleNormal: TitleNormal,
   subTitleBold: SubTitleBold,
   subTitleNormal: SubTitleNormal,
   paragraphBold: ParagraphBold,
