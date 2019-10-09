@@ -52,9 +52,10 @@ export const LINK_LIST = [
   }
 ];
 
+export const DEFAULT_IMAGE = `https://postfiles.pstatic.net/MjAxOTA5MDdfMjc5/MDAxNTY3ODYxODA1MTIz.LpUixWaK3qEzhKA23EjEThjN0C81uwl6Ec9ii0-CGQAg.OFNWw1kvH1ugW_dZV_vqdK9Odnedcr9dpLXj-j5Jg7Ig.PNG.ggijnd/swsy_ver_2.png?type=w966`;
+
 export const ogHeader = {
   title: `Better for`,
   description: `SAVE THE WORLD, SAVE THE YOURSELF.`,
-  image:
-    'https://postfiles.pstatic.net/MjAxOTA5MDdfMjc5/MDAxNTY3ODYxODA1MTIz.LpUixWaK3qEzhKA23EjEThjN0C81uwl6Ec9ii0-CGQAg.OFNWw1kvH1ugW_dZV_vqdK9Odnedcr9dpLXj-j5Jg7Ig.PNG.ggijnd/swsy_ver_2.png?type=w966'
+  image: DEFAULT_IMAGE
 };
