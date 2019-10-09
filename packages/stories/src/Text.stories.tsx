@@ -11,7 +11,7 @@ import {
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 
-const stories = storiesOf('Text', module).addDecorator(withKnobs);
+const stories = storiesOf('Component | Text', module).addDecorator(withKnobs);
 
 stories.add(
   'Hero',
