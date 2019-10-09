@@ -11,8 +11,7 @@ import {
   Row,
   Card,
   ItemTitle,
-  ItemDescription,
-  StyledParagraph
+  ItemDescription
 } from './style';
 import { LINK_LIST, ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';

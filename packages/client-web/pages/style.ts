@@ -82,3 +82,4 @@ export const ItemDescription = styled.p`
   padding: ${p => p.theme.unit.leaf._3} 0 0;
   ${p => p.theme.typography.labelNormal};
   color: ${p => p.theme.color.black};
+`;
