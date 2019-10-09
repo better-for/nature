@@ -1,5 +1,5 @@
 import { styled } from '@nature/element';
-import { Text } from '../../client-web/components/common/text';
+import { Text } from '../../client-web/components/common/Text';
 
 export const StyledTitle = styled(Text)`
   ${p => p.theme.typography.titleNormal};

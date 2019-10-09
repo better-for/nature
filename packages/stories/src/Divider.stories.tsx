@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Divider } from '../../client-web/components/common/divider';
+import { Divider } from '../../client-web/components/common/Divider';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, number, select } from '@storybook/addon-knobs';
 import { theme } from '@nature/element';
