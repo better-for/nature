@@ -10,9 +10,7 @@ import { BUTTON_TYPE } from './type';
 import { theme } from '@nature/element';
 
 export type IButton = {
-  /*가나다라마바사 */
   children: ReactNode;
-  /*호이호이호이 */
   [key: string]: any;
   icon?: string;
   color?: typeof theme.color.white;
