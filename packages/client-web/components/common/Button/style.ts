@@ -42,6 +42,10 @@ export const StyledIcon = styled(Icon)<typeof Icon>`
   margin-right: ${p => p.theme.unit.leaf._1};
 `;
 
+export const ErroredButton = styled.button`
+  ${DefaultStyle};
+`;
+
 export const StyledContainedButton = styled.button<IButton>`
   ${DefaultStyle};
   ${({ icon }) => !!icon && WithIcon};
