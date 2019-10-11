@@ -1,16 +1,12 @@
 import { styled } from '@nature/element';
-import { css } from 'styled-components';
+import { IDivider } from './index';
 
-export const StyledDivider = styled.div<{ color?: string }>`
+export const StyledDivider = styled.div<IDivider>`
   display: block;
   max-width: 100%;
   min-height: 1px;
-  background-color: ${p => (!!p.color ? p.color : p.theme.color.gray)};
-  ${p =>
-    !p.color &&
-    css`
-      opacity: 0.4; //TODO: Should we define value?
-    `}
-  border-radius: 3px;
+  background-color: ${({ color }) => color};
+  opacity: 0.4; //TODO: Should we define value?
+  border-radius: ${p => p.theme.unit.leaf._1};
   margin: ${p => p.theme.unit.leaf._2} 0;
 `;

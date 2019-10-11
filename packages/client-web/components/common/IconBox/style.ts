@@ -1,9 +1,10 @@
 import { styled } from '@nature/element';
+import { IIcon } from './index';
 
-export const StyledIcon = styled.div<{ size: string }>`
-  width: ${p => (!!p.size ? p.size : p.theme.unit.glass._4)};
-  height: ${p => (!!p.size ? p.size : p.theme.unit.glass._4)};
-  font-size: ${p => (!!p.size ? p.size : p.theme.unit.glass._4)};
-  line-height: 1;
+export const StyledIcon = styled.div<IIcon>`
+  width: ${({ size }) => size};
+  height: ${({ size }) => size};
+  font-size: ${({ size }) => size};
+  vertical-align: middle;
   border-radius: 50%;
 `;

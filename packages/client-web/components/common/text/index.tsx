@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import { StyledText } from './style';
 
-type IText = {
+export type IText = {
   children: ReactNode;
   lineClamp?: number;
   [key: string]: any;

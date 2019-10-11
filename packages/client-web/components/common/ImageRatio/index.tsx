@@ -5,14 +5,15 @@ import {
   StyledImagePosition,
   StyledImage
 } from './style';
+import { DEFAULT_IMAGE } from '../../../dataContent';
 
-type IImage = {
+export type IImage = {
   src?: string;
   ratio?: number;
   [key: string]: any;
 };
 
-export const Image: FC<IImage> = ({ src, ratio, ...props }) => {
+export const Image: FC<IImage> = ({ src = DEFAULT_IMAGE, ratio, ...props }) => {
   return (
     <StyledImageContainer {...props}>
       <StyledImageRatio ratio={ratio}>
