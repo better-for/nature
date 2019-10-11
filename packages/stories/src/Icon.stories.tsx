@@ -2,7 +2,8 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Icon } from '../../client-web/components/common/IconBox';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, number } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
+import { theme } from '@nature/element';
 
 const stories = storiesOf('Component', module).addDecorator(withKnobs);
 
@@ -15,7 +16,7 @@ stories.add(
     Prop Types: { size? : string }
 
     ~~~
-    <Icon size={'20px'} >🏔</Icon>
+    <Icon size={theme.unit.leaf._5} >🏔</Icon>
     ~~~
 
   `
@@ -24,7 +25,7 @@ stories.add(
       style={{
         marginLeft: 50
       }}
-      size={`${number('size', 20)}px`}
+      size={select('size', theme.unit.leaf, theme.unit.leaf._8)}
     >
       🏔
     </Icon>

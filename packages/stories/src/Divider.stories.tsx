@@ -16,7 +16,7 @@ stories.add(
     Prop Types: { color? : string }
 
     ~~~
-    <Divider color={'black'} />
+    <Divider color={theme.color.gray} />
     ~~~
 
   `
