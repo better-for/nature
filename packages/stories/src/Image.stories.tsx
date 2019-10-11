@@ -19,7 +19,7 @@ stories.add(
     }
 
     ~~~
-    <Image size={16/9} src={'image address'} />
+    <Image ratio={16/9} src={'image address'} />
     ~~~
 
   `
@@ -28,7 +28,7 @@ stories.add(
       style={{
         marginLeft: 50
       }}
-      ratio={number('size', 1)}
+      ratio={`${number('width', 16) / number('height', 9)}`}
       src={text('src', DEFAULT_IMAGE)}
     />
   )),

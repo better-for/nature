@@ -8,12 +8,15 @@ export const StyledImageRatio = styled.div<IImage>`
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: ${({ ratio }) => (!!ratio ? (1 / ratio) * 100 : 100)}%;
+  padding-bottom: ${({ ratio }) => (1 / ratio) * 100}%;
 `;
 
 export const StyledImagePosition = styled.div`
   position: absolute;
-  top,bottom,left,right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;
 
 export const StyledImage = styled.img<IImage>`

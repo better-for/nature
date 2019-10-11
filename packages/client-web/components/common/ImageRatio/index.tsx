@@ -13,7 +13,11 @@ export type IImage = {
   [key: string]: any;
 };
 
-export const Image: FC<IImage> = ({ src = DEFAULT_IMAGE, ratio, ...props }) => {
+export const Image: FC<IImage> = ({
+  src = DEFAULT_IMAGE,
+  ratio = 1,
+  ...props
+}) => {
   return (
     <StyledImageContainer {...props}>
       <StyledImageRatio ratio={ratio}>
