@@ -36,70 +36,70 @@ const SubHeroNormal = css`
 `;
 
 const TitleBold = css`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 22px;
+    font-size: 20px;
   }
 `;
 
 const TitleNormal = css`
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 22px;
+    font-size: 20px;
   }
 `;
 
 const SubTitleBold = css`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 
 const SubTitleNormal = css`
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 
 const ParagraphBold = css`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 1.3;
   @media ${device.mobile} {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
 const ParagraphNormal = css`
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.3;
   @media ${device.mobile} {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;
 
 const LabelBold = css`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   line-height: 1.3;
   @media ${device.mobile} {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
 const LabelNormal = css`
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.3;
   @media ${device.mobile} {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 

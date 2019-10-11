@@ -2,7 +2,7 @@ import { styled } from '@nature/element';
 import { css } from 'styled-components';
 import { IText } from './index';
 
-export const StyledText = styled.p<IText>`
+export const StyledText = styled.div<IText>`
   max-width: 100%;
   display: block;
   ${({ lineClamp }) =>
