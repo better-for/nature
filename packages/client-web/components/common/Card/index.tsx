@@ -42,6 +42,7 @@ export const Card: FC<ICard> = ({
   button,
   buttonColor,
   buttonIcon,
+  buttonIconSize,
   ...props
 }) => {
   return (
@@ -69,7 +70,11 @@ export const Card: FC<ICard> = ({
         </>
       )}
       {!!button && (
-        <StyledButton color={buttonColor} icon={buttonIcon}>
+        <StyledButton
+          color={buttonColor}
+          icon={buttonIcon}
+          size={buttonIconSize}
+        >
           {button}
         </StyledButton>
       )}
