@@ -12,7 +12,7 @@ import {
   SampleCard,
   ItemTitle,
   ItemDescription,
-  AA
+  CardContainer
 } from './style';
 
 import { LINK_LIST, ogHeader } from '../dataContent';
@@ -53,7 +53,7 @@ const Home: FC = observer(() => {
           ))}
         </Row>
       </Main>
-      <AA>
+      <CardContainer>
         <Card
           titleIcon={'☘️'}
           titleIconSize={20}
@@ -65,7 +65,7 @@ const Home: FC = observer(() => {
           }
           paragraphLineClamp={5}
           button={'save'}
-          buttonIcon={'A'}
+          buttonIcon={'🏔'}
         />
         <Card
           titleIcon={'☘️'}
@@ -78,7 +78,7 @@ const Home: FC = observer(() => {
           }
           paragraphLineClamp={5}
           button={'save'}
-          buttonIcon={'A'}
+          buttonIcon={'🏔'}
         />
         <Card
           titleIcon={'☘️'}
@@ -91,9 +91,9 @@ const Home: FC = observer(() => {
           }
           paragraphLineClamp={5}
           button={'save'}
-          buttonIcon={'A'}
+          buttonIcon={'🏔'}
         />
-      </AA>
+      </CardContainer>
       <DarkModeToggleBox />
     </>
   );
