@@ -84,7 +84,11 @@ export const ItemDescription = styled.p`
   color: ${p => p.theme.color.black};
 `;
 
-export const AA = styled.div`
+export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin: 0 ${p => p.theme.unit.leaf._2};
+  @media ${p => p.theme.device.mobile} {
+    margin: 0 ${p => p.theme.unit.leaf._4};
+  }
 `;
