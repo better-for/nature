@@ -22,7 +22,6 @@ const DefaultStyle = css`
 const WithIcon = css`
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: ${p => p.theme.unit.leaf._2} ${p => p.theme.unit.leaf._3};
 `;
 
@@ -39,7 +38,7 @@ const HoverBoxShadow = `
 `;
 
 export const StyledIcon = styled(Icon)<typeof Icon>`
-  margin-right: ${p => p.theme.unit.leaf._1};
+  margin-right: ${p => p.theme.unit.leaf._2};
 `;
 
 export const ErroredButton = styled.button`
@@ -52,7 +51,6 @@ export const StyledContainedButton = styled.button<IButton>`
   background-color: ${({ color }) => color};
   text-decoration: none;
   user-select: none;
-  height: 40px;
   color: ${p => p.theme.color.white};
   &:hover {
     background-color: ${HoverEffectColor};
@@ -68,7 +66,6 @@ export const StyledOutLinedButton = styled.button<IButton>`
   ${DefaultStyle};
   ${({ icon }) => !!icon && WithIcon};
   box-shadow: 0 0 0 1px ${({ color }) => color};
-  height: 40px;
   color: ${p => p.theme.color.gray};
   &:hover {
     box-shadow: 0 0 0.5px 1.5px ${HoverEffectColor};
@@ -86,7 +83,6 @@ export const StyledTextButton = styled.button<IButton>`
   box-shadow: none;
   border: none;
   user-select: none;
-  height: 40px;
   &:hover {
     color: ${HoverEffectColor};
   }
