@@ -53,10 +53,6 @@ const HoverEffectColor = css<IButton>`
   ${({ color }) => lighten(0.05, color)};
 `;
 
-const ActiveEffectColor = css<IButton>`
-  ${({ color }) => lighten(0.1, color)};
-`;
-
 const HoverBoxShadow = `
   0 4px 10px 0 rgba(0, 0, 0, 0.225);
 `;
@@ -80,10 +76,6 @@ export const StyledContainedButton = styled.button<IButton>`
     background-color: ${HoverEffectColor};
     box-shadow: ${HoverBoxShadow};
   }
-  /* &:active {
-    font-weight: 500;
-    background-color: ${ActiveEffectColor};
-  } */
 `;
 
 export const StyledOutLinedButton = styled.button<IButton>`
@@ -94,10 +86,6 @@ export const StyledOutLinedButton = styled.button<IButton>`
   &:hover {
     box-shadow: 0 0 0.5px 1.5px ${HoverEffectColor};
   }
-  /* &:active {
-    font-weight: 500;
-    box-shadow: 0 0 0.5px 1.5px ${ActiveEffectColor};
-  } */
 `;
 
 export const StyledTextButton = styled.button<IButton>`
@@ -110,8 +98,4 @@ export const StyledTextButton = styled.button<IButton>`
   &:hover {
     color: ${HoverEffectColor};
   }
-  /* &:active {
-    font-weight: 500;
-    color: ${ActiveEffectColor};
-  } */
 `;
