@@ -15,7 +15,7 @@ export type ICard = {
   image?: string;
   imageRatio?: number;
   titleIcon?: string;
-  titleIconSize?: number;
+  titleIconSize?: string;
   title?: string;
   titleLineClamp?: number;
   subTitle?: string;
@@ -25,6 +25,7 @@ export type ICard = {
   button?: string;
   buttonColor?: string;
   buttonIcon?: string;
+  buttonIconSize?: string;
   [key: string]: any;
 };
 

@@ -56,8 +56,9 @@ const Home: FC = observer(() => {
       <CardContainer>
         <Card
           titleIcon={'☘️'}
-          titleIconSize={20}
+          titleIconSize={'20px'}
           title={'Better Nature!'}
+          titleLineClamp={1}
           subTitle={'SAVE THE WORLD, SAVE THE YOURSELF.'}
           subTitleLineClamp={2}
           paragraph={
@@ -66,11 +67,13 @@ const Home: FC = observer(() => {
           paragraphLineClamp={5}
           button={'save'}
           buttonIcon={'🏔'}
+          buttonIconSize={'20px'}
         />
         <Card
           titleIcon={'☘️'}
-          titleIconSize={20}
+          titleIconSize={'20px'}
           title={'Better Nature!'}
+          titleLineClamp={1}
           subTitle={'SAVE THE WORLD, SAVE THE YOURSELF.'}
           subTitleLineClamp={2}
           paragraph={
@@ -79,11 +82,13 @@ const Home: FC = observer(() => {
           paragraphLineClamp={5}
           button={'save'}
           buttonIcon={'🏔'}
+          buttonIconSize={'20px'}
         />
         <Card
           titleIcon={'☘️'}
-          titleIconSize={20}
+          titleIconSize={'20px'}
           title={'Better Nature!'}
+          titleLineClamp={1}
           subTitle={'SAVE THE WORLD, SAVE THE YOURSELF.'}
           subTitleLineClamp={2}
           paragraph={
@@ -92,6 +97,7 @@ const Home: FC = observer(() => {
           paragraphLineClamp={5}
           button={'save'}
           buttonIcon={'🏔'}
+          buttonIconSize={'20px'}
         />
       </CardContainer>
       <DarkModeToggleBox />
