@@ -17,6 +17,30 @@ const DefaultStyle = css`
   border-radius: ${p => p.theme.unit.leaf._1};
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
   padding: ${p => p.theme.unit.leaf._2} ${p => p.theme.unit.leaf._4};
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+  }
+  &:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+  }
 `;
 
 const WithIcon = css`
@@ -56,10 +80,10 @@ export const StyledContainedButton = styled.button<IButton>`
     background-color: ${HoverEffectColor};
     box-shadow: ${HoverBoxShadow};
   }
-  &:active {
+  /* &:active {
     font-weight: 500;
     background-color: ${ActiveEffectColor};
-  }
+  } */
 `;
 
 export const StyledOutLinedButton = styled.button<IButton>`
@@ -70,10 +94,10 @@ export const StyledOutLinedButton = styled.button<IButton>`
   &:hover {
     box-shadow: 0 0 0.5px 1.5px ${HoverEffectColor};
   }
-  &:active {
+  /* &:active {
     font-weight: 500;
     box-shadow: 0 0 0.5px 1.5px ${ActiveEffectColor};
-  }
+  } */
 `;
 
 export const StyledTextButton = styled.button<IButton>`
@@ -86,8 +110,8 @@ export const StyledTextButton = styled.button<IButton>`
   &:hover {
     color: ${HoverEffectColor};
   }
-  &:active {
+  /* &:active {
     font-weight: 500;
     color: ${ActiveEffectColor};
-  }
+  } */
 `;
