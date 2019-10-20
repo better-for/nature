@@ -15,7 +15,7 @@ export type ICard = {
   image?: string;
   imageRatio?: number;
   titleIcon?: string;
-  titleIconSize?: number;
+  titleIconSize?: string;
   title?: string;
   titleLineClamp?: number;
   subTitle?: string;
@@ -25,6 +25,7 @@ export type ICard = {
   button?: string;
   buttonColor?: string;
   buttonIcon?: string;
+  buttonIconSize?: string;
   [key: string]: any;
 };
 
@@ -42,6 +43,7 @@ export const Card: FC<ICard> = ({
   button,
   buttonColor,
   buttonIcon,
+  buttonIconSize,
   ...props
 }) => {
   return (
@@ -69,7 +71,11 @@ export const Card: FC<ICard> = ({
         </>
       )}
       {!!button && (
-        <StyledButton color={buttonColor} icon={buttonIcon}>
+        <StyledButton
+          color={buttonColor}
+          icon={buttonIcon}
+          size={buttonIconSize}
+        >
           {button}
         </StyledButton>
       )}
