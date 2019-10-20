@@ -46,6 +46,7 @@ const DefaultStyle = css`
 const WithIcon = css`
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: ${p => p.theme.unit.leaf._2} ${p => p.theme.unit.leaf._3};
 `;
 
@@ -63,11 +64,13 @@ export const StyledIcon = styled(Icon)<typeof Icon>`
 
 export const ErroredButton = styled.button`
   ${DefaultStyle};
+  pointer-events: none;
 `;
 
 export const StyledContainedButton = styled.button<IButton>`
   ${DefaultStyle};
   ${({ icon }) => !!icon && WithIcon};
+  cursor: pointer;
   background-color: ${({ color }) => color};
   text-decoration: none;
   user-select: none;
@@ -81,6 +84,7 @@ export const StyledContainedButton = styled.button<IButton>`
 export const StyledOutLinedButton = styled.button<IButton>`
   ${DefaultStyle};
   ${({ icon }) => !!icon && WithIcon};
+  cursor: pointer;
   box-shadow: 0 0 0 1px ${({ color }) => color};
   color: ${p => p.theme.color.gray};
   &:hover {
@@ -91,6 +95,7 @@ export const StyledOutLinedButton = styled.button<IButton>`
 export const StyledTextButton = styled.button<IButton>`
   ${DefaultStyle};
   ${({ icon }) => !!icon && WithIcon};
+  cursor: pointer;
   color: ${({ color }) => color};
   box-shadow: none;
   border: none;
