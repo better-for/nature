@@ -12,7 +12,8 @@ import {
 } from './style';
 
 export type ICard = {
-  image?: string;
+  url: string | null;
+  image?: string | boolean;
   imageRatio?: number;
   titleIcon?: string;
   titleIconSize?: string;
@@ -30,6 +31,7 @@ export type ICard = {
 };
 
 export const Card: FC<ICard> = ({
+  url,
   image,
   imageRatio,
   titleIcon,
@@ -47,28 +49,27 @@ export const Card: FC<ICard> = ({
   ...props
 }) => {
   return (
-    <StyledCard {...props}>
+    <StyledCard {...props} href={url}>
       {!!image && <StyledImage src={image} ratio={imageRatio} />}
-      <StyledTitleSection>
-        {!!titleIcon && (
-          <StyledIcon size={titleIconSize}>{titleIcon}</StyledIcon>
-        )}
-        {!!title && (
-          <StyledTitle lineClamp={titleLineClamp}>{title}</StyledTitle>
-        )}
-      </StyledTitleSection>
+      {!!title && (
+        <StyledTitleSection>
+          {!!titleIcon && (
+            <StyledIcon size={titleIconSize}>{titleIcon}</StyledIcon>
+          )}
+          {!!title && (
+            <StyledTitle lineClamp={titleLineClamp}>{title}</StyledTitle>
+          )}
+        </StyledTitleSection>
+      )}
       {!!subTitle && (
         <StyledSubTitle lineClamp={subTitleLineClamp}>
           {subTitle}
         </StyledSubTitle>
       )}
       {!!paragraph && (
-        <>
-          <StyledDivider />
-          <StyledParagraph lineClamp={paragraphLineClamp}>
-            {paragraph}
-          </StyledParagraph>
-        </>
+        <StyledParagraph lineClamp={paragraphLineClamp}>
+          {paragraph}
+        </StyledParagraph>
       )}
       {!!button && (
         <StyledButton

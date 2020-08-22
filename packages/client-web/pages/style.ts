@@ -65,9 +65,9 @@ export const SampleCard = styled.a`
   width: ${p => p.theme.unit.glass._26};
   text-align: left;
   text-decoration: none;
-  box-shadow: 0 0 0px 1px ${p => p.theme.color.gray};
+  box-shadow: 0 0 1px 1px ${p => p.theme.color.gray};
   &:hover {
-    box-shadow: 0 0 0px 1px ${p => p.theme.color.primaryVariant};
+    box-shadow: 0 0 1px 1px ${p => p.theme.color.primaryVariant};
   }
 `;
 
@@ -87,7 +87,7 @@ export const ItemDescription = styled.p`
 export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 ${p => p.theme.unit.leaf._2};
+  margin: ${p => p.theme.unit.glass._10} ${p => p.theme.unit.leaf._2} 0;
   @media ${p => p.theme.device.mobile} {
     margin: 0 ${p => p.theme.unit.leaf._4};
   }

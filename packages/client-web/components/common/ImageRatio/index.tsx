@@ -8,21 +8,17 @@ import {
 import { DEFAULT_IMAGE } from '../../../dataContent';
 
 export type IImage = {
-  src?: string;
+  src?: string | null;
   ratio?: number;
   [key: string]: any;
 };
 
-export const Image: FC<IImage> = ({
-  src = DEFAULT_IMAGE,
-  ratio = 1,
-  ...props
-}) => {
+export const Image: FC<IImage> = ({ src, ratio = 1, ...props }) => {
   return (
     <StyledImageContainer {...props}>
       <StyledImageRatio ratio={ratio}>
         <StyledImagePosition>
-          <StyledImage src={src} />
+          <StyledImage src={!src ? DEFAULT_IMAGE : src} />
         </StyledImagePosition>
       </StyledImageRatio>
     </StyledImageContainer>
