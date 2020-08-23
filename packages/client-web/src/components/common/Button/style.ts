@@ -1,4 +1,4 @@
-import { styled } from '@nature/element';
+import { styled } from '../../../../src/element';
 import { css } from 'styled-components';
 import { IButton } from './index';
 import { lighten } from 'polished';

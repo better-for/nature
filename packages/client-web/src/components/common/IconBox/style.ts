@@ -1,4 +1,4 @@
-import { styled } from '@nature/element';
+import { styled } from '../../../../src/element';
 import { IIcon } from './index';
 
 export const StyledIcon = styled.div<IIcon>`

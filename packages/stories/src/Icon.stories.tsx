@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Icon } from '../../client-web/components/common/IconBox';
+import { Icon } from '../../client-web/src/components/common';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { theme } from '@nature/element';
+import { theme } from '../../client-web/src/components/common/Card/node_modules/@nature/element';
 
 const stories = storiesOf('Component', module).addDecorator(withKnobs);
 

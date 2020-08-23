@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { styled, Theme } from '@nature/element';
+import { styled, Theme } from '../../../src/element';
 
 type Props = {
   theme: Theme;

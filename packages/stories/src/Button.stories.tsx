@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Button } from '../../client-web/components/common/Button';
+import { Button } from '../../client-web/src/components/common';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, select, text } from '@storybook/addon-knobs';
-import { theme } from '@nature/element';
-import { BUTTON_TYPE } from '../../client-web/components/common/Button/type';
+import { theme } from '../../client-web/src/components/common/Card/node_modules/@nature/element';
+import { BUTTON_TYPE } from '../../client-web/src/components/common/Button/type';
 
 const stories = storiesOf('Component', module).addDecorator(withKnobs);
 

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyledDivider } from './style';
-import { theme } from '@nature/element';
+import { theme } from '../../../../src/element';
 
 export type IDivider = {
   [key: string]: any;

@@ -1,4 +1,4 @@
-import { styled } from '@nature/element';
+import { styled } from '../../../../src/element';
 import Button, { IButton } from '../Button';
 import Divider, { IDivider } from '../Divider';
 import Icon, { IIcon } from '../IconBox';

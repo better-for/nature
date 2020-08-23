@@ -1,4 +1,4 @@
-import { styled } from '@nature/element';
+import { styled } from '../../../../src/element';
 import { IImage } from './index';
 
 export const StyledImageContainer = styled.div``;

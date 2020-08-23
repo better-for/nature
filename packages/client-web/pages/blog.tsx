@@ -9,10 +9,10 @@ import {
   Point,
   CardContainer,
   BackButton
-} from '../components/pageStyles';
+} from '../src/components/pageStyles';
 import { ogHeader } from '../dataContent';
-import { OGHeader } from '../components/OG';
-import { Card } from '../components/common';
+import { OGHeader } from '../src/components/OG';
+import { Card } from '../src/components/common';
 import { ECO_FRIENDLY_BLOGS } from '../dataContent';
 
 const Blog: FC = observer(() => {

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Divider } from '../../client-web/components/common/Divider';
+import { Divider } from '../../client-web/src/components/common';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, number, select } from '@storybook/addon-knobs';
-import { theme } from '@nature/element';
+import { theme } from '../../client-web/src/components/common/Card/node_modules/@nature/element';
 
 const stories = storiesOf('Component', module).addDecorator(withKnobs);
 

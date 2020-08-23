@@ -1,4 +1,4 @@
-import { styled } from '@nature/element';
+import { styled } from '../../../../src/element';
 import { IDivider } from './index';
 
 export const StyledDivider = styled.div<IDivider>`

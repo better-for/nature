@@ -14,12 +14,12 @@ import {
   ItemTitle,
   ItemDescription,
   ToggleContainer
-} from '../components/pageStyles';
+} from '../src/components/pageStyles';
 
 import { LINK_LIST, ogHeader } from '../dataContent';
-import { OGHeader } from '../components/OG';
+import { OGHeader } from '../src/components/OG';
 import { useDarkMode } from '../src/utils/useDarkMode';
-import { Toggle } from '../components/common';
+import { Toggle } from '../src/components/common';
 
 const Home: FC = observer(() => {
   const { title, description, image } = ogHeader;
