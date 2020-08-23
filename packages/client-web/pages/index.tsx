@@ -11,20 +11,14 @@ import {
   Row,
   SampleCard,
   ItemTitle,
-  ItemDescription,
-  CardContainer
+  ItemDescription
 } from './style';
 
 import { LINK_LIST, ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';
 import { DarkModeToggleBox } from '../components/DarkModeSelector';
-import { Nav } from '../components/Nav';
-import { useStore } from '../src/utils/storeUtils';
-import { Card } from '../components/common/Card';
 
 const Home: FC = observer(() => {
-  const { uiStore } = useStore();
-  const { navigation } = uiStore;
   const { title, description, image } = ogHeader;
 
   return (
@@ -32,11 +26,9 @@ const Home: FC = observer(() => {
       <OGHeader title={title} description={description} image={image} />
       <GlobalStyle />
       <Main>
-        <button onClick={navigation.toggle}>🍔</button>
-        {navigation.opened && <Nav />}
         <TitleSection>
           <Title>
-            Better For <Point>Nature</Point>
+            Better for <Point>Nature</Point>
           </Title>
         </TitleSection>
         <Description>
@@ -53,53 +45,6 @@ const Home: FC = observer(() => {
           ))}
         </Row>
       </Main>
-      <CardContainer>
-        <Card
-          titleIcon={'☘️'}
-          titleIconSize={'20px'}
-          title={'Better Nature!'}
-          titleLineClamp={1}
-          subTitle={'SAVE THE WORLD, SAVE THE YOURSELF.'}
-          subTitleLineClamp={2}
-          paragraph={
-            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet autem aliquam mollitia enim sapiente iure! Voluptate repellat, placeat numquam officiis amet quos, exercitationem qui enim consequuntur, impedit assumenda ullam eaque.'
-          }
-          paragraphLineClamp={5}
-          button={'save'}
-          buttonIcon={'🏔'}
-          buttonIconSize={'20px'}
-        />
-        <Card
-          titleIcon={'☘️'}
-          titleIconSize={'20px'}
-          title={'Better Nature!'}
-          titleLineClamp={1}
-          subTitle={'SAVE THE WORLD, SAVE THE YOURSELF.'}
-          subTitleLineClamp={2}
-          paragraph={
-            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet autem aliquam mollitia enim sapiente iure! Voluptate repellat, placeat numquam officiis amet quos, exercitationem qui enim consequuntur, impedit assumenda ullam eaque.'
-          }
-          paragraphLineClamp={5}
-          button={'save'}
-          buttonIcon={'🏔'}
-          buttonIconSize={'20px'}
-        />
-        <Card
-          titleIcon={'☘️'}
-          titleIconSize={'20px'}
-          title={'Better Nature!'}
-          titleLineClamp={1}
-          subTitle={'SAVE THE WORLD, SAVE THE YOURSELF.'}
-          subTitleLineClamp={2}
-          paragraph={
-            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet autem aliquam mollitia enim sapiente iure! Voluptate repellat, placeat numquam officiis amet quos, exercitationem qui enim consequuntur, impedit assumenda ullam eaque.'
-          }
-          paragraphLineClamp={5}
-          button={'save'}
-          buttonIcon={'🏔'}
-          buttonIconSize={'20px'}
-        />
-      </CardContainer>
       <DarkModeToggleBox />
     </>
   );

@@ -36,19 +36,19 @@ const SubHeroNormal = css`
 `;
 
 const TitleBold = css`
-  font-size: 22px;
+  font-size: 30px;
   font-weight: bold;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 20px;
+    font-size: 24px;
   }
 `;
 
 const TitleNormal = css`
-  font-size: 22px;
+  font-size: 30px;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 20px;
+    font-size: 24px;
   }
 `;
 
@@ -72,7 +72,7 @@ const SubTitleNormal = css`
 const ParagraphBold = css`
   font-size: 16px;
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 1.5;
   @media ${device.mobile} {
     font-size: 14px;
   }
@@ -80,7 +80,7 @@ const ParagraphBold = css`
 
 const ParagraphNormal = css`
   font-size: 16px;
-  line-height: 1.3;
+  line-height: 1.5;
   @media ${device.mobile} {
     font-size: 14px;
   }

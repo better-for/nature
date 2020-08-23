@@ -10,6 +10,7 @@ export const StyledText = styled.div<IText>`
     css`
       overflow: hidden;
       display: -webkit-box;
+      padding: 0 ${p => p.theme.unit.leaf._5};
       -webkit-box-orient: vertical;
       -webkit-box-orient: block-axis;
       -webkit-line-clamp: ${lineClamp};
