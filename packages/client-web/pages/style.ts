@@ -1,25 +1,28 @@
 import { createGlobalStyle } from 'styled-components';
-import { styled } from '@nature/element';
+import { styled, Theme } from '@nature/element';
 
-export const GlobalStyle = createGlobalStyle`
+type Props = {
+  theme: Theme;
+  isDarkTheme: boolean;
+};
+
+export const GlobalStyle = createGlobalStyle<Props>`
   body {
     margin: 0;
-    /* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap'); */
-    /* font-family: 'Noto Sans KR', sans-serif; */
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
-  }
-  body.light-mode {
-    background-color: #fff;
-    & h1, h2, p{
-      /* color: #333; */
-    }
+    background-color: ${({ isDarkTheme, theme: { dark, light } }) =>
+      isDarkTheme ? dark.bg.secondary : light.bg.secondary};
     transition: background-color 0.3s ease;
-  }
-
-  body.dark-mode {
-    background-color: #1a1919;
-  & h1, h2, p{
-      /* color: #ccc; */
+    color: ${({ isDarkTheme, theme: { dark, light } }) =>
+      isDarkTheme ? dark.text.secondary : light.text.secondary};
+    & h1 {
+      color: ${({ isDarkTheme, theme: { dark, light } }) =>
+        isDarkTheme ? dark.text.primary : light.text.primary};
+    }
+    & h2, p{
+      color: ${({ isDarkTheme, theme: { dark, light } }) =>
+        isDarkTheme ? dark.text.secondary : light.text.secondary};
     }
   }
 `;
@@ -38,7 +41,6 @@ export const Title = styled.h1`
   display: flex;
   margin: 0;
   padding-top: ${p => p.theme.unit.glass._10};
-  color: ${p => p.theme.color.black};
   ${p => p.theme.typography.heroBold};
 `;
 
@@ -65,7 +67,7 @@ export const SampleCard = styled.a`
   width: ${p => p.theme.unit.glass._26};
   text-align: left;
   text-decoration: none;
-  box-shadow: 0 0 1px 1px ${p => p.theme.color.gray};
+  box-shadow: 0 0 0px 1px ${p => p.theme.color.gray};
   &:hover {
     box-shadow: 0 0 1px 1px ${p => p.theme.color.primaryVariant};
   }
@@ -75,6 +77,12 @@ export const ItemTitle = styled.h3`
   margin: 0;
   color: ${p => p.theme.color.secondary};
   ${p => p.theme.typography.paragraphNormal};
+`;
+
+export const BackButton = styled.div`
+  display: flex;
+  color: ${p => p.theme.color.secondary};
+  ${p => p.theme.typography.titleBold};
 `;
 
 export const ItemDescription = styled.p`
@@ -87,8 +95,15 @@ export const ItemDescription = styled.p`
 export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: ${p => p.theme.unit.glass._10} ${p => p.theme.unit.leaf._2} 0;
+  justify-content: center;
+  margin: ${p => p.theme.unit.glass._10} 10% 0;
   @media ${p => p.theme.device.mobile} {
     margin: 0 ${p => p.theme.unit.leaf._4};
   }
+`;
+
+export const ToggleContainer = styled.div`
+  position: fixed;
+  bottom: ${p => p.theme.unit.glass._8};
+  right: ${p => p.theme.unit.glass._3};
 `;

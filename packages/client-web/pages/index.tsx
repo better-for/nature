@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import { observer } from 'mobx-react';
+import 'mobx-react-lite/batchingForReactDom';
 import {
   GlobalStyle,
   TitleSection,
@@ -11,20 +12,22 @@ import {
   Row,
   SampleCard,
   ItemTitle,
-  ItemDescription
+  ItemDescription,
+  ToggleContainer
 } from './style';
 
 import { LINK_LIST, ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';
-import { DarkModeToggleBox } from '../components/DarkModeSelector';
+import { useDarkMode } from '../src/utils/useDarkMode';
+import { Toggle } from '../components/common';
 
 const Home: FC = observer(() => {
   const { title, description, image } = ogHeader;
-
+  const [isDarkTheme, toggleTheme] = useDarkMode();
   return (
     <>
       <OGHeader title={title} description={description} image={image} />
-      <GlobalStyle />
+      <GlobalStyle isDarkTheme={isDarkTheme} />
       <Main>
         <TitleSection>
           <Title>
@@ -45,7 +48,9 @@ const Home: FC = observer(() => {
           ))}
         </Row>
       </Main>
-      <DarkModeToggleBox />
+      <ToggleContainer>
+        <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+      </ToggleContainer>
     </>
   );
 });
