@@ -1,28 +1,27 @@
 import React, { FC } from 'react';
-import Link from 'next/link';
+import Router from 'next/router';
 import { observer } from 'mobx-react';
+import 'mobx-react-lite/batchingForReactDom';
 import {
   TitleSection,
   Main,
   Title,
   Point,
-  Row,
-  ItemTitle,
-  ItemDescription,
-  CardContainer
+  CardContainer,
+  BackButton
 } from './style';
-
 import { ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';
-import { Card } from '../components/common/Card';
+import { Card } from '../components/common';
 import { ECO_FRIENDLY_BLOGS } from '../dataContent';
 
-const Home: FC = observer(() => {
+const Blog: FC = observer(() => {
   const { title, description, image } = ogHeader;
 
   return (
     <>
       <OGHeader title={title} description={description} image={image} />
+      <BackButton onClick={() => Router.back()}>&larr; Back</BackButton>
       <Main>
         <TitleSection>
           <Title>
@@ -52,4 +51,4 @@ const Home: FC = observer(() => {
   );
 });
 
-export default Home;
+export default Blog;
