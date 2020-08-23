@@ -36,11 +36,6 @@ export const SAMPLE_DATA = [
 
 export const LINK_LIST = [
   {
-    link: 'yoga',
-    title: `YOGA`,
-    description: `Find place to yoga`
-  },
-  {
     link: '/blog',
     title: `BLOG`,
     description: `Find eco-friendly blogs`
