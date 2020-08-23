@@ -9,7 +9,7 @@ import {
   Point,
   CardContainer,
   BackButton
-} from './style';
+} from '../components/pageStyles';
 import { ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';
 import { Card } from '../components/common';

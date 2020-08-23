@@ -1,5 +1,5 @@
 import { styled } from '@nature/element';
-import { Button, IButton } from '../Button';
+import Button, { IButton } from '../Button';
 import Divider, { IDivider } from '../Divider';
 import Icon, { IIcon } from '../IconBox';
 import Image, { IImage } from '../ImageRatio';

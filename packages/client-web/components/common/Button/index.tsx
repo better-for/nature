@@ -19,7 +19,7 @@ export type IButton = {
   size?: IIcon['size'];
 };
 
-export const Button: FC<IButton> = ({
+const Button: FC<IButton> = ({
   type = BUTTON_TYPE.CONTAINED,
   icon,
   color = theme.color.secondary,
@@ -52,3 +52,5 @@ export const Button: FC<IButton> = ({
       );
   }
 };
+
+export default Button;

@@ -14,7 +14,7 @@ import {
   ItemTitle,
   ItemDescription,
   ToggleContainer
-} from './style';
+} from '../components/pageStyles';
 
 import { LINK_LIST, ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';

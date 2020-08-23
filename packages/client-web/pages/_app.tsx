@@ -2,7 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import { StoreProvider } from '../src/utils/storeUtils';
 import { ThemeProvider } from 'styled-components';
-import { theme, light, dark } from '@nature/element';
+import { theme } from '@nature/element';
 
 class MyApp extends App {
   render() {
