@@ -11,18 +11,12 @@ module.exports = {
         include
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader'
-          }
-        ]
-      },
-      {
         test: /\.(jpg|png|svg)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 25000
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 25000
+          }
         }
       }
     ]

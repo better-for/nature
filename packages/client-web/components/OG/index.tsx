@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import Head from 'next/head';
 
 interface OGHeaderProps {
-  title: string | undefined;
-  description: string | undefined;
-  image?: string | undefined;
-  url?: string | undefined;
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
 }
 
 export const OGHeader: FC<OGHeaderProps> = ({

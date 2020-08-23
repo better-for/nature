@@ -7,9 +7,8 @@ export type IDivider = {
   color?: typeof theme.color.white;
 };
 
-export const Divider: FC<IDivider> = ({
-  color = theme.color.gray,
-  ...props
-}) => {
+const Divider: FC<IDivider> = ({ color = theme.color.gray, ...props }) => {
   return <StyledDivider color={color} {...props} />;
 };
+
+export default Divider;
