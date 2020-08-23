@@ -7,14 +7,12 @@ export type IIcon = {
   size?: typeof theme.unit.leaf._1 | typeof theme.unit.glass._1;
   children: ReactNode;
 };
-export const Icon: FC<IIcon> = ({
-  children,
-  size = theme.unit.leaf._5,
-  ...props
-}) => {
+const Icon: FC<IIcon> = ({ children, size = theme.unit.leaf._5, ...props }) => {
   return (
     <StyledIcon size={size} {...props}>
       {children}
     </StyledIcon>
   );
 };
+
+export default Icon;

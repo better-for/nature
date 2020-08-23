@@ -1,8 +1,8 @@
 import { styled } from '@nature/element';
 import { css } from 'styled-components';
 import { IButton } from './index';
-import { Icon } from '../IconBox';
 import { lighten } from 'polished';
+import Icon, { IIcon } from '../IconBox';
 
 const DefaultStyle = css`
   display: inline-block;
@@ -58,7 +58,7 @@ const HoverBoxShadow = `
   0 4px 10px 0 rgba(0, 0, 0, 0.225);
 `;
 
-export const StyledIcon = styled(Icon)<typeof Icon>`
+export const StyledIcon = styled(Icon)<IIcon>`
   margin-right: ${p => p.theme.unit.leaf._2};
 `;
 

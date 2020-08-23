@@ -7,8 +7,10 @@ export type IText = {
   [key: string]: any;
 };
 
-export const Text: FC<IText> = ({ children, lineClamp, ...props }) => (
+const Text: FC<IText> = ({ children, lineClamp, ...props }) => (
   <StyledText lineClamp={lineClamp} {...props}>
     {children}
   </StyledText>
 );
+
+export default Text;
