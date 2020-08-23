@@ -3,7 +3,6 @@ import {
   StyledCard,
   StyledIcon,
   StyledButton,
-  StyledDivider,
   StyledImage,
   StyledTitleSection,
   StyledTitle,
@@ -30,7 +29,7 @@ export type ICard = {
   [key: string]: any;
 };
 
-export const Card: FC<ICard> = ({
+const Card: FC<ICard> = ({
   url,
   image,
   imageRatio,
@@ -83,3 +82,5 @@ export const Card: FC<ICard> = ({
     </StyledCard>
   );
 };
+
+export default Card;
