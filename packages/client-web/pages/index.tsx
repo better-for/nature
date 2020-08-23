@@ -9,19 +9,16 @@ import {
   Point,
   Description,
   Row,
-  Card,
+  SampleCard,
   ItemTitle,
   ItemDescription
 } from './style';
+
 import { LINK_LIST, ogHeader } from '../dataContent';
 import { OGHeader } from '../components/OG';
 import { DarkModeToggleBox } from '../components/DarkModeSelector';
-import { Nav } from '../components/Nav';
-import { useStore } from '../src/utils/storeUtils';
 
 const Home: FC = observer(() => {
-  const { uiStore } = useStore();
-  const { navigation } = uiStore;
   const { title, description, image } = ogHeader;
 
   return (
@@ -29,11 +26,9 @@ const Home: FC = observer(() => {
       <OGHeader title={title} description={description} image={image} />
       <GlobalStyle />
       <Main>
-        <button onClick={navigation.toggle}>🍔</button>
-        {navigation.opened && <Nav />}
         <TitleSection>
           <Title>
-            Better For <Point>Nature</Point>
+            Better for <Point>Nature</Point>
           </Title>
         </TitleSection>
         <Description>
@@ -42,10 +37,10 @@ const Home: FC = observer(() => {
         <Row>
           {LINK_LIST.map(({ link, title, description }) => (
             <Link href={link} key={title}>
-              <Card>
+              <SampleCard>
                 <ItemTitle>{title} &rarr;</ItemTitle>
                 <ItemDescription>{description}</ItemDescription>
-              </Card>
+              </SampleCard>
             </Link>
           ))}
         </Row>

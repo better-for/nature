@@ -3,10 +3,7 @@ if (!process.env.NODE_ENV) {
 }
 
 const path = require('path');
-const envFile =
-  process.env.NODE_ENV === 'production'
-    ? '.env'
-    : `.env.${process.env.NODE_ENV}`;
+const envFile = process.env.NODE_ENV === 'production' ? '.env' : `.env.${process.env.NODE_ENV}`;
 
 require('dotenv').config({
   path: path.resolve(process.cwd(), envFile)

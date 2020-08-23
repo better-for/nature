@@ -1,0 +1,5 @@
+export enum BUTTON_TYPE {
+  CONTAINED = 'CONTAINED',
+  OUTLINED = 'OUTLINED',
+  TEXT = 'TEXT'
+}

@@ -4,9 +4,9 @@ import { styled } from '@nature/element';
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-    font-family: 'Noto Sans KR', sans-serif;
-    /* font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif; */
+    /* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap'); */
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
   }
   body.light-mode {
     background-color: #fff;
@@ -59,14 +59,15 @@ export const Row = styled.div`
   justify-content: space-around;
 `;
 
-export const Card = styled.a`
-  padding: ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._5};
+export const SampleCard = styled.a`
+  padding: ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._4}
+    ${p => p.theme.unit.leaf._5};
   width: ${p => p.theme.unit.glass._26};
   text-align: left;
   text-decoration: none;
-  box-shadow: 0 0 0px 1px ${p => p.theme.color.gray};
+  box-shadow: 0 0 1px 1px ${p => p.theme.color.gray};
   &:hover {
-    box-shadow: 0 0 0px 1px ${p => p.theme.color.primaryVariant};
+    box-shadow: 0 0 1px 1px ${p => p.theme.color.primaryVariant};
   }
 `;
 
@@ -81,4 +82,13 @@ export const ItemDescription = styled.p`
   padding: ${p => p.theme.unit.leaf._3} 0 0;
   ${p => p.theme.typography.labelNormal};
   color: ${p => p.theme.color.black};
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: ${p => p.theme.unit.glass._10} ${p => p.theme.unit.leaf._2} 0;
+  @media ${p => p.theme.device.mobile} {
+    margin: 0 ${p => p.theme.unit.leaf._4};
+  }
 `;
