@@ -98,7 +98,7 @@ export const CardContainer = styled.div`
   justify-content: center;
   margin: ${p => p.theme.unit.glass._10} 10% 0;
   @media ${p => p.theme.device.mobile} {
-    margin: 0 ${p => p.theme.unit.leaf._4};
+    margin: ${p => p.theme.unit.glass._10} ${p => p.theme.unit.leaf._4};
   }
 `;
 
