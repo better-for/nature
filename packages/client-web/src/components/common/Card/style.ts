@@ -44,6 +44,7 @@ export const StyledParagraph = styled(Text)<IText>`
 
 export const StyledCard = styled.a`
   text-decoration: none;
+  color: inherit;
   display: flex;
   max-width: 33%;
   min-width: 25%;

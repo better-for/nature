@@ -80,6 +80,9 @@ export const ItemTitle = styled.h3`
 `;
 
 export const BackButton = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   color: ${p => p.theme.color.secondary};
   ${p => p.theme.typography.titleBold};

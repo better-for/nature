@@ -8,18 +8,22 @@ import {
   Title,
   Point,
   CardContainer,
-  BackButton
+  BackButton,
+  GlobalStyle,
+  ToggleContainer
 } from '../src/components/pageStyles';
 import { ogHeader } from '../dataContent';
 import OGHeader from '../src/components/OG';
-import { Card } from '../src/components/common';
+import { Card, Toggle } from '../src/components/common';
 import { ECO_FRIENDLY_BLOGS } from '../dataContent';
+import { useDarkMode } from '../src/utils/useDarkMode';
 
 const Blog: FC = observer(() => {
   const { title, description, image } = ogHeader;
-
+  const [isDarkTheme, toggleTheme] = useDarkMode();
   return (
     <>
+      <GlobalStyle isDarkTheme={isDarkTheme} />
       <OGHeader title={title} description={description} image={image} />
       <BackButton onClick={() => Router.back()}>&larr; Back</BackButton>
       <Main>
@@ -47,6 +51,9 @@ const Blog: FC = observer(() => {
           );
         })}
       </CardContainer>
+      <ToggleContainer>
+        <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+      </ToggleContainer>
     </>
   );
 });
