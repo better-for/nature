@@ -29,7 +29,18 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <link
+            rel="shortcut icon"
+            href="https://nature-six.vercel.app/packages/client-web/public/static/favicon.ico"
+            type="image/x-icon"
+          />
+          <link
+            rel="icon"
+            href="https://nature-six.vercel.app/packages/client-web/public/static/favicon.ico"
+            type="image/x-icon"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

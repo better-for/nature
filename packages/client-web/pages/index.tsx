@@ -17,7 +17,7 @@ import {
 } from '../src/components/pageStyles';
 
 import { LINK_LIST, ogHeader } from '../dataContent';
-import { OGHeader } from '../src/components/OG';
+import OGHeader from '../src/components/OG';
 import { useDarkMode } from '../src/utils/useDarkMode';
 import { Toggle } from '../src/components/common';
 

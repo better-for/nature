@@ -11,7 +11,7 @@ import {
   BackButton
 } from '../src/components/pageStyles';
 import { ogHeader } from '../dataContent';
-import { OGHeader } from '../src/components/OG';
+import OGHeader from '../src/components/OG';
 import { Card } from '../src/components/common';
 import { ECO_FRIENDLY_BLOGS } from '../dataContent';
 

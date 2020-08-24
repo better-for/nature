@@ -1,19 +1,14 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
 
-interface OGHeaderProps {
+interface OGHeader {
   title?: string;
   description?: string;
   image?: string;
   url?: string;
 }
 
-export const OGHeader: FC<OGHeaderProps> = ({
-  title,
-  description,
-  image,
-  url
-}) => {
+const OGHeader: FC<OGHeader> = ({ title, description, image, url }) => {
   return (
     <Head>
       <title>{title}</title>
@@ -27,3 +22,5 @@ export const OGHeader: FC<OGHeaderProps> = ({
     </Head>
   );
 };
+
+export default OGHeader;
