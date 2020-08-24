@@ -1,22 +1,22 @@
 const path = require('path');
 const withCustomBabelConfigFile = require('next-plugin-custom-babel-config');
-const withTranspileModules = require('next-transpile-modules');
-const { nextI18NextRewrites } = require('next-i18next/rewrites');
+const withTranspileModules = require('next-plugin-transpile-modules');
 
-const localeSubpaths = { en: 'en', ko: 'ko' };
+// const { nextI18NextRewrites } = require('next-i18next/rewrites');
+// const localeSubpaths = { en: 'en', ko: 'ko' };
 
 module.exports = withCustomBabelConfigFile(
   withTranspileModules({
-    babelConfigFile: path.resolve('./babel.config.js'),
-    transpileModules: ['@nature'],
-    publicRuntimeConfig: {
-      localeSubpaths
-    },
-    experimental: {
-      async rewrites() {
-        return [...nextI18NextRewrites(localeSubpaths)];
-      }
-    }
+    babelConfigFile: path.resolve('./babel.config.js')
+    // transpileModules: ['@nature']
+    // publicRuntimeConfig: {
+    //   localeSubpaths
+    // },
+    // experimental: {
+    //   async rewrites() {
+    //     return [...nextI18NextRewrites(localeSubpaths)];
+    //   }
+    // }
   })
 );
 

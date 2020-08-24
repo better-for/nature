@@ -11,7 +11,7 @@ export const includeDefaultNamespaces = (namespaces: string[]) =>
   ['common'].concat(namespaces);
 
 const NextI18NextInstance = new NextI18Next({
-  // browserLanguageDetection: false,
+  browserLanguageDetection: false,
   defaultLanguage: 'en',
   defaultNS: 'common',
   fallbackLng: 'en',

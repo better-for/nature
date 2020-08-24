@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import {
   useTranslation,
   I18nPage,
-  includeDefaultNamespaces,
-  Link
+  includeDefaultNamespaces
+  // Link
 } from '../I18n';
 
 import {

@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-// import Router from 'next/router';
+import Router from 'next/router';
 import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import {
   useTranslation,
   I18nPage,
-  includeDefaultNamespaces,
-  Router
+  includeDefaultNamespaces
+  // Router
 } from '../I18n';
 
 import {
