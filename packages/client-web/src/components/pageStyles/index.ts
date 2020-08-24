@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
       color: ${({ isDarkTheme, theme: { dark, light } }) =>
         isDarkTheme ? dark.text.primary : light.text.primary};
     }
-    & h2, p{
+    & h2, p, button{
       color: ${({ isDarkTheme, theme: { dark, light } }) =>
         isDarkTheme ? dark.text.secondary : light.text.secondary};
     }
