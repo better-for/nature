@@ -38,7 +38,8 @@ export const LINK_LIST = [
   {
     link: '/blog',
     title: `BLOG`,
-    description: `Find eco-friendly blogs`
+    // description: `How about looking for a better life on your eco-friendly blog?`,
+    description: `Look around eco-friendly blogs!`
   }
 ];
 

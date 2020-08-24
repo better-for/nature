@@ -71,6 +71,7 @@ export const SampleCard = styled.a`
   &:hover {
     box-shadow: 0 0 1px 1px ${p => p.theme.color.primaryVariant};
   }
+  cursor: pointer;
 `;
 
 export const ItemTitle = styled.h3`
@@ -79,13 +80,17 @@ export const ItemTitle = styled.h3`
   ${p => p.theme.typography.paragraphNormal};
 `;
 
-export const BackButton = styled.div`
+export const BackButton = styled.button`
+  background-color: inherit;
+  outline: none;
+  border: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 24px;
+  left: 16px;
   display: flex;
   color: ${p => p.theme.color.secondary};
   ${p => p.theme.typography.titleBold};
+  cursor: pointer;
 `;
 
 export const ItemDescription = styled.p`
@@ -105,8 +110,24 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const ToggleContainer = styled.div`
+export const FloatContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   bottom: ${p => p.theme.unit.glass._8};
   right: ${p => p.theme.unit.glass._3};
+`;
+
+export const ToggleContainer = styled.div``;
+
+export const I18nButton = styled.button`
+  border: 2px solid ${p => p.theme.color.primaryVariant};
+  border-radius: 20px;
+  outline: none;
+  background-color: inherit;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  ${p => p.theme.typography.labelBold};
 `;

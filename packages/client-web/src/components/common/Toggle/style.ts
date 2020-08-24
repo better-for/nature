@@ -9,7 +9,7 @@ export const Track = styled.div`
   background-color: ${p => p.theme.color.black};
   transition: all 0.2s ease;
   box-sizing: border-box;
-  border: 1px solid ${p => p.theme.color.primary};
+  border: 1px solid ${p => p.theme.color.primaryVariant};
 `;
 
 export const ToggleImg = styled.img`
@@ -52,11 +52,8 @@ export const Container = styled.div<{ isDarkTheme: boolean }>`
   touch-action: pan-x;
   display: inline-block;
   position: relative;
-  top: -60px;
+  top: -20px;
   transition: top 0.2s ease-out, background 0.2s ease-out;
-  @media (max-width: 672px) {
-    top: -20px;
-  }
   cursor: pointer;
   background-color: transparent;
   border: 0;
