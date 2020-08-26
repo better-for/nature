@@ -7,9 +7,6 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "lerna": "^3.16.4"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+    "lerna": "^3.22.1"
+  }
 }
