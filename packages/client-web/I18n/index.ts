@@ -2,14 +2,15 @@ import { NextComponentType, NextPageContext } from 'next';
 import NextI18Next from 'next-i18next';
 import KO from '../public/static/locales/ko/common.json';
 import EN from '../public/static/locales/en/common.json';
-// import ICU, { IcuInstance } from 'i18next-icu';
-// import en from 'i18next-icu/locale-data/en';
-// import ko from 'i18next-icu/locale-data/ko';
-// const use: IcuInstance[] = [];
-// const icu = new ICU({});
-// icu.addLocaleData(ko);
-// icu.addLocaleData(en);
-// use.push(icu);
+import ICU, { IcuInstance } from 'i18next-icu';
+import en from 'i18next-icu/locale-data/en';
+import ko from 'i18next-icu/locale-data/ko';
+
+const use: IcuInstance[] = [];
+const icu = new ICU({});
+icu.addLocaleData(ko);
+icu.addLocaleData(en);
+use.push(icu);
 
 export type I18nPage<P = {}> = NextComponentType<
   NextPageContext,
@@ -39,8 +40,8 @@ const NextI18NextInstance = new NextI18Next({
     en: { common: EN },
     ko: { common: KO }
   },
-  debug: false // for debugging
-  // use,
+  debug: false, // Turn on this for debugging
+  use
 });
 
 export const {
