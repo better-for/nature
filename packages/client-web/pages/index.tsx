@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
-import Link from 'next/link';
+import React from 'react';
 import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
-import {
-  useTranslation,
-  I18nPage,
-  includeDefaultNamespaces
-  // Link
-} from '../I18n';
+import { I18nPage, useTranslation, Link } from '../I18n';
+
+import OGHeader from '../src/components/OG';
+import Toggle from '../src/components/Toggle';
+import I18nButton from '../src/components/I18nButton';
+import { LINK_LIST, ogHeader } from '../dataContent';
+import { useDarkMode } from '../src/utils/useDarkMode';
 
 import {
   GlobalStyle,
@@ -21,25 +21,13 @@ import {
   ItemTitle,
   ItemDescription,
   ToggleContainer,
-  FloatContainer,
-  I18nButton
+  FloatContainer
 } from '../src/components/pageStyles';
-
-import { LINK_LIST, ogHeader } from '../dataContent';
-import OGHeader from '../src/components/OG';
-import { useDarkMode } from '../src/utils/useDarkMode';
-import { Toggle } from '../src/components/common';
-import { LANGUAGE } from '../src/constants';
 
 const Home: I18nPage = observer(() => {
   const { title, description, image } = ogHeader;
   const [isDarkTheme, toggleTheme] = useDarkMode();
-  const {
-    t,
-    i18n: { language, changeLanguage }
-  } = useTranslation();
-  const { label } = LANGUAGE[language];
-  const toggleLang = language === 'en' ? 'ko' : 'en';
+  const { t } = useTranslation();
 
   return (
     <>
@@ -70,9 +58,7 @@ const Home: I18nPage = observer(() => {
         <ToggleContainer>
           <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
         </ToggleContainer>
-        <I18nButton onClick={() => changeLanguage(toggleLang)}>
-          {label}
-        </I18nButton>
+        <I18nButton isDarkTheme={isDarkTheme} />
       </FloatContainer>
     </>
   );
@@ -81,5 +67,5 @@ const Home: I18nPage = observer(() => {
 export default Home;
 
 Home.getInitialProps = async () => ({
-  namespacesRequired: includeDefaultNamespaces(['Home'])
+  namespacesRequired: ['common']
 });

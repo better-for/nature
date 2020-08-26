@@ -1,13 +1,15 @@
-import React, { FC } from 'react';
-import Router from 'next/router';
+import React from 'react';
 import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
-import {
-  useTranslation,
-  I18nPage,
-  includeDefaultNamespaces
-  // Router
-} from '../I18n';
+import { useTranslation, I18nPage, Router } from '../I18n';
+
+import OGHeader from '../src/components/OG';
+import { ogHeader } from '../dataContent';
+import Toggle from '../src/components/Toggle';
+import I18nButton from '../src/components/I18nButton';
+import { Card } from '../src/components/common';
+import { useDarkMode } from '../src/utils/useDarkMode';
+import { ECO_FRIENDLY_BLOGS } from '../dataContent';
 
 import {
   TitleSection,
@@ -18,26 +20,13 @@ import {
   BackButton,
   GlobalStyle,
   ToggleContainer,
-  FloatContainer,
-  I18nButton
+  FloatContainer
 } from '../src/components/pageStyles';
-import { ogHeader } from '../dataContent';
-import OGHeader from '../src/components/OG';
-import { Card, Toggle } from '../src/components/common';
-import { ECO_FRIENDLY_BLOGS } from '../dataContent';
-import { useDarkMode } from '../src/utils/useDarkMode';
-import { LANGUAGE } from '../src/constants';
 
 const Blog: I18nPage = observer(() => {
   const { title, description, image } = ogHeader;
   const [isDarkTheme, toggleTheme] = useDarkMode();
-  const {
-    t,
-    i18n: { language, changeLanguage }
-  } = useTranslation();
-  const { label } = LANGUAGE[language];
-  const toggleLang = language === 'en' ? 'ko' : 'en';
-
+  const { t } = useTranslation();
   return (
     <>
       <GlobalStyle isDarkTheme={isDarkTheme} />
@@ -72,9 +61,7 @@ const Blog: I18nPage = observer(() => {
         <ToggleContainer>
           <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
         </ToggleContainer>
-        <I18nButton onClick={() => changeLanguage(toggleLang)}>
-          {label}
-        </I18nButton>
+        <I18nButton isDarkTheme={isDarkTheme} />
       </FloatContainer>
     </>
   );
@@ -83,5 +70,5 @@ const Blog: I18nPage = observer(() => {
 export default Blog;
 
 Blog.getInitialProps = async () => ({
-  namespacesRequired: includeDefaultNamespaces(['Blog'])
+  namespacesRequired: ['common']
 });
