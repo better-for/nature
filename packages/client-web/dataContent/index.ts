@@ -43,9 +43,10 @@ export const LINK_LIST = [
   }
 ];
 
-const githubusercontent = 'https://user-images.githubusercontent.com/29101760/';
-export const DEFAULT_IMAGE_1 = `${githubusercontent}90954114-8f6cc700-e4ac-11ea-967d-dd0f01386e93.jpg`;
-export const DEFAULT_IMAGE_2 = `${githubusercontent}91321661-d4b92d80-e7f9-11ea-9266-44666a8a84c7.png`;
+const staticAddress =
+  'https://nature-six.vercel.app/packages/client-web/public/static';
+export const DEFAULT_IMAGE_1 = `${staticAddress}/logo.jpg`;
+export const DEFAULT_IMAGE_2 = `${staticAddress}/og_image.png`;
 
 export const ECO_FRIENDLY_BLOGS = [
   {
