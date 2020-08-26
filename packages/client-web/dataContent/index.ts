@@ -43,7 +43,9 @@ export const LINK_LIST = [
   }
 ];
 
-export const DEFAULT_IMAGE = `https://user-images.githubusercontent.com/29101760/90954114-8f6cc700-e4ac-11ea-967d-dd0f01386e93.jpg`;
+const githubusercontent = 'https://user-images.githubusercontent.com/29101760/';
+export const DEFAULT_IMAGE_1 = `${githubusercontent}90954114-8f6cc700-e4ac-11ea-967d-dd0f01386e93.jpg`;
+export const DEFAULT_IMAGE_2 = `${githubusercontent}91321661-d4b92d80-e7f9-11ea-9266-44666a8a84c7.png`;
 
 export const ECO_FRIENDLY_BLOGS = [
   {
@@ -156,5 +158,5 @@ export const ECO_FRIENDLY_BLOGS = [
 export const ogHeader = {
   title: `Better for`,
   description: `SAVE THE WORLD, SAVE THE YOURSELF.`,
-  image: DEFAULT_IMAGE
+  image: DEFAULT_IMAGE_2
 };

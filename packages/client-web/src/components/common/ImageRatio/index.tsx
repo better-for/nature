@@ -5,7 +5,7 @@ import {
   StyledImagePosition,
   StyledImage
 } from './style';
-import { DEFAULT_IMAGE } from '../../../../dataContent';
+import { DEFAULT_IMAGE_2 } from '../../../../dataContent';
 
 export type IImage = {
   src?: string | null;
@@ -18,7 +18,7 @@ const Image: FC<IImage> = ({ src, ratio = 1, ...props }) => {
     <StyledImageContainer {...props}>
       <StyledImageRatio ratio={ratio}>
         <StyledImagePosition>
-          <StyledImage src={!src ? DEFAULT_IMAGE : src} />
+          <StyledImage src={!src ? DEFAULT_IMAGE_2 : src} />
         </StyledImagePosition>
       </StyledImageRatio>
     </StyledImageContainer>
