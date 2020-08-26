@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { styled, Theme } from '../../../../src/element';
+import { styled, Theme } from '../../element';
 
 export const Track = styled.div`
   width: 50px;
