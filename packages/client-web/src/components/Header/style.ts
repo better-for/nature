@@ -51,6 +51,14 @@ export const FloatContainer = styled.div`
   & > * ~ * {
     margin-left: ${p => p.theme.unit.leaf._2};
   }
+  @media ${p => p.theme.device.mobile} {
+    padding-top: ${p => p.theme.unit.leaf._8};
+    flex-direction: column;
+    align-items: flex-end;
+    & > * ~ * {
+      margin-top: ${p => p.theme.unit.leaf._1};
+    }
+  }
 `;
 
 export const ToggleContainer = styled.div`
