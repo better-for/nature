@@ -2,21 +2,17 @@ import { useState } from 'react';
 import useIsomorphicLayoutEffect from './useIsomorphicLayoutEffect';
 
 export const useDarkMode = (): [boolean, () => void] => {
-  let isDark = false;
-  if (typeof window !== 'undefined') {
-    isDark = JSON.parse(localStorage.getItem('theme')) === 'dark';
-  }
-  const [isDarkTheme, setDarkTheme] = useState(isDark);
+  const [theme, setTheme] = useState('light');
   const toggleTheme = () => {
-    setDarkTheme(prev => !prev);
+    const swichTheme = theme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('theme', swichTheme);
+    setTheme(swichTheme);
   };
 
   useIsomorphicLayoutEffect(() => {
-    const theme = isDarkTheme ? 'dark' : 'light';
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', JSON.stringify(theme));
-    }
-  }, [isDarkTheme]);
+    const localTheme = localStorage.getItem('theme');
+    localTheme && setTheme(localTheme);
+  }, []);
 
-  return [isDarkTheme, toggleTheme];
+  return [theme === 'dark', toggleTheme];
 };

@@ -25,6 +25,16 @@ export const GlobalStyle = createGlobalStyle<Props>`
         isDarkTheme ? dark.text.secondary : light.text.secondary};
     }
   }
+  @media (prefers-dark-interface) { 
+    background-color: ${({ theme: { dark } }) => dark.bg.secondary};
+    color: ${({ theme: { dark } }) => dark.text.secondary};
+    & h1 {
+      color: ${({ theme: { dark } }) => dark.text.primary};
+    }
+    & h2, p, button {
+      color: ${({ theme: { dark } }) => dark.text.secondary};
+    }
+  }
 `;
 
 export const ChildrenContainer = styled.div`
