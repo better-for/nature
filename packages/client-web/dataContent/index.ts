@@ -1,21 +1,3 @@
-export const NEXT_SAMPLE_DATA = [
-  {
-    link: 'https://github.com/zeit/next.js#setup',
-    h3: `Getting Started`,
-    p: `Learn more about Next.js on GitHub and in their examples.`
-  },
-  {
-    link: 'https://github.com/zeit/next.js/tree/master/examples',
-    h3: `Examples`,
-    p: `Find other example boilerplates on the Next.js GitHub.`
-  },
-  {
-    link: 'https://github.com/zeit/next.js',
-    h3: `Create Next App`,
-    p: `Was this tool helpful? Let us know how we can improve it!`
-  }
-];
-
 export const SAMPLE_DATA = [
   {
     link: 'https://yeun.github.io/open-color/',
@@ -47,6 +29,9 @@ const staticAddress =
   'https://nature-six.vercel.app/packages/client-web/public/static';
 export const DEFAULT_IMAGE_1 = `${staticAddress}/logo.jpg`;
 export const DEFAULT_IMAGE_2 = `${staticAddress}/og_image.png`;
+export const sun_image = `${staticAddress}/sun.png`;
+export const moon_image = `${staticAddress}/moon.png`;
+export const favicon = `${staticAddress}/favicon.ico`;
 
 export const ECO_FRIENDLY_BLOGS = [
   {

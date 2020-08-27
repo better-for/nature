@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { favicon } from '../dataContent';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -30,16 +31,8 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            rel="shortcut icon"
-            href="https://nature-six.vercel.app/packages/client-web/favicon.ico"
-            type="image/x-icon"
-          />
-          <link
-            rel="icon"
-            href="https://nature-six.vercel.app/packages/client-web/favicon.ico"
-            type="image/x-icon"
-          />
+          <link rel="shortcut icon" href={favicon} type="image/x-icon" />
+          <link rel="icon" href={favicon} type="image/x-icon" />
         </Head>
         <body>
           <Main />
