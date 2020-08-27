@@ -6,8 +6,7 @@ export const I18nButton = styled.button<{ isDarkTheme: boolean }>`
   outline: none;
   background-color: ${p =>
     p.isDarkTheme ? p.theme.color.black : p.theme.color.white};
-  width: 80px;
-  height: 40px;
   cursor: pointer;
+  padding: ${p => p.theme.unit.leaf._1} ${p => p.theme.unit.leaf._2};
   ${p => p.theme.typography.labelBold};
 `;

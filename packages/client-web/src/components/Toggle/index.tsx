@@ -1,28 +1,29 @@
 import React, { FC } from 'react';
+import { observer } from 'mobx-react';
+import 'mobx-react-lite/batchingForReactDom';
 import { Container, Track, Checked, Thumb, ToggleImg } from './style';
+import { moon_image, sun_image } from '../../../dataContent';
 
 type Toggle = {
   isDarkTheme: boolean;
   toggleTheme: () => void;
 };
-const moon =
-  'https://user-images.githubusercontent.com/29101760/90979579-ee0b7100-e590-11ea-8135-bc65e53c1daa.png';
-const sun =
-  'https://user-images.githubusercontent.com/29101760/90979581-ef3c9e00-e590-11ea-90e1-4b52f6b7ab61.png';
 
-const Toggle: FC<Toggle> = ({ isDarkTheme, toggleTheme }) => (
-  <Container onClick={toggleTheme} isDarkTheme={isDarkTheme}>
-    <Track>
-      <Checked>
-        <ToggleImg
-          src={isDarkTheme ? moon : sun}
-          alt={isDarkTheme ? 'moon' : 'sun'}
-          role="presentation"
-        />
-      </Checked>
-    </Track>
-    <Thumb />
-  </Container>
-);
+const Toggle: FC<Toggle> = observer(({ isDarkTheme, toggleTheme }) => {
+  return (
+    <Container onClick={toggleTheme} isDarkTheme={isDarkTheme}>
+      <Track>
+        <Checked>
+          <ToggleImg
+            src={isDarkTheme ? moon_image : sun_image}
+            alt={isDarkTheme ? 'moon_image' : 'sun_image'}
+            role="presentation"
+          />
+        </Checked>
+      </Track>
+      <Thumb />
+    </Container>
+  );
+});
 
 export default Toggle;
