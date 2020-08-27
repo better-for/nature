@@ -34,9 +34,9 @@ export const StyledParagraph = styled(Text)<IText>`
   ${p => p.theme.typography.paragraphNormal};
   border: 2px solid ${p => p.theme.color.primary};
   border-top: 2px solid ${p => p.theme.color.gray};
-  padding: ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._3}
-    ${p => p.theme.unit.leaf._1};
-  border-radius: ${p => p.theme.unit.leaf._2};
+  padding: ${p => p.theme.unit.leaf._1} ${p => p.theme.unit.leaf._3};
+  line-height: 1.6;
+  border-radius: ${p => p.theme.unit.leaf._6};
   box-sizing: border-box;
   transition: all ease 0.4s;
   transform: perspective(0px) rotateX(0deg);

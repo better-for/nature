@@ -6,10 +6,10 @@ export const Track = styled.div`
   height: ${p => p.theme.unit.glass._3};
   padding: 0;
   border-radius: ${p => p.theme.unit.leaf._3};
-  background-color: ${p => p.theme.color.black};
+  background-color: ${p => p.theme.color.white};
   transition: all 0.2s ease;
   box-sizing: border-box;
-  border: 1px solid ${p => p.theme.color.primaryVariant};
+  border: 2px solid ${p => p.theme.color.primaryVariant};
 `;
 
 export const ToggleImg = styled.img`
@@ -34,25 +34,26 @@ export const Checked = styled.div`
 
 export const Thumb = styled.div`
   position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 22px;
-  height: 22px;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background-color: ${p => p.theme.color.white};
-  border: 1px solid ${p => p.theme.color.black};
+  background-color: ${p => p.theme.color.black};
   box-sizing: border-box;
+  box-shadow: 0 0 2px ${p => p.theme.color.black};
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   transform: translateX(0);
 `;
+
 type Css = {
   theme: Theme;
 };
+
 export const Container = styled.div<{ isDarkTheme: boolean }>`
   touch-action: pan-x;
   display: inline-block;
   position: relative;
-  top: -20px;
   transition: top 0.2s ease-out, background 0.2s ease-out;
   cursor: pointer;
   background-color: transparent;
@@ -69,9 +70,12 @@ export const Container = styled.div<{ isDarkTheme: boolean }>`
         opacity: 1;
       }
       ${Thumb} {
-        background-color: ${p => p.theme.color.black};
-        border-color: ${p => p.theme.color.white};
+        background-color: ${p => p.theme.color.white};
+        box-shadow: 0 0 2px ${p => p.theme.color.white};
         transform: translateX(26px);
+      }
+      ${Track} {
+        background-color: ${p => p.theme.color.black};
       }
     `}
 `;
