@@ -3,14 +3,9 @@ import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation, Link } from '../I18n';
 
-import OGHeader from '../src/components/OG';
-import Toggle from '../src/components/Toggle';
-import I18nButton from '../src/components/I18nButton';
-import { LINK_LIST, ogHeader } from '../dataContent';
-import { useDarkMode } from '../src/utils/useDarkMode';
+import { LINK_LIST } from '../dataContent';
 
 import {
-  GlobalStyle,
   TitleSection,
   Main,
   Title,
@@ -19,20 +14,14 @@ import {
   Row,
   SampleCard,
   ItemTitle,
-  ItemDescription,
-  ToggleContainer,
-  FloatContainer
+  ItemDescription
 } from '../src/components/pageStyles';
 
 const Home: I18nPage = observer(() => {
-  const { title, description, image } = ogHeader;
-  const [isDarkTheme, toggleTheme] = useDarkMode();
   const { t } = useTranslation();
 
   return (
     <>
-      <OGHeader title={title} description={description} image={image} />
-      <GlobalStyle isDarkTheme={isDarkTheme} />
       <Main>
         <TitleSection>
           <Title>
@@ -54,12 +43,6 @@ const Home: I18nPage = observer(() => {
           ))}
         </Row>
       </Main>
-      <FloatContainer>
-        <ToggleContainer>
-          <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
-        </ToggleContainer>
-        <I18nButton isDarkTheme={isDarkTheme} />
-      </FloatContainer>
     </>
   );
 });
