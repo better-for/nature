@@ -14,6 +14,10 @@ module.exports = withCustomBabelConfigFile(
     },
     async rewrites() {
       return [...nextI18NextRewrites(localeSubpaths)];
+    },
+    webpack(config) {
+      config.resolve.modules.push(__dirname);
+      return config;
     }
   })
 );
