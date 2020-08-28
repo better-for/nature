@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import { favicon } from '../dataContent';
+import { favicon } from 'src/constants';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {

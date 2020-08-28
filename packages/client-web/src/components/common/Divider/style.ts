@@ -1,4 +1,4 @@
-import { styled } from '../../../../src/element';
+import styled from 'styled-components';
 import { IDivider } from './index';
 
 export const StyledDivider = styled.div<IDivider>`

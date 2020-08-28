@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { Container, Track, Checked, Thumb, ToggleImg } from './style';
-import { moon_image, sun_image } from '../../../dataContent';
+import { moon_image, sun_image } from 'src/constants';
 
 type Toggle = {
   isDarkTheme: boolean;

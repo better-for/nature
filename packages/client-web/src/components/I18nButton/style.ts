@@ -1,4 +1,4 @@
-import { styled } from '../../element';
+import styled from 'styled-components';
 
 export const I18nButton = styled.button<{ isDarkTheme: boolean }>`
   border: 2px solid ${p => p.theme.color.primaryVariant};

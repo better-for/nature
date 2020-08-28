@@ -1,10 +1,10 @@
 import React from 'react';
 import App from 'next/app';
-import { StoreProvider } from '../src/utils/storeUtils';
+import { StoreProvider } from 'src/utils/storeUtils';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../src/element';
+import { theme } from 'src/element';
 import { appWithTranslation } from '../I18n';
-import Layout from '../src/components/Layout';
+import Layout from 'src/components/Layout';
 
 class MyApp extends App {
   render() {

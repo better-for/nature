@@ -3,8 +3,6 @@ import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation, Link } from '../I18n';
 
-import { LINK_LIST } from '../dataContent';
-
 import {
   TitleSection,
   Main,
@@ -15,7 +13,8 @@ import {
   SampleCard,
   ItemTitle,
   ItemDescription
-} from '../src/components/pageStyles';
+} from 'src/components/pageStyles';
+import { LINK_LIST } from 'src/constants';
 
 const Home: I18nPage = observer(() => {
   const { t } = useTranslation();

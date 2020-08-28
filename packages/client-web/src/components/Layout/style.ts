@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { styled, Theme } from '../../../src/element';
+import styled, { createGlobalStyle } from 'styled-components';
+import { Theme } from 'src/element';
 
 type Props = {
   theme: Theme;

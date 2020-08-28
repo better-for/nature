@@ -1,4 +1,4 @@
-import { styled } from '../../element';
+import styled from 'styled-components';
 
 export const Navbar = styled.nav<{
   isDarkTheme: boolean;

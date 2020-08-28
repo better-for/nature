@@ -5,7 +5,7 @@ import {
   StyledImagePosition,
   StyledImage
 } from './style';
-import { DEFAULT_IMAGE_2 } from '../../../../dataContent';
+import { DEFAULT_IMAGE_2 } from 'src/constants';
 
 export type IImage = {
   src?: string | null;

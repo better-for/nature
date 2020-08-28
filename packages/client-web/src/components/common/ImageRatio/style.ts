@@ -1,4 +1,4 @@
-import { styled } from '../../../../src/element';
+import styled from 'styled-components';
 import { IImage } from './index';
 
 export const StyledImageContainer = styled.div``;

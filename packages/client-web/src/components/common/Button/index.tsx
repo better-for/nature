@@ -7,7 +7,7 @@ import {
   ErroredButton
 } from './style';
 import { BUTTON_TYPE } from './type';
-import { theme } from '../../../../src/element';
+import { theme } from 'src/element';
 import { IIcon } from '../IconBox';
 
 export type IButton = {

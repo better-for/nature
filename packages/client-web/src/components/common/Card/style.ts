@@ -1,4 +1,4 @@
-import { styled } from '../../../../src/element';
+import styled from 'styled-components';
 import Button, { IButton } from '../Button';
 import Divider, { IDivider } from '../Divider';
 import Icon, { IIcon } from '../IconBox';

@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { StyledIcon } from './style';
-import { theme } from '../../../../src/element';
+import { theme } from 'src/element';
 
 export type IIcon = {
   [key: string]: any;

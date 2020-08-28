@@ -3,8 +3,7 @@ import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { useTranslation, I18nPage } from '../I18n';
 
-import { Card } from '../src/components/common';
-import { ECO_FRIENDLY_BLOGS } from '../dataContent';
+import { Card } from 'src/components/common';
 
 import {
   TitleSection,
@@ -12,7 +11,8 @@ import {
   Title,
   Point,
   CardContainer
-} from '../src/components/pageStyles';
+} from 'src/components/pageStyles';
+import { ECO_FRIENDLY_BLOGS } from 'src/constants';
 
 const Blog: I18nPage = observer(() => {
   const { t } = useTranslation();

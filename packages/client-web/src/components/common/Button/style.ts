@@ -1,5 +1,4 @@
-import { styled } from '../../../../src/element';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { IButton } from './index';
 import { lighten } from 'polished';
 import Icon, { IIcon } from '../IconBox';

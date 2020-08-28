@@ -1,5 +1,4 @@
-import { styled } from '../../../../src/element';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { IText } from './index';
 
 export const StyledText = styled.div<IText>`
