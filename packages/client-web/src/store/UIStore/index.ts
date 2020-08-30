@@ -1,13 +1,13 @@
 import RootStore from '../RootStore';
-import Navigation from './Navigation';
+import BlogStore from './BlogStore';
 
 class UIStore {
   rootStore: RootStore;
-  navigation: Navigation;
+  blogStore: BlogStore;
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
-    this.navigation = new Navigation(rootStore);
+    this.blogStore = new BlogStore(rootStore);
   }
 }
 
