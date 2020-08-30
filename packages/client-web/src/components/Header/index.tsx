@@ -19,29 +19,27 @@ type Header = {
   show: boolean;
 };
 
-const Header: FC<Header> = observer(({ isDarkTheme, toggleTheme, show }) => {
-  return (
-    <Navbar isDarkTheme={isDarkTheme} show={show}>
-      <Ul>
-        <Li>
-          <BackButton onClick={() => Router.back()}>&larr; Back</BackButton>
-        </Li>
-        <Li>
-          <Link href="/">
-            <Anchor>Home</Anchor>
-          </Link>
-        </Li>
-        <Li>
-          <FloatContainer>
-            <ToggleContainer>
-              <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
-            </ToggleContainer>
-            <I18nButton isDarkTheme={isDarkTheme} />
-          </FloatContainer>
-        </Li>
-      </Ul>
-    </Navbar>
-  );
-});
+const Header: FC<Header> = observer(({ isDarkTheme, toggleTheme, show }) => (
+  <Navbar isDarkTheme={isDarkTheme} show={show}>
+    <Ul>
+      <Li>
+        <BackButton onClick={() => Router.back()}>&larr; Back</BackButton>
+      </Li>
+      <Li>
+        <Link href="/">
+          <Anchor>Home</Anchor>
+        </Link>
+      </Li>
+      <Li>
+        <FloatContainer>
+          <ToggleContainer>
+            <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+          </ToggleContainer>
+          <I18nButton isDarkTheme={isDarkTheme} />
+        </FloatContainer>
+      </Li>
+    </Ul>
+  </Navbar>
+));
 
 export default Header;

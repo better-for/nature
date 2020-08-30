@@ -54,9 +54,9 @@ export const FloatContainer = styled.div`
   @media ${p => p.theme.device.mobile} {
     padding-top: ${p => p.theme.unit.leaf._8};
     flex-direction: column;
-    align-items: flex-end;
     & > * ~ * {
       margin-top: ${p => p.theme.unit.leaf._1};
+      margin-left: 0;
     }
   }
 `;

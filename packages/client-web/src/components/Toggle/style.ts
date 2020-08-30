@@ -46,10 +46,6 @@ export const Thumb = styled.div`
   transform: translateX(0);
 `;
 
-type Css = {
-  theme: Theme;
-};
-
 export const Container = styled.div<{ isDarkTheme: boolean }>`
   touch-action: pan-x;
   display: inline-block;
@@ -64,7 +60,7 @@ export const Container = styled.div<{ isDarkTheme: boolean }>`
   -webkit-tap-highlight-color: transparent;
   ${p =>
     p.isDarkTheme &&
-    css<Css>`
+    css`
       ${Checked} {
         left: 5px;
         opacity: 1;
