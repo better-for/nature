@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { useTranslation, I18nPage } from '../I18n';
@@ -12,10 +12,26 @@ import {
   Point,
   CardContainer
 } from 'src/components/pageStyles';
-import { ECO_FRIENDLY_BLOGS } from 'src/constants';
+import { theme } from 'src/element';
+import { useStore } from 'src/utils/storeUtils';
+import { Blogs } from 'src/apis/blogs';
 
 const Blog: I18nPage = observer(() => {
   const { t } = useTranslation();
+  const {
+    uiStore: { blogStore }
+  } = useStore();
+  const { blogsData, fetchBlogs } = blogStore;
+  const [blogList, setBlogList] = useState<Blogs>([]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  useEffect(() => {
+    setBlogList(blogsData);
+  }, [blogsData]);
+
   return (
     <>
       <Main>
@@ -26,14 +42,14 @@ const Blog: I18nPage = observer(() => {
         </TitleSection>
       </Main>
       <CardContainer>
-        {ECO_FRIENDLY_BLOGS.map(({ title, image, url, id, description }) => {
+        {blogList.map(({ title, image, url, id, description }) => {
           return (
             <Card
               url={url}
               image={image}
               imageRatio={4 / 1}
               titleIcon={!image && '🌱'}
-              titleIconSize={'30px'}
+              titleIconSize={theme.unit.glass._4}
               title={!image && title}
               titleLineClamp={1}
               paragraph={description}
