@@ -4,7 +4,6 @@ import { StyledText } from './style';
 export type IText = {
   children: ReactNode;
   lineClamp?: number;
-  [key: string]: any;
 };
 
 const Text: FC<IText> = ({ children, lineClamp, ...props }) => (

@@ -9,13 +9,14 @@ import {
   StyledSubTitle,
   StyledParagraph
 } from './style';
+import { leaf, glass, color } from 'src/element';
 
 export type ICard = {
   url: string | null;
-  image?: string | boolean;
+  image?: string | null;
   imageRatio?: number;
   titleIcon?: string;
-  titleIconSize?: string;
+  titleIconSize?: glass | leaf;
   title?: string;
   titleLineClamp?: number;
   subTitle?: string;
@@ -23,10 +24,9 @@ export type ICard = {
   paragraph?: string;
   paragraphLineClamp?: number;
   button?: string;
-  buttonColor?: string;
+  buttonColor?: color;
   buttonIcon?: string;
-  buttonIconSize?: string;
-  [key: string]: any;
+  buttonIconSize?: glass | leaf;
 };
 
 const Card: FC<ICard> = ({
@@ -49,28 +49,28 @@ const Card: FC<ICard> = ({
 }) => {
   return (
     <StyledCard {...props} href={url}>
-      {!!image && <StyledImage src={image} ratio={imageRatio} />}
-      {!!title && (
+      {!!image ? <StyledImage src={image} ratio={imageRatio} /> : null}
+      {!!title ? (
         <StyledTitleSection>
-          {!!titleIcon && (
+          {!!titleIcon ? (
             <StyledIcon size={titleIconSize}>{titleIcon}</StyledIcon>
-          )}
-          {!!title && (
+          ) : null}
+          {!!title ? (
             <StyledTitle lineClamp={titleLineClamp}>{title}</StyledTitle>
-          )}
+          ) : null}
         </StyledTitleSection>
-      )}
-      {!!subTitle && (
+      ) : null}
+      {!!subTitle ? (
         <StyledSubTitle lineClamp={subTitleLineClamp}>
           {subTitle}
         </StyledSubTitle>
-      )}
-      {!!paragraph && (
+      ) : null}
+      {!!paragraph ? (
         <StyledParagraph lineClamp={paragraphLineClamp}>
           {paragraph}
         </StyledParagraph>
-      )}
-      {!!button && (
+      ) : null}
+      {!!button ? (
         <StyledButton
           color={buttonColor}
           icon={buttonIcon}
@@ -78,7 +78,7 @@ const Card: FC<ICard> = ({
         >
           {button}
         </StyledButton>
-      )}
+      ) : null}
     </StyledCard>
   );
 };
