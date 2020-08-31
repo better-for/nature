@@ -1,17 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 import { color } from 'src/element';
 
-export const UnderBar = styled.path``;
-
-export const Container = styled.div<{ isDarkTheme: boolean }>`
+export const Container = styled.div`
   display: inline-block;
   width: ${p => p.theme.unit.glass._18};
   @media ${p => p.theme.device.mobile} {
     width: ${p => p.theme.unit.glass._12};
-  }
-  & ${UnderBar} {
-    fill: ${p =>
-      p.isDarkTheme ? p => p.theme.color.white : p => p.theme.color.black};
   }
 `;
 
@@ -34,4 +28,8 @@ export const BetterPath = styled.path`
 
 export const ForPath = styled(BetterPath)`
   animation: ${pathFill} 2s linear 0.4s both;
+`;
+
+export const UnderBar = styled(BetterPath)`
+  animation: ${pathFill} 2s linear 0.8s both;
 `;

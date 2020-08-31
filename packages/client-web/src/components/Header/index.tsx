@@ -34,7 +34,7 @@ const Header: FC<Header> = observer(({ isDarkTheme, toggleTheme, show }) => {
         <Li>
           <Link href="/">
             <Anchor>
-              <Logo isDarkTheme={isDarkTheme} />
+              <Logo />
             </Anchor>
           </Link>
         </Li>

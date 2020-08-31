@@ -1,13 +1,9 @@
 import React, { FC } from 'react';
 import { Container, ForPath, UnderBar, BetterPath } from './style';
 
-type Logo = {
-  isDarkTheme: boolean;
-};
-
-const Logo: FC<Logo> = ({ isDarkTheme }) => {
+const Logo: FC = () => {
   return (
-    <Container isDarkTheme={isDarkTheme}>
+    <Container>
       <svg
         width="100%"
         height="100%"

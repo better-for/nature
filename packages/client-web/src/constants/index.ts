@@ -14,8 +14,7 @@ export const LINK_LIST = [
   }
 ];
 
-const staticAddress =
-  'https://nature-six.vercel.app/packages/client-web/public/static';
+const staticAddress = 'https://better-for-static.vercel.app/';
 export const DEFAULT_IMAGE_1 = `${staticAddress}/logo.jpg`;
 export const DEFAULT_IMAGE_2 = `${staticAddress}/og_image.png`;
 export const sun_image = `${staticAddress}/sun.png`;
