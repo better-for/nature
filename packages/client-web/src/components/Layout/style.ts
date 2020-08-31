@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
   body {
     margin: 0;
     padding: 0;
-    // font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     background-color: ${({ isDarkTheme, theme: { dark, light } }) =>
       isDarkTheme ? dark.bg.secondary : light.bg.secondary};
     transition: background-color 0.3s ease;
