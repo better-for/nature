@@ -8,7 +8,8 @@ import {
   Li,
   Anchor
 } from './style';
-import I18nButton from '../I18nButton';
+import I18nButton from 'src/components/I18nButton';
+import Logo from 'src/components/Logo';
 import Toggle from '../Toggle';
 import { Router, Link } from '../../../I18n';
 import { observer } from 'mobx-react';
@@ -27,7 +28,9 @@ const Header: FC<Header> = observer(({ isDarkTheme, toggleTheme, show }) => (
       </Li>
       <Li>
         <Link href="/">
-          <Anchor>Home</Anchor>
+          <Anchor>
+            <Logo isDarkTheme={isDarkTheme} />
+          </Anchor>
         </Link>
       </Li>
       <Li>

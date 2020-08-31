@@ -52,7 +52,7 @@ export const StyledCard = styled.a`
   justify-content: space-between;
   align-items: center;
   margin: 0 ${p => p.theme.unit.leaf._2} ${p => p.theme.unit.leaf._4};
-  padding: ${p => p.theme.unit.leaf._4};
+  padding: ${p => p.theme.unit.leaf._4} 0;
   box-sizing: border-box;
 
   @media ${p => p.theme.device.tablet} {

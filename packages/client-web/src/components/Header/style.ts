@@ -39,9 +39,7 @@ export const Li = styled.li`
 
 export const Anchor = styled.a`
   display: flex;
-  color: ${p => p.theme.color.secondary};
   text-decoration: none;
-  ${p => p.theme.typography.subTitleBold};
   cursor: pointer;
 `;
 
