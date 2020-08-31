@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { useTranslation, I18nPage } from '../I18n';
 
@@ -12,13 +12,8 @@ import {
   Point,
   CardContainer
 } from 'src/components/pageStyles';
-import { theme } from 'src/element';
 import { useStore } from 'src/utils/storeUtils';
 import { Blogs } from 'src/apis/blogs';
-
-// type Blog = {
-//   blogList: Blogs;
-// };
 
 const Blog: I18nPage = observer(() => {
   const { t } = useTranslation();
@@ -47,22 +42,15 @@ const Blog: I18nPage = observer(() => {
         </TitleSection>
       </Main>
       <CardContainer>
-        {blogList.map(({ title, image, url, id, description }) => {
-          return (
-            <Card
-              url={url}
-              image={image}
-              imageRatio={4 / 1}
-              titleIcon={!image && '🌱'}
-              titleIconSize={theme.unit.glass._4}
-              title={!image && title}
-              titleLineClamp={1}
-              paragraph={description}
-              paragraphLineClamp={3}
-              key={id}
-            />
-          );
-        })}
+        {blogList.map(({ title, url, id, description }) => (
+          <Card
+            url={url}
+            title={title}
+            paragraph={description}
+            paragraphLineClamp={3}
+            key={id}
+          />
+        ))}
       </CardContainer>
     </>
   );

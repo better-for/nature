@@ -24,7 +24,7 @@ export const StyledIcon = styled(Icon)<IIcon>``;
 export const StyledTitle = styled(Text)<IText>`
   width: 100%;
   text-transform: uppercase;
-  ${p => p.theme.typography.titleBold};
+  ${p => p.theme.typography.subTitleBold};
 `;
 
 export const StyledParagraph = styled(Text)<IText>`
