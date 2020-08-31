@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { useTranslation, I18nPage } from '../I18n';
 
@@ -16,8 +16,13 @@ import { theme } from 'src/element';
 import { useStore } from 'src/utils/storeUtils';
 import { Blogs } from 'src/apis/blogs';
 
+// type Blog = {
+//   blogList: Blogs;
+// };
+
 const Blog: I18nPage = observer(() => {
   const { t } = useTranslation();
+
   const {
     uiStore: { blogStore }
   } = useStore();
@@ -63,8 +68,14 @@ const Blog: I18nPage = observer(() => {
   );
 });
 
-export default Blog;
+Blog.getInitialProps = async ctx => {
+  // console.log(ctx);
+  // const { blogsData, fetchBlogs } = mobxStore.uiStore.blogStore;
+  // await fetchBlogs();
+  return {
+    // blogList: blogsData,
+    namespacesRequired: ['common']
+  };
+};
 
-Blog.getInitialProps = async () => ({
-  namespacesRequired: ['common']
-});
+export default Blog;

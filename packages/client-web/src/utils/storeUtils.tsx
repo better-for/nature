@@ -1,5 +1,6 @@
 import React from 'react';
 import RootStore from '../store/RootStore';
+// import {Provider} from 'mobx-react'
 
 const rootStore = new RootStore();
 const rootStoreContext = React.createContext<RootStore>(null);
@@ -12,6 +13,10 @@ export const StoreProvider = ({ children }) => {
   );
 };
 
+// export const StoreProvider = ({ children, ...props }) => {
+//   return <Provider {...props}>{children}</Provider>;
+// };
+
 export const useStore = () => {
   const store = React.useContext(rootStoreContext);
   if (!store) {
@@ -20,3 +25,21 @@ export const useStore = () => {
   }
   return store;
 };
+
+// import { useStaticRendering } from 'mobx-react';
+
+// const isServer = typeof window === 'undefined';
+// useStaticRendering(isServer);
+
+// let store = null;
+
+// export default function initializeStore() {
+//   if (isServer) {
+//     return rootStore;
+//   }
+//   if (store === null) {
+//     store = rootStore;
+//   }
+
+//   return store;
+// }
