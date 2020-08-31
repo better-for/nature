@@ -48,7 +48,7 @@ const Card: FC<ICard> = ({
   ...props
 }) => {
   return (
-    <StyledCard {...props} href={url}>
+    <StyledCard {...props} href={url} rel="noopener noreferrer" target="_blank">
       {!!image ? <StyledImage src={image} ratio={imageRatio} /> : null}
       {!!title ? (
         <StyledTitleSection>
