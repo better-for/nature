@@ -4,6 +4,8 @@ import { color } from 'src/element';
 export const Container = styled.div`
   display: inline-block;
   width: ${p => p.theme.unit.glass._18};
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   @media ${p => p.theme.device.mobile} {
     width: ${p => p.theme.unit.glass._12};
   }
