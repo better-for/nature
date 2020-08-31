@@ -39,7 +39,6 @@ export const StyledParagraph = styled(Text)<IText>`
   border-radius: ${p => p.theme.unit.leaf._6};
   box-sizing: border-box;
   transition: all ease 0.4s;
-  transform: perspective(0px) rotateX(0deg);
 `;
 
 export const StyledCard = styled.a`
@@ -68,17 +67,12 @@ export const StyledCard = styled.a`
 
   &:hover {
     ${StyledParagraph} {
-      box-shadow: 0 0 2px 0px ${p => p.theme.color.primary};
-      background-color: ${p => p.theme.color.primary};
-      transform: perspective(200px) rotateX(-10deg);
-      border-radius: 0 0 ${p => p.theme.unit.leaf._4}
-        ${p => p.theme.unit.leaf._4};
     }
     ${StyledTitleSection} {
-      transform: rotateZ(-10deg);
+      transform: rotateZ(-5deg);
     }
     ${StyledImage} {
-      transform: rotateZ(-10deg);
+      transform: rotateZ(-5deg);
     }
   }
   &:visited,
