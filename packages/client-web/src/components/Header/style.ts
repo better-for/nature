@@ -29,7 +29,6 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   display: flex;
-  padding: ${p => p.theme.unit.leaf._1} ${p => p.theme.unit.leaf._2};
   flex-grow: 1;
   flex-basis: 0;
   &:nth-child(2) > * {
