@@ -1,4 +1,41 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const hoverEffect = css`
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  position: relative;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: ${p => p.theme.color.primaryVariant};
+    border-right-color: ${p => p.theme.color.primaryVariant};
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+
+  &:hover::after {
+    border-bottom-color: ${p => p.theme.color.primaryVariant};
+    border-left-color: ${p => p.theme.color.primaryVariant};
+    transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+  }
+`;
 
 export const Main = styled.div`
   width: 100%;
@@ -41,46 +78,7 @@ export const SampleCard = styled.a`
   text-align: left;
   text-decoration: none;
   cursor: pointer;
-  background: none;
-  border: 0;
-  box-sizing: border-box;
-  color: ${p => p.theme.color.gray};
-  position: relative;
-  transition: color 0.25s;
-
-  &::before,
-  &::after {
-    box-sizing: inherit;
-    content: '';
-    position: absolute;
-    border: 2px solid transparent;
-    width: 0;
-    height: 0;
-    top: 0;
-    left: 0;
-  }
-
-  &:hover {
-    color: ${p => p.theme.color.primaryVariant};
-  }
-
-  &:hover::before,
-  &:hover::after {
-    width: 100%;
-    height: 100%;
-  }
-
-  &:hover::before {
-    border-top-color: ${p => p.theme.color.primaryVariant};
-    border-right-color: ${p => p.theme.color.primaryVariant};
-    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
-  }
-
-  &:hover::after {
-    border-bottom-color: ${p => p.theme.color.primaryVariant};
-    border-left-color: ${p => p.theme.color.primaryVariant};
-    transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
-  }
+  ${hoverEffect};
   @media ${p => p.theme.device.mobile} {
     box-shadow: inset 0 0 0 2px ${p => p.theme.color.primaryVariant};
   }

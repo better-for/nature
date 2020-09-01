@@ -32,8 +32,11 @@ export const Li = styled.li`
   padding: ${p => p.theme.unit.leaf._1} ${p => p.theme.unit.leaf._2};
   flex-grow: 1;
   flex-basis: 0;
-  & > *:nth-child(1) {
+  &:nth-child(2) > * {
     margin: 0 auto;
+  }
+  &:last-child > * {
+    margin-left: auto;
   }
 `;
 
