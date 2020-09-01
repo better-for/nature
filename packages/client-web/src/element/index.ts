@@ -2,6 +2,7 @@ import { color } from './Color';
 import { typography } from './Typography';
 import { unit } from './Unit';
 import { device, size } from './Viewport';
+import { DefaultTheme } from 'styled-components';
 
 export { color } from './Color';
 export { typography } from './Typography';
@@ -44,4 +45,12 @@ export const dark = {
   }
 };
 
-export const theme = { color, typography, unit, device, size, light, dark };
+export const theme: DefaultTheme = {
+  color,
+  typography,
+  unit,
+  device,
+  size,
+  light,
+  dark
+};
