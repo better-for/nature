@@ -54,7 +54,8 @@ export const Title = styled.h1`
   ${p => p.theme.typography.heroBold};
 `;
 
-export const Point = styled.a`
+export const Point = styled.div`
+  display: inline-flex;
   color: ${p => p.theme.color.primary};
   margin-left: ${p => p.theme.unit.leaf._3};
 `;
@@ -84,10 +85,10 @@ export const SampleCard = styled.a`
   }
 `;
 
-export const ItemTitle = styled.h3`
+export const ItemTitle = styled.div`
   margin: 0;
   color: ${p => p.theme.color.secondary};
-  ${p => p.theme.typography.paragraphNormal};
+  ${p => p.theme.typography.paragraphBold};
 `;
 
 export const ItemDescription = styled.p`

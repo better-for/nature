@@ -18,7 +18,6 @@ export type ICard = {
   titleIcon?: string;
   titleIconSize?: glass | leaf;
   title?: string;
-  titleLineClamp?: number;
   subTitle?: string;
   subTitleLineClamp?: number;
   paragraph?: string;
@@ -36,7 +35,6 @@ const Card: FC<ICard> = ({
   titleIcon,
   titleIconSize,
   title,
-  titleLineClamp,
   subTitle,
   subTitleLineClamp,
   paragraph,
@@ -55,9 +53,7 @@ const Card: FC<ICard> = ({
           {!!titleIcon ? (
             <StyledIcon size={titleIconSize}>{titleIcon}</StyledIcon>
           ) : null}
-          {!!title ? (
-            <StyledTitle lineClamp={titleLineClamp}>{title}</StyledTitle>
-          ) : null}
+          {!!title ? <StyledTitle>{title}</StyledTitle> : null}
         </StyledTitleSection>
       ) : null}
       {!!subTitle ? (

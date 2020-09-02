@@ -25,6 +25,10 @@ export const GlobalStyle = createGlobalStyle<Props>`
       color: ${({ isDarkTheme, theme: { dark, light } }) =>
         isDarkTheme ? dark.text.secondary : light.text.secondary};
     }
+    & b {
+      color: ${({ isDarkTheme, theme: { dark, light } }) =>
+        isDarkTheme ? dark.text.primary : light.text.primary};
+    }
     -webkit-font-smoothing: antialiased;
   }
   @media (prefers-dark-interface) { 

@@ -22,8 +22,7 @@ export const StyledTitleSection = styled.div`
 
 export const StyledIcon = styled(Icon)``;
 
-export const StyledTitle = styled(Text)`
-  width: 100%;
+export const StyledTitle = styled.b`
   text-transform: uppercase;
   ${p => p.theme.typography.subTitleBold};
 `;
@@ -39,7 +38,6 @@ export const StyledParagraph = styled(Text)`
   background: none;
   border: 0;
   box-sizing: border-box;
-  color: ${p => p.theme.color.gray};
   position: relative;
   @media ${p => p.theme.device.mobile} {
     box-shadow: inset 0 0 0 2px ${p => p.theme.color.primaryVariant};
