@@ -1,6 +1,4 @@
 import React, { FC } from 'react';
-import { observer } from 'mobx-react';
-import 'mobx-react-lite/batchingForReactDom';
 import { useTranslation } from '../../../I18n';
 import { I18nButton as I18nBtn } from './style';
 
@@ -8,7 +6,7 @@ type I18nButton = {
   isDarkTheme: boolean;
 };
 
-const I18nButton: FC<I18nButton> = observer(({ isDarkTheme }) => {
+const I18nButton: FC<I18nButton> = ({ isDarkTheme }) => {
   const {
     i18n: { language, changeLanguage }
   } = useTranslation();
@@ -22,6 +20,6 @@ const I18nButton: FC<I18nButton> = observer(({ isDarkTheme }) => {
       {translatedLang}
     </I18nBtn>
   );
-});
+};
 
 export default I18nButton;

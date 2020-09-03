@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href={favicon} />
           <meta name="theme-color" content={color.primaryVariant} />
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
             rel="stylesheet"
             type="text/css"
           />
