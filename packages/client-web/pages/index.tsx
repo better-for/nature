@@ -28,17 +28,17 @@ const Home: I18nPage = observer(() => {
         <Description>
           <code>{t('SAVE THE WORLD, SAVE THE YOURSELF.')}</code>
         </Description>
-        <Row>
-          {LINK_LIST.map(({ link, title, description }) => (
-            <Link href={link} key={title}>
-              <SampleCard>
-                <ItemTitle>{t(`${title}`)} &rarr;</ItemTitle>
-                <ItemDescription>{t(`${description}`)}</ItemDescription>
-              </SampleCard>
-            </Link>
-          ))}
-        </Row>
       </Main>
+      <Row>
+        {LINK_LIST.map(({ link, title, description }) => (
+          <Link href={link} key={title}>
+            <SampleCard>
+              <ItemTitle>{t(`${title}`)} &rarr;</ItemTitle>
+              <ItemDescription>{t(`${description}`)}</ItemDescription>
+            </SampleCard>
+          </Link>
+        ))}
+      </Row>
     </>
   );
 });
