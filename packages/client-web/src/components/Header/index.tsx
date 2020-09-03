@@ -8,11 +8,8 @@ import {
   Li,
   Anchor
 } from './style';
-import I18nButton from 'src/components/I18nButton';
-import Logo from 'src/components/Logo';
-import Toggle from '../Toggle';
+import { I18nButton, Logo, Toggle } from 'src/components';
 import { Router, Link } from '../../../I18n';
-import { observer } from 'mobx-react';
 import { useRouter } from 'next/router';
 
 type Header = {
@@ -21,7 +18,7 @@ type Header = {
   show: boolean;
 };
 
-const Header: FC<Header> = observer(({ isDarkTheme, toggleTheme, show }) => {
+const Header: FC<Header> = ({ isDarkTheme, toggleTheme, show }) => {
   const { pathname } = useRouter();
   return (
     <Navbar isDarkTheme={isDarkTheme} show={show}>
@@ -49,6 +46,6 @@ const Header: FC<Header> = observer(({ isDarkTheme, toggleTheme, show }) => {
       </Ul>
     </Navbar>
   );
-});
+};
 
 export default Header;

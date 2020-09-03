@@ -3,15 +3,10 @@ import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { useTranslation, I18nPage } from '../I18n';
 
+import { MainTitle } from 'src/components';
 import { Card } from 'src/components/common';
 
-import {
-  TitleSection,
-  Main,
-  Title,
-  Point,
-  CardContainer
-} from 'src/components/pageStyles';
+import { Main, Point, CardContainer } from 'src/components/pageStyles';
 import { useStore } from 'src/utils/storeUtils';
 import { Blogs } from 'src/apis/blogs';
 
@@ -35,11 +30,9 @@ const Blog: I18nPage = observer(() => {
   return (
     <>
       <Main>
-        <TitleSection>
-          <Title>
-            {t('Eco-friendly')} <Point>{t('Blogs')}</Point>
-          </Title>
-        </TitleSection>
+        <MainTitle>
+          {t('Eco-friendly')} <Point>{t('Blogs')}</Point>
+        </MainTitle>
       </Main>
       <CardContainer>
         {blogList.map(({ title, url, id, description }) => (

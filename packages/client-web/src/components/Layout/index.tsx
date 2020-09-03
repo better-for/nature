@@ -1,8 +1,7 @@
 import React, { FC, useState } from 'react';
-import Header from '../Header';
+import { Header, OG } from 'src/components';
 import { GlobalStyle, ChildrenContainer } from './style';
 import { useDarkMode } from 'src/utils/useDarkMode';
-import OGHeader from '../OG';
 import { observer } from 'mobx-react';
 import { useScrollPosition, isBrowser } from 'src/utils/useScrollPosition';
 import { ogHeader } from 'src/constants';
@@ -24,7 +23,7 @@ const Layout: FC = observer(({ children }) => {
 
   return (
     <>
-      <OGHeader title={title} description={description} image={image} />
+      <OG title={title} description={description} image={image} />
       <GlobalStyle isDarkTheme={isDarkTheme} />
       <Header
         isDarkTheme={isDarkTheme}

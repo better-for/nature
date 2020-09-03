@@ -42,18 +42,6 @@ export const Main = styled.div`
   color: ${p => p.theme.color.gray};
 `;
 
-export const TitleSection = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-export const Title = styled.h1`
-  display: flex;
-  margin: 0;
-  padding-top: ${p => p.theme.unit.glass._10};
-  ${p => p.theme.typography.heroBold};
-`;
-
 export const Point = styled.div`
   display: inline-flex;
   color: ${p => p.theme.color.primary};

@@ -4,9 +4,7 @@ import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation, Link } from '../I18n';
 
 import {
-  TitleSection,
   Main,
-  Title,
   Point,
   Description,
   Row,
@@ -15,6 +13,7 @@ import {
   ItemDescription
 } from 'src/components/pageStyles';
 import { LINK_LIST } from 'src/constants';
+import { MainTitle } from 'src/components';
 
 const Home: I18nPage = observer(() => {
   const { t } = useTranslation();
@@ -22,12 +21,10 @@ const Home: I18nPage = observer(() => {
   return (
     <>
       <Main>
-        <TitleSection>
-          <Title>
-            {t('Better for')}
-            <Point>{t('Nature')}</Point>
-          </Title>
-        </TitleSection>
+        <MainTitle>
+          {t('Better for')}
+          <Point>{t('Nature')}</Point>
+        </MainTitle>
         <Description>
           <code>{t('SAVE THE WORLD, SAVE THE YOURSELF.')}</code>
         </Description>
