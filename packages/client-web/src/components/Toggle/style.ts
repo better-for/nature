@@ -46,7 +46,7 @@ export const Thumb = styled.div`
   transform: translateX(0);
 `;
 
-export const Container = styled.div<{ isDarkTheme: boolean }>`
+export const Container = styled.button<{ isDarkTheme: boolean }>`
   touch-action: pan-x;
   display: inline-block;
   position: relative;

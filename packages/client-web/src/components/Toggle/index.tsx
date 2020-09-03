@@ -11,10 +11,14 @@ const Toggle: FC<Toggle> = ({ isDarkTheme, toggleTheme }) => {
   const toggleImgSrc = isDarkTheme ? moon_image : sun_image;
   const alt = isDarkTheme ? 'moon' : 'sun';
   return (
-    <Container onClick={toggleTheme} isDarkTheme={isDarkTheme}>
+    <Container
+      onClick={toggleTheme}
+      isDarkTheme={isDarkTheme}
+      aria-label="Button to convert to dark mode"
+    >
       <Track>
         <Checked>
-          <ToggleImg src={toggleImgSrc} alt={alt} role="presentation" />
+          <ToggleImg src={toggleImgSrc} alt={alt} />
         </Checked>
       </Track>
       <Thumb />

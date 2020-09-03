@@ -60,12 +60,11 @@ export const Row = styled.div`
   justify-content: space-around;
 `;
 
-export const SampleCard = styled.a`
+export const SampleCard = styled.button`
   padding: ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._4}
     ${p => p.theme.unit.leaf._5};
   width: ${p => p.theme.unit.glass._31};
   text-align: left;
-  text-decoration: none;
   cursor: pointer;
   ${hoverEffect};
   @media ${p => p.theme.device.mobile} {
