@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, AnchorHTMLAttributes } from 'react';
 import {
   StyledCard,
   StyledIcon,
@@ -26,7 +26,7 @@ export type ICard = {
   buttonColor?: color;
   buttonIcon?: string;
   buttonIconSize?: glass | leaf;
-};
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const Card: FC<ICard> = ({
   url,
@@ -46,7 +46,7 @@ const Card: FC<ICard> = ({
   ...props
 }) => {
   return (
-    <StyledCard {...props} href={url} rel="noopener noreferrer" target="_blank">
+    <StyledCard {...props} href={url}>
       {!!image ? <StyledImage src={image} ratio={imageRatio} /> : null}
       {!!title ? (
         <StyledTitleSection>

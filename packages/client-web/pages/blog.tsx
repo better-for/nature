@@ -37,6 +37,8 @@ const Blog: I18nPage = observer(() => {
       <CardContainer>
         {blogList.map(({ title, url, id, description }) => (
           <Card
+            rel="noopener noreferrer"
+            target="_blank"
             url={url}
             title={title}
             paragraph={description}
