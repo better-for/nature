@@ -8,9 +8,15 @@ export enum ActionStatus {
 export const LINK_LIST = [
   {
     link: '/blog',
-    title: `BLOG`,
+    title: `BLOG LIST`,
     // description: `How about looking for a better life on your eco-friendly blog?`,
-    description: `Look around eco-friendly blogs!`
+    description: `Look around eco-friendly blog list!`
+  },
+  {
+    link: '/chart',
+    title: `CHART`,
+    // description: `How about looking for a better life on your eco-friendly blog?`,
+    description: `Check out the charts related to climate change!`
   }
 ];
 
