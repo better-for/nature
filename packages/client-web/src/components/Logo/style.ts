@@ -33,5 +33,5 @@ export const ForPath = styled(BetterPath)`
 `;
 
 export const UnderBar = styled(BetterPath)`
-  animation: ${pathFill} 2s linear 0.8s both;
+  animation: ${pathFill} 3s linear 0.8s both;
 `;
