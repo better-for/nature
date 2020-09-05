@@ -58,6 +58,13 @@ export const Row = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  @media ${p => p.theme.device.mobile} {
+    flex-direction: column;
+    align-items: center;
+    & > * ~ * {
+      margin-top: ${p => p.theme.unit.glass._3};
+    }
+  }
 `;
 
 export const SampleCard = styled.button`
@@ -92,4 +99,10 @@ export const CardContainer = styled.div`
   @media ${p => p.theme.device.mobile} {
     margin: ${p => p.theme.unit.glass._10} ${p => p.theme.unit.leaf._4};
   }
+`;
+
+export const ChartContainer = styled.div`
+  margin: 0 auto;
+  margin-top: ${p => p.theme.unit.glass._30};
+  width: 80%;
 `;

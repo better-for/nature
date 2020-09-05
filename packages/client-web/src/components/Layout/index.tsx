@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, Children, cloneElement } from 'react';
 import { Header, OG } from 'src/components';
 import { GlobalStyle, ChildrenContainer } from './style';
 import { useDarkMode } from 'src/utils/useDarkMode';
@@ -30,7 +30,11 @@ const Layout: FC = observer(({ children }) => {
         toggleTheme={toggleTheme}
         show={hideOnScroll}
       />
-      <ChildrenContainer>{children}</ChildrenContainer>
+      <ChildrenContainer>
+        {Children.map(children, child =>
+          cloneElement(child as any, { isDarkTheme })
+        )}
+      </ChildrenContainer>
     </>
   );
 });
