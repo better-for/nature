@@ -9,7 +9,7 @@ export const Title = styled.h1`
   display: flex;
   margin: 0;
   padding-top: ${p => p.theme.unit.glass._10};
-  ${p => p.theme.typography.heroBold};
+  ${p => p.theme.typography.subHeroBold};
   text-align: center;
   @media ${p => p.theme.device.mobile} {
     font-size: ${p => p.theme.unit.glass._3};
