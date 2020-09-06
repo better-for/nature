@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useTranslation } from '../../../I18n';
+import { useTranslation } from 'I18n';
 import { I18nButton as I18nBtn } from './style';
 
 type I18nButton = {

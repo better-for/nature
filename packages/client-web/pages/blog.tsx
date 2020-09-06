@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
-import { useTranslation, I18nPage } from '../I18n';
+import { useTranslation, I18nPage } from 'I18n';
 
 import { MainTitle } from 'src/components';
 import { Card } from 'src/components/common';
