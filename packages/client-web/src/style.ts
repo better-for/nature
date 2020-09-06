@@ -68,11 +68,15 @@ export const Row = styled.div`
 `;
 
 export const SampleCard = styled.button`
-  padding: ${p => p.theme.unit.leaf._4} ${p => p.theme.unit.leaf._4}
-    ${p => p.theme.unit.leaf._5};
+  padding: ${p => p.theme.unit.leaf._4};
   width: ${p => p.theme.unit.glass._31};
   text-align: left;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  & > * ~ * {
+    margin-top: ${p => p.theme.unit.leaf._3};
+  }
   ${hoverEffect};
   @media ${p => p.theme.device.mobile} {
     box-shadow: inset 0 0 0 2px ${p => p.theme.color.primaryVariant};
@@ -80,14 +84,11 @@ export const SampleCard = styled.button`
 `;
 
 export const ItemTitle = styled.div`
-  margin: 0;
   color: ${p => p.theme.color.secondary};
   ${p => p.theme.typography.paragraphBold};
 `;
 
-export const ItemDescription = styled.p`
-  margin: 0;
-  padding: ${p => p.theme.unit.leaf._3} 0 0;
+export const ItemDescription = styled.div`
   ${p => p.theme.typography.labelNormal};
 `;
 
@@ -102,7 +103,9 @@ export const CardContainer = styled.div`
 `;
 
 export const ChartContainer = styled.div`
-  margin: 0 auto;
-  margin-top: ${p => p.theme.unit.glass._30};
+  margin: ${p => p.theme.unit.glass._30} auto;
   width: 80%;
+  @media ${p => p.theme.device.mobile} {
+    margin: ${p => p.theme.unit.glass._20} auto;
+  }
 `;

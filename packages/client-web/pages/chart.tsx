@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation } from '../I18n';
 
-import { Main, ChartContainer } from 'src/components/pageStyles';
+import { Main, ChartContainer } from 'src/style';
 import { MainTitle } from 'src/components';
 
 declare global {

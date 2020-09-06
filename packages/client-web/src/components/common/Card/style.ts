@@ -4,7 +4,7 @@ import Divider from '../Divider';
 import Icon from '../IconBox';
 import Image from '../ImageRatio';
 import Text from '../Text';
-import { hoverEffect } from 'src/components/pageStyles';
+import { hoverEffect } from 'src/style';
 
 export const StyledImage = styled(Image)`
   padding: 0 ${p => p.theme.unit.glass._8};

@@ -11,7 +11,7 @@ import {
   SampleCard,
   ItemTitle,
   ItemDescription
-} from 'src/components/pageStyles';
+} from 'src/style';
 import { LINK_LIST } from 'src/constants';
 import { MainTitle } from 'src/components';
 

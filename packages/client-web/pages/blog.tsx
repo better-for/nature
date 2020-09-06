@@ -6,7 +6,7 @@ import { useTranslation, I18nPage } from '../I18n';
 import { MainTitle } from 'src/components';
 import { Card } from 'src/components/common';
 
-import { Main, Point, CardContainer } from 'src/components/pageStyles';
+import { Main, Point, CardContainer } from 'src/style';
 import { useStore } from 'src/utils/storeUtils';
 import { Blogs } from 'src/apis/blogs';
 
