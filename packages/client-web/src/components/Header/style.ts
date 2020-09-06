@@ -1,21 +1,34 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Navbar = styled.nav<{
-  isDarkTheme: boolean;
-  show: boolean;
-}>`
+const commonCSS = css<{ show: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 100;
   height: ${p => p.theme.unit.glass._7};
-  background-color: ${p =>
-    p.isDarkTheme ? p.theme.dark.bg.secondary : p.theme.light.bg.secondary};
-
-  visibility: ${p => (p.show ? 'visible' : 'hidden')};
   transition: all 200ms ${p => (p.show ? 'ease-in' : 'ease-out')};
   transform: ${p => (p.show ? 'none' : 'translate(0, -100%)')};
+`;
+
+export const Navbar = styled.nav<{
+  show: boolean;
+}>`
+  ${commonCSS};
+  @supports (backdrop-filter: blur(${p => p.theme.unit.leaf._1})) {
+    backdrop-filter: blur(${p => p.theme.unit.leaf._1});
+  }
+`;
+
+export const Optionbar = styled.div<{
+  show: boolean;
+}>`
+  ${commonCSS};
+  top: auto;
+  bottom: 0;
+  right: ${p => p.theme.unit.leaf._5};
+  height: ${p => p.theme.unit.glass._8};
+  transform: ${p => (p.show ? 'none' : 'translate(0, 100%)')};
 `;
 
 export const Ul = styled.ul`
@@ -47,17 +60,10 @@ export const Anchor = styled.a`
 
 export const FloatContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  flex-direction: column;
   & > * ~ * {
-    margin-left: ${p => p.theme.unit.leaf._2};
-  }
-  @media ${p => p.theme.device.mobile} {
-    padding-top: ${p => p.theme.unit.leaf._8};
-    flex-direction: column;
-    & > * ~ * {
-      margin-top: ${p => p.theme.unit.leaf._1};
-      margin-left: 0;
-    }
+    margin-top: ${p => p.theme.unit.leaf._1};
   }
 `;
 
@@ -69,7 +75,6 @@ export const ToggleContainer = styled.div`
 
 export const BackButton = styled.div`
   display: flex;
-  color: ${p => p.theme.color.secondary};
-  ${p => p.theme.typography.subTitleNormal};
   cursor: pointer;
+  ${p => p.theme.typography.subTitleBold};
 `;

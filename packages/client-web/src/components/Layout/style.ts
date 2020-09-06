@@ -17,17 +17,13 @@ export const GlobalStyle = createGlobalStyle<Props>`
     transition: background-color 0.3s ease;
     color: ${({ isDarkTheme, theme: { dark, light } }) =>
       isDarkTheme ? dark.text.secondary : light.text.secondary};
-    & h1 {
+    & h1, b {
       color: ${({ isDarkTheme, theme: { dark, light } }) =>
         isDarkTheme ? dark.text.primary : light.text.primary};
     }
     & h2, p, button {
       color: ${({ isDarkTheme, theme: { dark, light } }) =>
         isDarkTheme ? dark.text.secondary : light.text.secondary};
-    }
-    & b {
-      color: ${({ isDarkTheme, theme: { dark, light } }) =>
-        isDarkTheme ? dark.text.primary : light.text.primary};
     }
     -webkit-font-smoothing: antialiased;
   }

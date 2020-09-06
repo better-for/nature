@@ -6,7 +6,8 @@ import {
   Navbar,
   Ul,
   Li,
-  Anchor
+  Anchor,
+  Optionbar
 } from './style';
 import { I18nButton, Logo, Toggle } from 'src/components';
 import { Router, Link } from '../../../I18n';
@@ -21,30 +22,33 @@ type Header = {
 const Header: FC<Header> = ({ isDarkTheme, toggleTheme, show }) => {
   const { pathname } = useRouter();
   return (
-    <Navbar isDarkTheme={isDarkTheme} show={show}>
-      <Ul>
-        <Li>
-          {pathname !== '/' ? (
-            <BackButton onClick={() => Router.back()}>&larr; Back</BackButton>
-          ) : null}
-        </Li>
-        <Li>
-          <Link href="/">
-            <Anchor>
-              <Logo />
-            </Anchor>
-          </Link>
-        </Li>
-        <Li>
-          <FloatContainer>
-            <ToggleContainer>
-              <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
-            </ToggleContainer>
-            <I18nButton isDarkTheme={isDarkTheme} />
-          </FloatContainer>
-        </Li>
-      </Ul>
-    </Navbar>
+    <>
+      <Navbar show={show}>
+        <Ul>
+          <Li>
+            {pathname !== '/' ? (
+              <BackButton onClick={() => Router.back()}>&larr;</BackButton>
+            ) : null}
+          </Li>
+          <Li>
+            <Link href="/">
+              <Anchor>
+                <Logo />
+              </Anchor>
+            </Link>
+          </Li>
+          <Li></Li>
+        </Ul>
+      </Navbar>
+      <Optionbar show={show}>
+        <FloatContainer>
+          <ToggleContainer>
+            <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+          </ToggleContainer>
+          <I18nButton isDarkTheme={isDarkTheme} />
+        </FloatContainer>
+      </Optionbar>
+    </>
   );
 };
 

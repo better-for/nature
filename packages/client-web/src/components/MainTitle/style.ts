@@ -10,4 +10,8 @@ export const Title = styled.h1`
   margin: 0;
   padding-top: ${p => p.theme.unit.glass._10};
   ${p => p.theme.typography.heroBold};
+  text-align: center;
+  @media ${p => p.theme.device.mobile} {
+    font-size: ${p => p.theme.unit.glass._3};
+  }
 `;
