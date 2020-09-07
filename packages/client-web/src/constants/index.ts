@@ -121,6 +121,34 @@ export const greenhouseGasData = [
   }
 ];
 
+export const greenhouseEffect = [
+  {
+    title: 'Greenhouse Effect',
+    desc:
+      "The greenhouse effect caused by the actual atmosphere is a very important phenomenon that keeps the earth at a constant temperature. If there is no atmosphere and there is no greenhouse effect, Earth will receive sunlight during the day like Mars and rise more than tens of degrees, but on the contrary, at night without the sun, all heat will be released and fall below -100℃. In other words, the greenhouse effect is a phenomenon in which the atmosphere absorbs radiant energy emitted from the planet's surface so that it does not diffuse outward, and the temperature rises due to the energy. As such, the greenhouse effect is essential to the climate system and is not itself a problem. However, after the Industrial Revolution, the global warming phenomenon caused by excessive high temperatures caused by excessive emission of gases causing the greenhouse effect into the atmosphere becomes a problem."
+  },
+  {
+    title: 'Sea Level Rise',
+    desc:
+      "As temperatures rise, ice in the Arctic or Antarctica melts. If the temperature rises by about 3°C, most of the glaciers in the Arctic are floating icebergs, so even if they melt, sea level has no effect. However, as glaciers in Antarctica are continental glaciers, it is predicted that when they melt, sea level rises by about 7 m7 m. In that case, the actual submerged area along the coast of each continent is only about 3%, but considering that most of the world's big cities develop on the coast, and therefore, about a third of humanity lives in coastal areas. The disaster is enormous and adds to the seriousness of the problem. In other words, sea level has risen by an average of 10 to 20 cm over the past 20th century, and sea level rise is expected to continue in the future. If sea level rises significantly, there is a concern about damage from seawater flooding in countries with densely populated beaches, such as Bangladesh. Also, small island nations like Maldives will disappear. Thus, rising sea levels will pollute the water used by billions of people and cause large population migration."
+  },
+  {
+    title: 'Climate change',
+    desc:
+      "Climate change refers to the change over time in the global or regional climate of the Earth. Climate change may be due to internal or external forces (for example, changes in solar radiation), or human activity. According to recent studies, radiative forcing from greenhouse gases is a major cause of climate change. The temperature of the earth's surface has risen due to the greenhouse effect. This increase in temperature is becoming more pronounced toward higher northern latitudes. Also, the land shows a faster temperature rise than the ocean."
+  },
+  {
+    title: 'Global warming',
+    desc:
+      "Global warming is a long-term increase in the average temperature of the atmosphere and sea near the surface. Since the last industrial revolution, as greenhouse gases are continuously released into the atmosphere, the concentration of greenhouse gases in the earth's atmosphere increases, causing an excessive increase in the temperature of the earth's surface, resulting in such a global warming phenomenon. The rise in temperature on the earth's surface causes sea level rise, which in turn changes the amount and pattern of precipitation, causing extreme weather such as drought and flood. The retreat of glaciers and climate change threaten the survival of life on Earth, including humans, by changing ecosystems. Global warming has been progressing over recent decades [when?], and it is predicted to continue to increase in the future. It is not yet clear how much warming will take place in the future and how it will vary between regions."
+  },
+  {
+    title: 'Ecosystem and human impact',
+    desc:
+      'The various global changes caused by the increase in greenhouse gases have a great impact on ecosystems and humans. Due to changes in the environment, the survival of the species is threatened and extinction is accelerated. Of course, species that adapt quickly to changes in temperature can survive through migration, but plant species cannot easily migrate. Thus, many plant species can become extinct. It also contributes to increased drought and forest fires. This is closely related not only to ecological problems but also to human food problems. Difficulties arise in cultivation of crops, and changes in marine ecosystems are caused by rising seawater temperatures. In addition, natural disasters such as heavy rains and storms, tsunamis and floods, droughts and forest fires cause loss of human life and property.'
+  }
+];
+
 //example
 // export const SAMPLE_DATA = [
 //   {

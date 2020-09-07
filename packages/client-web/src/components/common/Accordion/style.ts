@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Button, Text } from 'src/components/common';
 
 export const ToggleButton = styled(Button)<{ isExpanded: Boolean }>`
@@ -15,17 +15,40 @@ export const ToggleButton = styled(Button)<{ isExpanded: Boolean }>`
         `};
 `;
 
+const bound = keyframes`
+  0% {
+    height: 100%;
+  }
+  50% {
+    height: 300%;
+  }
+  100% {
+    height: 100%;
+  }
+`;
+
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   padding: ${p => p.theme.unit.leaf._3} ${p => p.theme.unit.leaf._2};
-  border-bottom: 2px solid ${p => p.theme.color.secondaryVariant};
   box-sizing: border-box;
   ${p => p.theme.typography.subTitleBold};
-  transition-duration: 0.25s;
-  &:hover {
+  position: relative;
+  &::after {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition-duration: 0.25s;
+    border-bottom: 2px solid ${p => p.theme.color.secondaryVariant};
+  }
+  &:hover::after {
+    animation: ${bound} 0.8s ease-in-out both;
     border-color: ${p => p.theme.color.primaryVariant};
   }
 `;

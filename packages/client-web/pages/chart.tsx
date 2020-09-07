@@ -4,8 +4,12 @@ import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation } from 'I18n';
 
 import { Main, ChartContainer } from 'src/style';
-import { MainTitle, FoodChart } from 'src/components';
-import GreenHouseGas from 'src/components/GreenhouseGas';
+import {
+  MainTitle,
+  FoodChart,
+  GreenhouseGas,
+  GreenhouseEffect
+} from 'src/components';
 
 declare global {
   interface Window {
@@ -38,7 +42,8 @@ const Chart: I18nPage<{ isDarkTheme: boolean }> = observer(
         <Main>
           <MainTitle>{t('Climatic change-related chart')}</MainTitle>
         </Main>
-        <GreenHouseGas isDarkTheme={isDarkTheme} />
+        <GreenhouseGas isDarkTheme={isDarkTheme} />
+        <GreenhouseEffect isDarkTheme={isDarkTheme} />
         <FoodChart />
         <ChartContainer>
           <div id="co2-widget-container"></div>

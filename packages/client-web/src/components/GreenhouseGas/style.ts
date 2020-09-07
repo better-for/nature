@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { hoverEffect } from 'src/style';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 50%;
-  margin: ${p => p.theme.unit.glass._10} auto;
+  margin: ${p => p.theme.unit.glass._15} auto;
   @media ${p => p.theme.device.mobile} {
     width: 80%;
     word-break: break-all;
@@ -28,6 +27,7 @@ export const Wrapper = styled.div`
 
 export const Cc = styled.a`
   text-decoration: none;
+  color: inherit;
   text-align: right;
   margin-top: ${p => p.theme.unit.glass._8};
   ${p => p.theme.typography.labelNormal};
