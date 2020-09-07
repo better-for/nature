@@ -38,7 +38,7 @@ const Chart: I18nPage<{ isDarkTheme: boolean }> = observer(
         <Main>
           <MainTitle>{t('Climatic change-related chart')}</MainTitle>
         </Main>
-        <GreenHouseGas />
+        <GreenHouseGas isDarkTheme={isDarkTheme} />
         <FoodChart />
         <ChartContainer>
           <div id="co2-widget-container"></div>

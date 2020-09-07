@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { hoverEffect } from 'src/style';
 
 export const Container = styled.div`
   display: flex;
@@ -23,16 +24,6 @@ export const Wrapper = styled.div`
   & ~ & {
     margin-top: ${p => p.theme.unit.glass._8};
   }
-`;
-
-export const Title = styled.div`
-  margin-bottom: ${p => p.theme.unit.glass._3};
-  ${p => p.theme.typography.subTitleBold};
-`;
-
-export const Desc = styled.div`
-  white-space: pre-wrap;
-  ${p => p.theme.typography.subTitleNormal};
 `;
 
 export const Cc = styled.a`

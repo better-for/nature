@@ -13,7 +13,7 @@ import {
 import { foodData, foodChartAxisLabel, foodChartData } from 'src/constants';
 import { extractRawData, sumTotalValue } from 'src/utils';
 import { Container, Title, Ul } from './style';
-import { useTranslation, I18nPage } from 'I18n';
+import { useTranslation } from 'I18n';
 
 const FoodChart: FC = () => {
   const {
@@ -51,10 +51,8 @@ const FoodChart: FC = () => {
             data={sortedData}
             layout="vertical"
             margin={{
-              top: 20,
-              right: 100,
-              left: 100,
-              bottom: 20
+              right: 20,
+              left: 20
             }}
           >
             <CartesianGrid strokeDasharray="4 4" />

@@ -2,9 +2,10 @@ import React, { FC } from 'react';
 import { useTranslation } from 'I18n';
 
 import { greenhouseGasData } from 'src/constants';
-import { Container, Subject, Title, Content, Desc, Wrapper, Cc } from './style';
+import { Container, Subject, Content, Wrapper, Cc } from './style';
+import Accordion from '../common/Accordion';
 
-const GreenHouseGas: FC = () => {
+const GreenHouseGas: FC<{ isDarkTheme: boolean }> = ({ isDarkTheme }) => {
   const { t } = useTranslation();
 
   return (
@@ -13,8 +14,9 @@ const GreenHouseGas: FC = () => {
       <Content>
         {greenhouseGasData.map(({ title, desc }) => (
           <Wrapper key={title}>
-            <Title>{t(title)}</Title>
-            <Desc>{t(desc)}</Desc>
+            <Accordion header={t(title)} isDarkTheme={isDarkTheme}>
+              {t(desc)}
+            </Accordion>
           </Wrapper>
         ))}
       </Content>
