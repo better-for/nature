@@ -36,7 +36,6 @@ export const Body = styled(Text)<{ isExpanded: boolean; isDarkTheme: boolean }>`
   transition: background 0.3s ease, max-height 1s ease-in-out;
   ${p => p.theme.typography.paragraphNormal};
   line-height: 1.6;
-  cursor: pointer;
   background: none;
   border: 0;
   box-sizing: border-box;

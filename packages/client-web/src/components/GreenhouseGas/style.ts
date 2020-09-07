@@ -28,6 +28,7 @@ export const Wrapper = styled.div`
 
 export const Cc = styled.a`
   text-decoration: none;
-  margin-top: ${p => p.theme.unit.glass._2};
+  text-align: right;
+  margin-top: ${p => p.theme.unit.glass._8};
   ${p => p.theme.typography.labelNormal};
 `;
