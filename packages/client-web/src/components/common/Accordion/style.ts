@@ -16,14 +16,9 @@ export const ToggleButton = styled(Button)<{ isExpanded: Boolean }>`
 `;
 
 const bound = keyframes`
-  0% {
-    height: 100%;
-  }
   50% {
-    height: 300%;
-  }
-  100% {
-    height: 100%;
+    transform:translateY(50%);
+    opacity:0;
   }
 `;
 
