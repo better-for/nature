@@ -74,6 +74,7 @@ export const SampleCard = styled.button`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   & > * ~ * {
     margin-top: ${p => p.theme.unit.leaf._3};
   }

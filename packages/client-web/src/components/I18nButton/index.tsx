@@ -12,6 +12,7 @@ const I18nButton: FC<I18nButton> = ({ isDarkTheme }) => {
   } = useTranslation();
   const toggleLang = language === 'en' ? 'ko' : 'en';
   const translatedLang = language === 'en' ? 'English' : '한국어';
+
   return (
     <I18nBtn
       onClick={() => changeLanguage(toggleLang)}
