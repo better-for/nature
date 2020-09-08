@@ -149,6 +149,77 @@ export const greenhouseEffect = [
   }
 ];
 
+export const carbonFootPrint = {
+  title: 'What is a Carbon Footprint?',
+  desc:
+    'A carbon footprint is the total amount of greenhouse gas emissions that come from the production, use and end-of-life of a product or service. It includes carbon dioxide — the gas most commonly emitted by humans — and others, including methane, nitrous oxide, and fluorinated gases, which trap heat in the atmosphere, causing global warming. Usually, the bulk of an individual’s carbon footprint will come from transportation, housing and food.'
+};
+
+export const section: {
+  title: keyof typeof listOfWaysToReduceCarbonEmissions;
+  desc: string;
+}[] = [
+  {
+    title: 'On the Road, in the Sky',
+    desc:
+      'One of the most effective ways to begin thinking about how to reduce your carbon footprint is to reconsider how much, and how often, you travel. In November 2017 carbon dioxide emissions from transportation surpassed emissions from electricity generation as the top source of greenhouse gases. Why? Electricity generation is shifting away from the use of coal to more renewable sources and natural gas. But let’s be realistic. You will likely need to use a car this year. So, when you do, here are some tips to make your trip more climate-friendly'
+  },
+  {
+    title: 'On your Plate',
+    desc: 'Globally, emissions are linked to what we put on our plates.'
+  },
+  {
+    title: 'In your Home',
+    desc:
+      'There are simple changes you can make at home that will save you energy, and money.'
+  },
+  {
+    title: 'What you Buy',
+    desc:
+      'Buying less is the first step. Beyond that, there are simple ways to reduce the impact from your purchases. According to the World Resources Institute, 20 items of clothing are manufactured per person, per year. This is because of “fast fashion”: clothes that are produced quickly, cheaply and unsustainably. As the price of our clothes drops, the environmental (and human) costs increase.'
+  }
+];
+
+export const listOfWaysToReduceCarbonEmissions = {
+  'On the Road, in the Sky': [
+    'Go easy on the gas and brakes — driving efficiently can help to reduce emissions. Drive “like you have an egg under your foot,” recommends Brian West, an expert in fuel and engine research from the Oak Ridge National Laboratory.',
+    'Regularly service your car to keep it more efficient.',
+    'Check your tires. Keeping tires pumped correctly can reduce emissions. “Low tire pressure will hurt your fuel economy”',
+    'Air conditioning and intensive city driving can make emissions creep up. Cut down on these as often as possible.',
+    'Use cruise control on long drives — in most cases, this can help to save gas.',
+    'Don’t weigh your car down with extra things that you don’t need on your trip.',
+    'Carpool — this way, you’re splitting emissions between the number of people in the car.',
+    'Cars with lower emissions can often end up costing less to operate.'
+  ],
+  'On your Plate': [
+    'While food systems are complicated, and research is still evolving on what the most environmentally-friendly diet is, experts mostly agree that cutting down on meat, and red meat in particular, is a better choice for the environment. This is because the production of red meat uses a lot of feed, water and land. Cows themselves also give off methane emissions (a harmful greenhouse gas).',
+    'For that reason, eating a vegan diet is likely to be best for the environment, say experts. According to a study published in 2017 in the journal Environmental Research Letters, red meat can have up to 100 times the environmental impact of plant based food. (According to some estimates, beef gives off more than six pounds of carbon dioxide per serving; the amount created per serving by rice, legumes carrots, apples or potatoes is less than half a pound.)',
+    'Eating a vegetarian or pescetarian diet are also likely to be better for the environment than a diet which includes a lot of meat. Each of these, however, depend on exactly what you are eating, and how much of it. If you replace that meat with dairy, for example, your emissions could rise again. “Deep net fishing can emit as much as beef,” said Marco Springmann, a senior researcher on environmental sustainability and public health at the University of Oxford. Following national health guidelines, with further reductions in meat, fish and dairy (this is similar to a Mediterranean diet) is a good option too, Dr. Springmann said. These diets can also have health benefits.',
+    'Overall, eating low down the food chain as often as you can is a probably a good way to reduce your carbon footprint and stay healthy, say experts. That means filling your plate with vegetables, fruits, grains and beans. For meat-lovers, even swapping carbon-intensive meats like beef and lamb with chicken can make a difference. Better still, swap a few meals per-week to vegan or vegetarian.'
+  ],
+  'In your Home': [
+    'Turn down the heat. Use a programmable or smart thermostat, if you have one. Keep blinds closed to help keep temperature stable inside.',
+    'Turn off lights and appliances when you’re not using them. Turn off appliances at the power outlet to reduce even more energy. Putting them to sleep is second best.',
+    'Stream movies through your smart TV, not your game console. Smart TVs and their plugins use just a few watts to stream movies, Mr. Horowitz said, but if you use your game console, energy use is about 10 times higher, because they aren’t optimized to play films.',
+    'Buy a laptop, not a desktop computer. Laptops take less energy to charge and run.',
+    'Replace lights. LED lights use up to 85 percent less energy, last up to 25 times longer and are cheaper to run than incandescent lights.',
+    'Replace old fridges.They are “energy hogs” according to Mr. Horowitz, and can cost you up to $100 extra per year to run. “If it’s 15 to 20 years old,” he said, “it’s a no brainer to recycle it.”'
+  ],
+  'What you Buy': [
+    'Look for a fairtrade, or similar logo. This indicates your clothes were made sustainably.',
+    'Shop vintage. You’ll be saving money, and the environment.',
+    'Don’t buy clothing that will either wear out quickly, or, that you’ll barely wear.',
+    'Consider the fabric. Different materials have different environmental impacts',
+    'Donate old clothes.',
+    'Buying less and wearing more'
+  ]
+  // 'How to Shop Sustainably': [
+  //   'Take a reusable bag to the store.',
+  //   'Skip the packaging.',
+  //   'Invest in quality products that last.'
+  // ]
+};
+
 //example
 // export const SAMPLE_DATA = [
 //   {

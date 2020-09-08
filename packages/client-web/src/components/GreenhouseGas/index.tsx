@@ -3,7 +3,7 @@ import { useTranslation } from 'I18n';
 
 import { greenhouseGasData } from 'src/constants';
 import { Container, Subject, Content, Wrapper } from './style';
-import Accordion from '../common/Accordion';
+import { Accordion } from 'src/components/common';
 
 const GreenhouseGas: FC<{ isDarkTheme: boolean }> = ({ isDarkTheme }) => {
   const { t } = useTranslation();

@@ -8,7 +8,8 @@ import {
   MainTitle,
   FoodChart,
   GreenhouseGas,
-  GreenhouseEffect
+  GreenhouseEffect,
+  CarbonFootPrint
 } from 'src/components';
 
 declare global {
@@ -44,6 +45,8 @@ const Chart: I18nPage<{ isDarkTheme: boolean }> = observer(
         </Main>
         <GreenhouseGas isDarkTheme={isDarkTheme} />
         <GreenhouseEffect isDarkTheme={isDarkTheme} />
+        <CarbonFootPrint isDarkTheme={isDarkTheme} />
+
         <FoodChart />
         <ChartContainer>
           <div id="co2-widget-container"></div>

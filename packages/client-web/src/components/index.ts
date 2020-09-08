@@ -8,3 +8,4 @@ export { default as Toggle } from './Toggle';
 export { default as FoodChart } from './FoodChart';
 export { default as GreenhouseGas } from './GreenhouseGas';
 export { default as GreenhouseEffect } from './GreenhouseEffect';
+export { default as CarbonFootPrint } from './CarbonFootPrint';

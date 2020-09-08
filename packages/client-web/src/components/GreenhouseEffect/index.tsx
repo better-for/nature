@@ -9,7 +9,7 @@ import {
   Wrapper,
   Cc
 } from '../GreenhouseGas/style';
-import Accordion from '../common/Accordion';
+import { Accordion } from 'src/components/common';
 
 const GreenhouseEffect: FC<{ isDarkTheme: boolean }> = ({ isDarkTheme }) => {
   const { t } = useTranslation();
