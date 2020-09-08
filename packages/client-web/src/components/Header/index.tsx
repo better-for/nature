@@ -14,12 +14,10 @@ import { Router, Link } from '../../../I18n';
 import { useRouter } from 'next/router';
 
 type Header = {
-  isDarkTheme: boolean;
-  toggleTheme: () => void;
   show: boolean;
 };
 
-const Header: FC<Header> = ({ isDarkTheme, toggleTheme, show }) => {
+const Header: FC<Header> = ({ show }) => {
   const { pathname } = useRouter();
   return (
     <>
@@ -43,9 +41,9 @@ const Header: FC<Header> = ({ isDarkTheme, toggleTheme, show }) => {
       <Optionbar show={show}>
         <FloatContainer>
           <ToggleContainer>
-            <Toggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+            <Toggle />
           </ToggleContainer>
-          <I18nButton isDarkTheme={isDarkTheme} />
+          <I18nButton />
         </FloatContainer>
       </Optionbar>
     </>

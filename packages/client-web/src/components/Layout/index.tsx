@@ -1,14 +1,14 @@
-import React, { FC, useState, Children, cloneElement } from 'react';
+import React, { FC, useState } from 'react';
 import { Header, OG } from 'src/components';
 import { GlobalStyle, ChildrenContainer } from './style';
-import { useDarkMode } from 'src/utils/useDarkMode';
 import { observer } from 'mobx-react';
 import { useScrollPosition, isBrowser } from 'src/utils/useScrollPosition';
 import { ogHeader } from 'src/constants';
+import { useDarkModeTheme } from 'src/utils/storeUtils';
 
 const Layout: FC = observer(({ children }) => {
   const { title, description, image } = ogHeader;
-  const [isDarkTheme, toggleTheme] = useDarkMode();
+  const { isDarkTheme } = useDarkModeTheme();
   const [hideOnScroll, setHideOnScroll] = useState(true);
 
   useScrollPosition(
@@ -25,16 +25,8 @@ const Layout: FC = observer(({ children }) => {
     <>
       <OG title={title} description={description} image={image} />
       <GlobalStyle isDarkTheme={isDarkTheme} />
-      <Header
-        isDarkTheme={isDarkTheme}
-        toggleTheme={toggleTheme}
-        show={hideOnScroll}
-      />
-      <ChildrenContainer>
-        {Children.map(children, child =>
-          cloneElement(child as any, { isDarkTheme })
-        )}
-      </ChildrenContainer>
+      <Header show={hideOnScroll} />
+      <ChildrenContainer>{children}</ChildrenContainer>
     </>
   );
 });

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { createContext, useContext, useState, Component } from 'react';
 import RootStore from '../store/RootStore';
+import { useDarkMode } from './useDarkMode';
 // import {Provider} from 'mobx-react'
 
 const rootStore = new RootStore();
-const rootStoreContext = React.createContext<RootStore>(null);
+const rootStoreContext = createContext<RootStore>(null);
 
 export const StoreProvider = ({ children }) => {
   return (
@@ -13,12 +14,34 @@ export const StoreProvider = ({ children }) => {
   );
 };
 
+const DarkModeContext = createContext<{
+  isDarkTheme: boolean;
+  toggleTheme: () => void;
+}>(null);
+
+export const DarkModeContextProvider = ({ children }) => {
+  const [isDarkTheme, toggleTheme] = useDarkMode();
+  return (
+    <DarkModeContext.Provider value={{ isDarkTheme, toggleTheme }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+};
+
+export const useDarkModeTheme = () => {
+  const theme = useContext(DarkModeContext);
+  if (!theme) {
+    throw new Error('You have forgot to use StoreProvider, shame on you.');
+  }
+  return theme;
+};
+
 // export const StoreProvider = ({ children, ...props }) => {
 //   return <Provider {...props}>{children}</Provider>;
 // };
 
 export const useStore = () => {
-  const store = React.useContext(rootStoreContext);
+  const store = useContext(rootStoreContext);
   if (!store) {
     // this is especially useful in TypeScript so you don't need to be checking for null all the time
     throw new Error('You have forgot to use StoreProvider, shame on you.');

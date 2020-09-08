@@ -1,13 +1,10 @@
 import React, { FC } from 'react';
 import { Container, Track, Checked, Thumb, ToggleImg } from './style';
 import { moon_image, sun_image } from 'src/constants';
+import { useDarkModeTheme } from 'src/utils/storeUtils';
 
-type Toggle = {
-  isDarkTheme: boolean;
-  toggleTheme: () => void;
-};
-
-const Toggle: FC<Toggle> = ({ isDarkTheme, toggleTheme }) => {
+const Toggle: FC = () => {
+  const { isDarkTheme, toggleTheme } = useDarkModeTheme();
   const toggleImgSrc = isDarkTheme ? moon_image : sun_image;
   const alt = isDarkTheme ? 'moon' : 'sun';
   return (

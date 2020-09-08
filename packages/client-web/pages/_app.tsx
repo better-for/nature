@@ -1,6 +1,6 @@
 import React from 'react';
 import App from 'next/app';
-import { StoreProvider } from 'src/utils/storeUtils';
+import { StoreProvider, DarkModeContextProvider } from 'src/utils/storeUtils';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'src/element';
 import { appWithTranslation } from '../I18n';
@@ -31,11 +31,13 @@ class MyApp extends App {
     return (
       // <StoreProvider {...this.mobxStore}>
       <StoreProvider>
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
+        <DarkModeContextProvider>
+          <ThemeProvider theme={theme}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeProvider>
+        </DarkModeContextProvider>
       </StoreProvider>
     );
   }

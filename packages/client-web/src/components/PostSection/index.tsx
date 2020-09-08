@@ -5,7 +5,6 @@ import { Container, Subject, Content, Wrapper, Cc, Li } from './style';
 import { Accordion } from 'src/components/common';
 
 type PostSection = {
-  isDarkTheme: boolean;
   title: string;
   data: { title: string; desc: string }[];
   ccLink?: string;
@@ -17,16 +16,11 @@ type InnerContent = Omit<PostSection, 'data' | 'ccContent' | 'ccLink'> & {
   desc: string;
 };
 
-export const InnerContent: FC<InnerContent> = ({
-  title,
-  isDarkTheme,
-  desc,
-  todoList
-}) => {
+export const InnerContent: FC<InnerContent> = ({ title, desc, todoList }) => {
   const { t } = useTranslation();
   return (
     <Wrapper key={title}>
-      <Accordion header={t(title)} isDarkTheme={isDarkTheme}>
+      <Accordion header={t(title)}>
         {t(desc)}
         {todoList && (
           <ul>
@@ -41,7 +35,6 @@ export const InnerContent: FC<InnerContent> = ({
 };
 
 const PostSection: FC<PostSection> = ({
-  isDarkTheme,
   title,
   data,
   todoList,
@@ -58,7 +51,6 @@ const PostSection: FC<PostSection> = ({
         {children}
         {data.map(({ title, desc }) => (
           <InnerContent
-            isDarkTheme={isDarkTheme}
             title={title}
             desc={desc}
             key={title}

@@ -5,21 +5,16 @@ import { Icon } from 'src/components/common';
 import { Section, Header, ToggleButton, Body } from './style';
 import { glass, leaf } from 'src/element';
 import { BUTTON_TYPE } from '../Button/type';
+import { useDarkModeTheme } from 'src/utils/storeUtils';
 
 type Props = {
   header: ReactNode;
-  isDarkTheme: boolean;
   size?: glass | leaf;
 };
 
-const Accordion: FC<Props> = ({
-  header,
-  children,
-  isDarkTheme,
-  size = leaf._5
-}) => {
+const Accordion: FC<Props> = ({ header, children, size = leaf._5 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
+  const { isDarkTheme } = useDarkModeTheme();
   return (
     <Section>
       <Header role="button" onClick={() => setIsExpanded(prev => !prev)}>
