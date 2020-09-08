@@ -32,3 +32,8 @@ export const Cc = styled.a`
   margin-top: ${p => p.theme.unit.glass._8};
   ${p => p.theme.typography.labelNormal};
 `;
+
+export const Li = styled.li`
+  font-weight: 500;
+  margin: ${p => p.theme.unit.glass._1} 0;
+`;
