@@ -24,12 +24,8 @@ const NextI18NextInstance = new NextI18Next({
   fallbackLng: 'en',
   localePath:
     process.env.NODE_ENV === 'production'
-      ? '{{lng}}/public/static/locales'
+      ? 'public/static/locales'
       : './public/static/locales',
-  localeSubpaths: {
-    ko: 'ko',
-    en: 'en'
-  },
   otherLanguages: ['ko'],
   preload: ['en', 'ko'],
   ns: ['common'],
