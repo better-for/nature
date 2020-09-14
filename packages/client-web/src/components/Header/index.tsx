@@ -35,7 +35,13 @@ const Header: FC<Header> = ({ show }) => {
               </Anchor>
             </Link>
           </Li>
-          <Li></Li>
+          <Li>
+            {pathname !== '/login' ? (
+              <Link href="/login">
+                <Anchor>LOGIN</Anchor>
+              </Link>
+            ) : null}
+          </Li>
         </Ul>
       </Navbar>
       <Optionbar show={show}>

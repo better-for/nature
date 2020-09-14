@@ -111,3 +111,56 @@ export const ChartContainer = styled.div`
     margin: ${p => p.theme.unit.glass._20} auto;
   }
 `;
+
+export const SLContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Avatar = styled.span`
+  border-radius: ${p => p.theme.unit.glass._5};
+  float: left;
+  height: ${p => p.theme.unit.glass._5};
+  width: ${p => p.theme.unit.glass._5};
+  background-color: ${p => p.theme.color.white};
+  background-size: cover;
+  border: 2px solid #ddd;
+`;
+
+export const Email = styled.span`
+  margin-right: ${p => p.theme.unit.glass._2};
+  margin-left: ${p => p.theme.unit.glass._1};
+  font-weight: 500;
+`;
+
+const signButton = css`
+  color: ${p => p.theme.color.white};
+  border: none;
+  border-radius: ${p => p.theme.unit.leaf._1};
+  cursor: pointer;
+  font-size: ${p => p.theme.unit.glass._2};
+  padding: ${p => p.theme.unit.glass._1} ${p => p.theme.unit.glass._2};
+`;
+
+export const SignInButton = styled.button`
+  ${signButton};
+  background-color: #1eb1fc;
+  &:hover {
+    background-color: #1b9fe2;
+  }
+`;
+
+export const SignOutButton = styled.button`
+  ${signButton};
+  background-color: #333;
+  &:hover {
+    background-color: #555;
+  }
+`;
+
+export const UserCard = styled.p`
+  display: flex;
+  align-items: center;
+`;

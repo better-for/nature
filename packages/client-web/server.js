@@ -1,5 +1,6 @@
 const next = require('next');
 
+const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = next({ dev: process.env.NODE_ENV !== 'production' });
@@ -16,15 +17,17 @@ const options = {
   const server = express();
 
   server.use(bodyParser.json());
-  server.use(bodyParser.urlencoded({ extended: true }));
+  server.all('*', (req, res) => {
+    return handle(req, res);
+  });
 
-  server.get('/', (req, res) => handle(req, res));
-  server.get('*', (req, res) => handle(req, res));
+  server.get('*', handle);
+  server.post('*', handle);
   server.get('/robots.txt', (req, res) =>
     res.status(200).sendFile('robots.txt', options)
   );
 
-  await server.listen(port, err => {
+  http.createServer(server).listen(port, err => {
     if (err) throw err;
     console.log(`> Server is listening on port ${port}`);
   });
