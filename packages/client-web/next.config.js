@@ -1,23 +1,27 @@
+require('dotenv').config();
+
 const path = require('path');
 const withCustomBabelConfigFile = require('next-plugin-custom-babel-config');
 const withTranspileModules = require('next-plugin-transpile-modules');
-
-const { nextI18NextRewrites } = require('next-i18next/rewrites');
-const localeSubpaths = { en: 'en', ko: 'ko' };
 
 module.exports = withCustomBabelConfigFile(
   withTranspileModules({
     babelConfigFile: path.resolve('./babel.config.js'),
     transpileModules: ['@nature'],
-    publicRuntimeConfig: {
-      localeSubpaths
-    },
-    async rewrites() {
-      return [...nextI18NextRewrites(localeSubpaths)];
-    },
     webpack(config) {
       config.resolve.modules.push(__dirname);
+      config.plugins = config.plugins || [];
+
       return config;
+    },
+    env: {
+      SITE: process.env.SITE,
+      FACEBOOK_ID: process.env.FACEBOOK_ID,
+      FACEBOOK_SECRET: process.env.FACEBOOK_SECRET,
+      NAVER: process.env.NAVER,
+      NAVER_CALLBACK: process.env.NAVER_CALLBACK,
+      LOCALHOST: process.env.LOCALHOST,
+      NEXTAUTH_URL: process.env.NEXTAUTH_URL
     }
   })
 );
