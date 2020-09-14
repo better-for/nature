@@ -10,17 +10,18 @@ import { BUTTON_TYPE } from './type';
 import { theme } from 'src/element';
 import { color } from 'src/element/Color';
 import { IIcon } from '../IconBox';
+import { ButtonHTMLAttributes } from 'react';
 
 export type IButton = {
   children: ReactNode;
   icon?: string;
   color?: color;
-  type?: BUTTON_TYPE;
+  buttonType?: BUTTON_TYPE;
   size?: IIcon['size'];
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: FC<IButton> = ({
-  type = BUTTON_TYPE.CONTAINED,
+  buttonType = BUTTON_TYPE.CONTAINED,
   icon,
   color = theme.color.secondary,
   children,
@@ -28,7 +29,7 @@ const Button: FC<IButton> = ({
   ...props
 }) => {
   if (!icon && !children) return <ErroredButton>🤷‍</ErroredButton>;
-  switch (type) {
+  switch (buttonType) {
     case BUTTON_TYPE.CONTAINED:
       return (
         <StyledContainedButton icon={icon} color={color} {...props}>

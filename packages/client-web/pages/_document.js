@@ -32,6 +32,9 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ko">
         <Head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="viewport-fit=cover" />
           <link rel="shortcut icon" href={favicon} type="image/x-icon" />
           <link rel="icon" href={favicon} type="image/x-icon" />
           <link rel="apple-touch-icon" href={favicon} />
@@ -41,6 +44,17 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             type="text/css"
           />
+          <script
+            src="https://apis.google.com/js/platform.js"
+            async
+            defer
+          ></script>
+          <script
+            async
+            type="text/javascript"
+            src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+            charset="utf-8"
+          ></script>
         </Head>
         <body>
           <Main />

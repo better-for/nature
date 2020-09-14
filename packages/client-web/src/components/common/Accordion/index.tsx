@@ -19,7 +19,7 @@ const Accordion: FC<Props> = ({ header, children, size = leaf._5 }) => {
     <Section>
       <Header role="button" onClick={() => setIsExpanded(prev => !prev)}>
         <div>{header}</div>
-        <ToggleButton type={BUTTON_TYPE.TEXT} isExpanded={isExpanded}>
+        <ToggleButton buttonType={BUTTON_TYPE.TEXT} isExpanded={isExpanded}>
           <Icon size={size}>△</Icon>
         </ToggleButton>
       </Header>
