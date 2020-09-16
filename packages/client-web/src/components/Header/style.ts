@@ -5,7 +5,7 @@ const commonCSS = css<{ show: boolean }>`
   top: 0;
   right: 0;
   left: 0;
-  z-index: 100;
+  z-index: 200;
   height: ${p => p.theme.unit.glass._7};
   transition: all 200ms ${p => (p.show ? 'ease-in' : 'ease-out')};
   transform: ${p => (p.show ? 'none' : 'translate(0, -100%)')};
@@ -25,10 +25,10 @@ export const Optionbar = styled.div<{
 }>`
   ${commonCSS};
   top: auto;
-  bottom: 0;
+  bottom: ${p => p.theme.unit.glass._3};
   right: ${p => p.theme.unit.leaf._5};
   height: ${p => p.theme.unit.glass._8};
-  transform: ${p => (p.show ? 'none' : 'translate(0, 100%)')};
+  transform: ${p => (p.show ? 'none' : 'translate(0, 150%)')};
 `;
 
 export const Ul = styled.ul`

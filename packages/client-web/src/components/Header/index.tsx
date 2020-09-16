@@ -10,7 +10,7 @@ import {
   Optionbar
 } from './style';
 import { I18nButton, Logo, Toggle } from 'src/components';
-import { Router, Link } from '../../../I18n';
+import { Router, Link } from 'I18n';
 import { useRouter } from 'next/router';
 
 type Header = {

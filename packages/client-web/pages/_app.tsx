@@ -4,7 +4,7 @@ import { Provider as NextAuthProvider } from 'next-auth/client';
 import { StoreProvider, DarkModeContextProvider } from 'src/utils/storeUtils';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'src/element';
-import { appWithTranslation } from '../I18n';
+import { appWithTranslation } from 'I18n';
 import { Layout } from 'src/components';
 
 class MyApp extends App {

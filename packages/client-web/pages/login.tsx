@@ -45,7 +45,7 @@ const Login: I18nPage = observer(() => {
     window.addEventListener('load', () => {
       naverLogin.getLoginStatus((status: boolean) => {
         if (status) {
-          const { email, name, nickname } = naverLogin.user;
+          const { name, nickname } = naverLogin.user;
           (nickname || name) && setNaverID(nickname || name);
         } else {
           console.log('callback 처리에 실패하였습니다.');
@@ -102,28 +102,8 @@ const Login: I18nPage = observer(() => {
 
 export default Login;
 
-Login.getInitialProps = async ({ req }) => {
-  //   const baseURL = req ? `http://localhost:8080` : '';
-  //   const res = await fetch(`${baseURL}/api/loginPage/`);
-  //   let thoughts = null;
-
-  //   try {
-  //     thoughts = await (res.ok && res.json());
-  //   } catch (e) {
-  //     thoughts = await res.text();
-  //   }
-
+Login.getInitialProps = async () => {
   return {
     namespacesRequired: ['common']
   };
 };
-
-// export async function getServerSideProps({ req }) {
-//   const session = await NextAuth.session({ req });
-//   return {
-//     props: {
-//       session,
-//       namespacesRequired: ['common']
-//     }
-//   };
-// }

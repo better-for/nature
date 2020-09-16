@@ -4,10 +4,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  margin: ${p => p.theme.unit.glass._15} auto;
+  width: ${p => p.theme.size.mobile};
+  margin: ${p => p.theme.unit.glass._15} 0;
+  padding: 0 ${p => p.theme.unit.glass._3};
+  box-sizing: border-box;
   @media ${p => p.theme.device.mobile} {
-    width: 80%;
+    width: 100%;
     word-break: break-all;
   }
 `;

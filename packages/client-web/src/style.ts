@@ -104,12 +104,9 @@ export const CardContainer = styled.div`
 `;
 
 export const ChartContainer = styled.div`
-  margin: ${p => p.theme.unit.glass._30} auto;
-  width: 60%;
-  @media ${p => p.theme.device.mobile} {
-    width: 90%;
-    margin: ${p => p.theme.unit.glass._20} auto;
-  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const SLContainer = styled.div`

@@ -9,9 +9,10 @@ export const Title = styled.div`
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 60%;
-  margin: 0 auto;
+  width: ${p => p.theme.size.mobile};
+  padding: 0 ${p => p.theme.unit.glass._2};
   margin-bottom: ${p => p.theme.unit.glass._5};
+  box-sizing: border-box;
   @media ${p => p.theme.device.mobile} {
     width: 100%;
   }
