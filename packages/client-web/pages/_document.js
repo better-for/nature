@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href={favicon} />
           <meta name="theme-color" content={color.primaryVariant} />
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap"
             rel="stylesheet"
             type="text/css"
           />
@@ -51,7 +51,7 @@ export default class MyDocument extends Document {
             async
             type="text/javascript"
             src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
-            charset="utf-8"
+            charSet="utf-8"
           ></script>
         </Head>
         <body>
