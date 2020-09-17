@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import {
   BarChart,
   Bar,
@@ -10,7 +10,12 @@ import {
   Label,
   ResponsiveContainer
 } from 'recharts';
-import { foodData, foodChartAxisLabel, foodChartData } from 'src/constants';
+import {
+  foodData,
+  foodChartAxisLabel,
+  foodChartData,
+  FoodData
+} from 'src/constants';
 import { extractRawData, sumTotalValue } from 'src/utils';
 import { Container, Title, Ul } from './style';
 import { useTranslation } from 'I18n';
@@ -26,15 +31,18 @@ const FoodChart: FC = () => {
     Packging,
     Retail
   } = foodChartData;
-  const { t } = useTranslation();
-  const resolvedData = extractRawData(foodData, t);
-  const sortedData = resolvedData.sort(
-    (a, b) => sumTotalValue(b) - sumTotalValue(a)
-  );
 
-  const renderLegend = ({ payload }) => (
+  const { t } = useTranslation();
+  const [state, setstate] = useState<FoodData[]>([]);
+
+  const renderLegend: FC<{
+    payload: {
+      color: string;
+      value: string;
+    }[];
+  }> = ({ payload }) => (
     <Ul>
-      {payload.map(({ color, value }, i) => (
+      {payload.map(({ color, value }, i: number) => (
         <li key={`item-${i}`} style={{ color }}>
           {t(value)}
         </li>
@@ -42,13 +50,21 @@ const FoodChart: FC = () => {
     </Ul>
   );
 
+  useEffect(() => {
+    const resolvedData = extractRawData(foodData, t);
+    const sortedData = resolvedData.sort(
+      (a, b) => sumTotalValue(b) - sumTotalValue(a)
+    );
+    setstate(sortedData);
+  }, [foodData, t]);
+
   return (
     <>
       <Title>{t('The Carbon Footprint of the Food Supply Chain')}</Title>
       <Container>
         <ResponsiveContainer width="100%" height={1400}>
           <BarChart
-            data={sortedData}
+            data={state}
             layout="vertical"
             margin={{
               right: 20,
