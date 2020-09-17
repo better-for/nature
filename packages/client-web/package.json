@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production nodemon server.js"
+    "start": "NODE_ENV=production nodemon server.js",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.10.4",
@@ -30,19 +33,21 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.1",
     "recharts": "^1.8.5",
-    "styled-components": "^5.1.1",
-    "webpack": "^4.44.1",
-    "webpack-bundle-analyzer": "^3.8.0"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@next/bundle-analyzer": "^9.5.3",
     "@types/node": "^14.6.0",
     "@types/react": "^16.9.46",
     "@types/styled-components": "^5.1.2",
     "babel-plugin-styled-components": "^1.11.1",
+    "cross-env": "^7.0.2",
+    "html-webpack-plugin": "^4.4.1",
     "next-plugin-transpile-modules": "^2.0.0",
     "nodemon": "^2.0.4",
+    "terser-webpack-plugin": "^4.2.1",
     "typescript": "^4.0.2",
     "url-loader": "^4.1.0"
   }
