@@ -1,13 +1,13 @@
 import styled, { keyframes } from 'styled-components';
 import { color } from 'src/element';
 
-export const Container = styled.div`
+export const Container = styled.div<{ width: string }>`
   display: inline-block;
-  width: ${p => p.theme.unit.glass._18};
+  width: ${p => p.width};
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   @media ${p => p.theme.device.mobile} {
-    width: ${p => p.theme.unit.glass._12};
+    width: calc((${p => p.width}) * (2 / 3));
   }
 `;
 

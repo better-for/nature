@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import Logo from 'src/components/Logo';
 
 export const hoverEffect = css`
   background: none;
@@ -160,4 +161,10 @@ export const SignOutButton = styled.button`
 export const UserCard = styled.p`
   display: flex;
   align-items: center;
+`;
+
+export const StyledLogo = styled(Logo)`
+  & path {
+    animation-iteration-count: infinite;
+  }
 `;

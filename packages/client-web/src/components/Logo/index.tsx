@@ -1,9 +1,14 @@
 import React, { FC } from 'react';
+import { glass } from 'src/element';
 import { Container, ForPath, UnderBar, BetterPath } from './style';
 
-const Logo: FC = () => {
+type Logo = {
+  width?: string;
+};
+
+const Logo: FC<Logo> = ({ width = glass._18, ...props }) => {
   return (
-    <Container>
+    <Container width={width} {...props}>
       <svg
         version="1.1"
         width="100%"
