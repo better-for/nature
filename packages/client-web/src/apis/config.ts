@@ -1,4 +1,3 @@
-// Make sure auth token is not expired and valid
 import axios, { AxiosInstance } from 'axios';
 
 const ADMIN_API_ROUTE = '/api';

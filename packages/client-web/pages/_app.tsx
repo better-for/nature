@@ -8,23 +8,6 @@ import { appWithTranslation } from 'I18n';
 import { Layout } from 'src/components';
 
 class MyApp extends App {
-  // mobxStore = null;
-  // static async getInitialProps(appContext) {
-  //   const mobxStore = initializeStore();
-  //   appContext.ctx.mobxStore = mobxStore;
-  //   const appProps = await App.getInitialProps(appContext);
-  //   return {
-  //     ...appProps,
-  //     initialMobxState: mobxStore,
-  //     namespacesRequired: ['common']
-  //   };
-  // }
-
-  // constructor(props) {
-  //   super(props);
-  //   const isServer = typeof window === 'undefined';
-  //   this.mobxStore = isServer ? props.initialMobxState : initializeStore();
-  // }
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -39,7 +22,6 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      // <StoreProvider {...this.mobxStore}>
       <NextAuthProvider
         options={{ site: process.env.SITE }}
         session={pageProps.session}

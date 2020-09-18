@@ -54,12 +54,8 @@ const Blog: I18nPage = observer(() => {
   );
 });
 
-Blog.getInitialProps = async ctx => {
-  // console.log(ctx);
-  // const { blogsData, fetchBlogs } = mobxStore.uiStore.blogStore;
-  // await fetchBlogs();
+Blog.getInitialProps = async () => {
   return {
-    // blogList: blogsData,
     namespacesRequired: ['common']
   };
 };
