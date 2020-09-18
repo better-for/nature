@@ -32,6 +32,9 @@
   "Packging": "포장",
   "Retail": "소매",
 
+  "GHG Emissions per kg of food product": "식품 kg 당 온실 가스 배출량",
+  "Food Type": "식품 유형",
+
   "Wheat & Rye (Bread)": "밀 & 호밀(빵)",
   "Maize (Meal)": "옥수수 (밀)",
   "Barley (Beer)": "보리 (맥주)",

@@ -1,3 +1,4 @@
+import { YAxis } from 'recharts';
 import styled from 'styled-components';
 
 export const Title = styled.div`
@@ -29,4 +30,25 @@ export const Ul = styled.ul`
     flex-direction: column;
     top: 0;
   }
+`;
+
+export const StyledYAxis = styled(YAxis)`
+  font-size: 10px;
+`;
+
+export const TooltopContainer = styled.div`
+  background-color: white;
+  border: 1px solid ${p => p.theme.color.gray};
+  padding: ${p => p.theme.unit.leaf._5} ${p => p.theme.unit.glass._4};
+`;
+
+export const LegendContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: ${p => p.theme.unit.glass._2};
+`;
+
+export const StyledLegend = styled.div`
+  padding: 4px 0;
 `;

@@ -35,6 +35,9 @@
   "Packging": "Packging",
   "Retail": "Retail",
 
+  "GHG Emissions per kg of food product": "GHG Emissions per kg of food product",
+  "Food Type": "Food Type",
+
   "Wheat & Rye (Bread)": "Wheat & Rye (Bread)",
   "Maize (Meal)": "Maize (Meal)",
   "Barley (Beer)": "Barley (Beer)",
@@ -138,5 +141,5 @@
   "Skip the packaging.": " Skip the packaging.",
   "Invest in quality products that last.": " Invest in quality products that last.",
 
-  "Social Login":"Social Login"
+  "Social Login": "Social Login"
 }

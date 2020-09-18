@@ -8,16 +8,26 @@ import {
   Tooltip,
   Legend,
   Label,
-  ResponsiveContainer
+  ResponsiveContainer,
+  ContentRenderer,
+  LegendPayload,
+  TooltipPayload
 } from 'recharts';
 import {
   foodData,
-  foodChartAxisLabel,
-  foodChartData,
+  FOOD_CHART_AXIS_LABEL,
+  FOOD_CHART_DATA,
   FoodData
 } from 'src/constants';
 import { extractRawData, sumTotalValue } from 'src/utils';
-import { Container, Title, Ul } from './style';
+import {
+  Container,
+  LegendContainer,
+  StyledLegend,
+  Title,
+  TooltopContainer,
+  Ul
+} from './style';
 import { useTranslation } from 'I18n';
 
 const FoodChart: FC = () => {
@@ -30,25 +40,42 @@ const FoodChart: FC = () => {
     Transport,
     Packging,
     Retail
-  } = foodChartData;
+  } = FOOD_CHART_DATA;
 
   const { t } = useTranslation();
   const [state, setstate] = useState<FoodData[]>([]);
+  const xLabel = t(FOOD_CHART_AXIS_LABEL.X);
+  const yLabel = t(FOOD_CHART_AXIS_LABEL.Y);
 
-  const renderLegend: FC<{
-    payload: {
-      color: string;
-      value: string;
-    }[];
-  }> = ({ payload }) => (
+  const renderLegend: ContentRenderer<{ payload: LegendPayload[] }> = ({
+    payload
+  }) => (
     <Ul>
-      {payload.map(({ color, value }, i: number) => (
-        <li key={`item-${i}`} style={{ color }}>
+      {payload.map(({ color, value }) => (
+        <li key={`item-${value}`} style={{ color }}>
           {t(value)}
         </li>
       ))}
     </Ul>
   );
+
+  const renderTooltip: ContentRenderer<{
+    payload: TooltipPayload[];
+    label: string;
+  }> = ({ payload, label }) => {
+    return (
+      <TooltopContainer>
+        {label}
+        <LegendContainer>
+          {payload.map(({ color, name, value }) => (
+            <StyledLegend key={`item-${name}`} style={{ color }}>{`${t(
+              name
+            )} : ${value}`}</StyledLegend>
+          ))}
+        </LegendContainer>
+      </TooltopContainer>
+    );
+  };
 
   useEffect(() => {
     const resolvedData = extractRawData(foodData, t);
@@ -72,18 +99,24 @@ const FoodChart: FC = () => {
             }}
           >
             <CartesianGrid strokeDasharray="4 4" />
-            <XAxis type="number" domain={[0, 65]} dy={10}>
-              <Label value={foodChartAxisLabel.X} position="top" />
+            <XAxis
+              type="number"
+              domain={[
+                dataMin => Math.floor(dataMin),
+                dataMax => Math.ceil(dataMax)
+              ]}
+              dy={10}
+            >
+              <Label value={xLabel} position="top" />
             </XAxis>
             <YAxis
               dataKey={Food_product}
               type="category"
-              style={{ fontSize: '12px' }}
-              dx={-10}
+              tick={{ fontSize: 12 }}
             >
-              <Label value={foodChartAxisLabel.Y} position="left" angle={-90} />
+              <Label value={yLabel} position="left" angle={-90} />
             </YAxis>
-            <Tooltip />
+            <Tooltip content={renderTooltip} />
             <Legend content={renderLegend} />
             <Bar dataKey={Land_use_change} stackId="a" fill="#1864ab" />
             <Bar dataKey={Animal_Feed} stackId="a" fill="#0b7285" />
