@@ -33,7 +33,7 @@ export const Ul = styled.ul`
 `;
 
 export const StyledYAxis = styled(YAxis)`
-  font-size: 10px;
+  font-size: ${p => p.theme.unit.leaf._3};
 `;
 
 export const TooltopContainer = styled.div`
@@ -50,5 +50,5 @@ export const LegendContainer = styled.div`
 `;
 
 export const StyledLegend = styled.div`
-  padding: 4px 0;
+  padding: ${p => p.theme.unit.leaf._1} 0;
 `;
