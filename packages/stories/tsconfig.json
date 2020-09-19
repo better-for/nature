@@ -22,6 +22,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["src/**/*"],
+  "include": ["stories/*"],
   "exclude": ["node_modules", "build", "scripts"]
 }

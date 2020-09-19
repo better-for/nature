@@ -7,7 +7,7 @@ import {
   StyledTitleSection,
   StyledTitle,
   StyledSubTitle,
-  StyledParagraph
+  StyledParagraph,
 } from './style';
 import { leaf, glass, color } from '@nature/design';
 
@@ -46,7 +46,7 @@ const Card: FC<ICard> = ({
   ...props
 }) => {
   return (
-    <StyledCard {...props} href={url}>
+    <StyledCard href={url} {...props}>
       {!!image ? <StyledImage src={image} ratio={imageRatio} /> : null}
       {!!title ? (
         <StyledTitleSection>
@@ -70,7 +70,7 @@ const Card: FC<ICard> = ({
         <StyledButton
           color={buttonColor}
           icon={buttonIcon}
-          size={buttonIconSize}
+          iconSize={buttonIconSize}
         >
           {button}
         </StyledButton>

@@ -12,10 +12,9 @@ const DefaultStyle = css`
   border: none;
   outline: none;
   box-sizing: border-box;
-  text-transform: uppercase;
-  border-radius: ${p => p.theme.unit.leaf._1};
+  border-radius: ${(p) => p.theme.unit.leaf._1};
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
-  padding: ${p => p.theme.unit.leaf._2} ${p => p.theme.unit.leaf._4};
+  padding: ${(p) => p.theme.unit.leaf._2} ${(p) => p.theme.unit.leaf._4};
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
@@ -46,7 +45,7 @@ const WithIcon = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${p => p.theme.unit.leaf._2} ${p => p.theme.unit.leaf._3};
+  padding: ${(p) => p.theme.unit.leaf._2} ${(p) => p.theme.unit.leaf._3};
 `;
 
 const HoverEffectColor = css<IButton>`
@@ -58,7 +57,7 @@ const HoverBoxShadow = `
 `;
 
 export const StyledIcon = styled(Icon)<IIcon>`
-  margin-right: ${p => p.theme.unit.leaf._2};
+  margin-right: ${(p) => p.theme.unit.leaf._2};
 `;
 
 export const ErroredButton = styled.button`
@@ -73,7 +72,7 @@ export const StyledContainedButton = styled.button<IButton>`
   background-color: ${({ color }) => color};
   text-decoration: none;
   user-select: none;
-  color: ${p => p.theme.color.white};
+  color: ${(p) => p.theme.color.white};
   &:hover {
     background-color: ${HoverEffectColor};
     box-shadow: ${HoverBoxShadow};
@@ -85,7 +84,7 @@ export const StyledOutLinedButton = styled.button<IButton>`
   ${({ icon }) => !!icon && WithIcon};
   cursor: pointer;
   box-shadow: 0 0 0 1px ${({ color }) => color};
-  color: ${p => p.theme.color.gray};
+  color: ${(p) => p.theme.color.gray};
   &:hover {
     box-shadow: 0 0 0.5px 1.5px ${HoverEffectColor};
   }
