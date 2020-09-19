@@ -7,14 +7,14 @@ import {
   ErroredButton
 } from './style';
 import { BUTTON_TYPE } from './type';
-import { leaf, color as Color } from '@nature/element';
+import { leaf, color as COLOR } from '@nature/element';
 import { IIcon } from '../IconBox';
 import { ButtonHTMLAttributes } from 'react';
 
 export type IButton = {
   children: ReactNode;
   icon?: string;
-  color?: Color;
+  color?: COLOR;
   buttonType?: BUTTON_TYPE;
   size?: IIcon['size'];
 } & ButtonHTMLAttributes<HTMLButtonElement>;
@@ -22,7 +22,7 @@ export type IButton = {
 const Button: FC<IButton> = ({
   buttonType = BUTTON_TYPE.CONTAINED,
   icon,
-  color = Color.secondary,
+  color = COLOR.secondary,
   children,
   size = leaf._5,
   ...props

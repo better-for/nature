@@ -1,4 +1,3 @@
-import { YAxis } from 'recharts';
 import styled from 'styled-components';
 
 export const Title = styled.div`
@@ -30,10 +29,6 @@ export const Ul = styled.ul`
     flex-direction: column;
     top: 0;
   }
-`;
-
-export const StyledYAxis = styled(YAxis)`
-  font-size: ${p => p.theme.unit.leaf._3};
 `;
 
 export const TooltopContainer = styled.div`
