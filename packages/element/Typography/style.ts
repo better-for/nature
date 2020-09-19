@@ -6,7 +6,7 @@ const HeroBold = css`
   font-weight: bold;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 40px;
+    font-size: 38px;
   }
 `;
 
@@ -14,7 +14,7 @@ const HeroNormal = css`
   font-size: 48px;
   line-height: 1.1;
   @media ${device.mobile} {
-    font-size: 40px;
+    font-size: 38px;
   }
 `;
 

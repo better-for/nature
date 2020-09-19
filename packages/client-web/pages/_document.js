@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { favicon } from 'src/constants';
-import { color } from '../src/element';
+import { color } from '@nature/element';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {

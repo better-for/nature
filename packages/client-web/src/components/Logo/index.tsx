@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { glass } from 'src/element';
+import { glass } from '@nature/element';
 import { Container, ForPath, UnderBar, BetterPath } from './style';
 
 type Logo = {

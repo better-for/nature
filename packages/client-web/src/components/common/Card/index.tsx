@@ -9,7 +9,7 @@ import {
   StyledSubTitle,
   StyledParagraph
 } from './style';
-import { leaf, glass, color } from 'src/element';
+import { leaf, glass, color } from '@nature/element';
 
 export type ICard = {
   url: string | null;

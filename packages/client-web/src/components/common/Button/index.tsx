@@ -7,15 +7,14 @@ import {
   ErroredButton
 } from './style';
 import { BUTTON_TYPE } from './type';
-import { theme } from 'src/element';
-import { color } from 'src/element/Color';
+import { leaf, color as Color } from '@nature/element';
 import { IIcon } from '../IconBox';
 import { ButtonHTMLAttributes } from 'react';
 
 export type IButton = {
   children: ReactNode;
   icon?: string;
-  color?: color;
+  color?: Color;
   buttonType?: BUTTON_TYPE;
   size?: IIcon['size'];
 } & ButtonHTMLAttributes<HTMLButtonElement>;
@@ -23,9 +22,9 @@ export type IButton = {
 const Button: FC<IButton> = ({
   buttonType = BUTTON_TYPE.CONTAINED,
   icon,
-  color = theme.color.secondary,
+  color = Color.secondary,
   children,
-  size = theme.unit.leaf._5,
+  size = leaf._5,
   ...props
 }) => {
   if (!icon && !children) return <ErroredButton>🤷‍</ErroredButton>;

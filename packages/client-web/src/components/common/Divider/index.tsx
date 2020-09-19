@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { StyledDivider } from './style';
-import { theme, color } from 'src/element';
+import { color as Color } from '@nature/element';
 
 export type IDivider = {
-  color?: color;
+  color?: Color;
 };
 
-const Divider: FC<IDivider> = ({ color = theme.color.gray, ...props }) => (
+const Divider: FC<IDivider> = ({ color = Color.gray, ...props }) => (
   <StyledDivider color={color} {...props} />
 );
 

@@ -3,7 +3,7 @@ import React, { FC, useState, ReactNode } from 'react';
 import { Icon } from 'src/components/common';
 
 import { Section, Header, ToggleButton, Body } from './style';
-import { glass, leaf } from 'src/element';
+import { glass, leaf } from '@nature/element';
 import { BUTTON_TYPE } from '../Button/type';
 import { useDarkModeTheme } from 'src/utils/storeUtils';
 

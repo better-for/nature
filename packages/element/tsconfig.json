@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "validate": false
+      }
+    ]
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "styled.d.ts"]
+}

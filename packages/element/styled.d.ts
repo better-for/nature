@@ -6,8 +6,9 @@ import {
   color,
   typography,
   light,
-  dark
-} from 'src/element';
+  dark,
+  Theme
+} from './index';
 
 declare module 'styled-components' {
   export interface DefaultTheme {

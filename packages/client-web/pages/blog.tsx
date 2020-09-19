@@ -10,7 +10,7 @@ import { Main, Point, CardContainer, StyledLogo } from 'src/style';
 import { useStore } from 'src/utils/storeUtils';
 import { Blogs } from 'src/apis/blogs';
 import { ActionStatus } from 'src/constants';
-import { glass } from 'src/element/Unit';
+import { glass } from '@nature/element';
 
 const Blog: I18nPage = observer(() => {
   const { t } = useTranslation();

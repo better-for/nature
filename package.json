@@ -3,10 +3,15 @@
   "private": true,
   "scripts": {
     "dev": "lerna run dev",
+    "build": "lerna run build",
+    "start": "lerna run start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

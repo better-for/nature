@@ -2,10 +2,12 @@ import { color } from './Color';
 import { typography } from './Typography';
 import { unit } from './Unit';
 import { device, size } from './Viewport';
-import baseStyled, { ThemedStyledInterface } from 'styled-components';
 
-export type Theme = typeof theme;
-export const styled = baseStyled as ThemedStyledInterface<Theme>;
+export { color } from './Color';
+export { typography } from './Typography';
+export { leaf, glass } from './Unit';
+export { device, size } from './Viewport';
+export { unit } from './Unit';
 
 export const light = {
   bg: {
@@ -41,4 +43,14 @@ export const dark = {
   }
 };
 
-export const theme = { color, typography, unit, device, size, light, dark };
+export const theme = {
+  color,
+  typography,
+  unit,
+  device,
+  size,
+  light,
+  dark
+};
+
+export type Theme = typeof theme;

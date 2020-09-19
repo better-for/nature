@@ -1,9 +1,9 @@
+import { Theme } from '@nature/element';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Theme } from 'src/element';
 
 type Props = {
-  theme: Theme;
   isDarkTheme: boolean;
+  theme: Theme;
 };
 
 export const GlobalStyle = createGlobalStyle<Props>`

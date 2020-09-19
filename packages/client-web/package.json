@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.10.4",
+    "@nature/element": "*",
     "@types/next-auth": "^3.1.4",
     "@types/recharts": "^1.8.15",
     "@zeit/next-typescript": "^1.1.1",
@@ -49,7 +50,6 @@
     "next-plugin-transpile-modules": "^2.0.0",
     "nodemon": "^2.0.4",
     "terser-webpack-plugin": "^4.2.1",
-    "typescript": "^4.0.2",
-    "url-loader": "^4.1.0"
+    "typescript": "^4.0.2"
   }
 }
