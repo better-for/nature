@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { StyledIcon } from './style';
-import { glass, leaf } from '@nature/element';
+import { glass, leaf } from '@nature/design';
 
 export type IIcon = {
   size?: glass | leaf;

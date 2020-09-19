@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'I18n';
-import { I18nButton as I18nBtn } from './style';
-import { useDarkModeTheme } from 'src/utils/storeUtils';
+import { StyledChip } from './style';
+import { useDarkModeTheme } from 'src/utils';
 
-const I18nButton: FC = () => {
+const I18nChip: FC = () => {
   const {
     i18n: { language, changeLanguage }
   } = useTranslation();
@@ -12,13 +12,13 @@ const I18nButton: FC = () => {
   const translatedLang = language === 'en' ? 'English' : '한국어';
 
   return (
-    <I18nBtn
+    <StyledChip
       onClick={() => changeLanguage(toggleLang)}
       isDarkTheme={isDarkTheme}
     >
       {translatedLang}
-    </I18nBtn>
+    </StyledChip>
   );
 };
 
-export default I18nButton;
+export default I18nChip;

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Container, Track, Checked, Thumb, ToggleImg } from './style';
 import { moon_image, sun_image } from 'src/constants';
-import { useDarkModeTheme } from 'src/utils/storeUtils';
+import { useDarkModeTheme } from 'src/utils';
 
 const Toggle: FC = () => {
   const { isDarkTheme, toggleTheme } = useDarkModeTheme();

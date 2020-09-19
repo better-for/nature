@@ -1,10 +1,46 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Button from '../Button';
 import Divider from '../Divider';
 import Icon from '../IconBox';
 import Image from '../ImageRatio';
 import Text from '../Text';
-import { hoverEffect } from 'src/style';
+
+export const hoverEffect = css`
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  position: relative;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::before {
+    border-top-color: ${p => p.theme.color.primaryVariant};
+    border-right-color: ${p => p.theme.color.primaryVariant};
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  }
+
+  &:hover::after {
+    border-bottom-color: ${p => p.theme.color.primaryVariant};
+    border-left-color: ${p => p.theme.color.primaryVariant};
+    transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+  }
+`;
 
 export const StyledImage = styled(Image)`
   padding: 0 ${p => p.theme.unit.glass._8};
@@ -103,6 +139,6 @@ export const StyledDivider = styled(Divider)`
 
 export const StyledButton = styled(Button)`
   margin-top: ${p => p.theme.unit.leaf._4};
-  height: ${p => p.theme.unit.glass._4}; //FIXME: Temporary value
+  height: ${p => p.theme.unit.glass._4};
   ${p => p.theme.typography.labelNormal};
 `;

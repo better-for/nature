@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
-import RootStore from '../store/RootStore';
-import { useDarkMode } from './useDarkMode';
+import RootStore from 'src/store/RootStore';
+import { useDarkMode } from '@nature/design';
 
 const rootStore = new RootStore();
 const rootStoreContext = createContext<RootStore>(null);

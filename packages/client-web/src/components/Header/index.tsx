@@ -9,7 +9,7 @@ import {
   Anchor,
   Optionbar
 } from './style';
-import { I18nButton, Logo, Toggle } from 'src/components';
+import { I18nChip, Logo, Toggle } from 'src/components';
 import { Router, Link } from 'I18n';
 import { useRouter } from 'next/router';
 
@@ -43,7 +43,7 @@ const Header: FC<Header> = ({ show }) => {
           <ToggleContainer>
             <Toggle />
           </ToggleContainer>
-          <I18nButton />
+          <I18nChip />
         </FloatContainer>
       </Optionbar>
     </>

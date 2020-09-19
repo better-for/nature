@@ -4,4 +4,4 @@ export { default as Icon } from './IconBox';
 export { default as Image } from './ImageRatio';
 export { default as Text } from './Text';
 export { default as Button } from './Button';
-export { default as Accordion } from './Accordion';
+export * from './Button/type';

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { color } from '@nature/element';
+import { color } from '@nature/design';
 
 export const Container = styled.div<{ width: string }>`
   display: inline-block;

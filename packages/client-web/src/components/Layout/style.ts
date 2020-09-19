@@ -1,4 +1,4 @@
-import { Theme } from '@nature/element';
+import { Theme } from '@nature/design';
 import styled, { createGlobalStyle } from 'styled-components';
 
 type Props = {

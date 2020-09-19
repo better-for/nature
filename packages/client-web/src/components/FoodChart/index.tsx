@@ -19,7 +19,7 @@ import {
   FOOD_CHART_DATA,
   FoodData
 } from 'src/constants';
-import { extractRawData, sumTotalValue } from 'src/utils';
+import { extractRawData, sumTotalValue } from '@nature/design';
 import {
   Container,
   LegendContainer,

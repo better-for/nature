@@ -1,14 +1,5 @@
 import 'styled-components';
-import {
-  size,
-  device,
-  unit,
-  color,
-  typography,
-  light,
-  dark,
-  Theme
-} from './index';
+import { size, device, unit, color, typography, light, dark } from './theme';
 
 declare module 'styled-components' {
   export interface DefaultTheme {

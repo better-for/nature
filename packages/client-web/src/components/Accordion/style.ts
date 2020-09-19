@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { Button, Text } from 'src/components/common';
+import { Button, Text } from '@nature/design';
 
 export const ToggleButton = styled(Button)<{ isExpanded: Boolean }>`
   font-weight: bold;
@@ -79,17 +79,13 @@ export const Body = styled(Text)<{ isExpanded: boolean; isDarkTheme: boolean }>`
         width: 100%;
         height: 30px;
         content: '';
-        background: ${p.isDarkTheme
-          ? `linear-gradient(
-                to bottom,
-                rgba(34, 34, 34, 0.7),
-                rgba(34, 34, 34, 1)
-              )`
-          : `linear-gradient(
-                to bottom,
-                rgba(255, 255, 255, 0.7),
-                rgba(255, 255, 255, 1)
-              )`};
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          ${p.isDarkTheme
+            ? p.theme.dark.bg.secondary
+            : p.theme.light.bg.secondary}
+        );
       `};
   }
 `;

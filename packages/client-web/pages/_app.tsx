@@ -1,9 +1,9 @@
 import React from 'react';
 import App from 'next/app';
 import { Provider as NextAuthProvider } from 'next-auth/client';
-import { StoreProvider, DarkModeContextProvider } from 'src/utils/storeUtils';
+import { StoreProvider, DarkModeContextProvider } from 'src/utils';
 import { ThemeProvider } from 'styled-components';
-import { theme } from 'src/element';
+import { theme } from '@nature/design';
 import { appWithTranslation } from 'I18n';
 import { Layout } from 'src/components';
 
@@ -23,7 +23,7 @@ class MyApp extends App {
 
     return (
       <NextAuthProvider
-        options={{ site: process.env.SITE }}
+        options={{ baseUrl: process.env.SITE }}
         session={pageProps.session}
       >
         <StoreProvider>

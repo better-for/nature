@@ -1,11 +1,8 @@
 import React, { FC, useState, ReactNode } from 'react';
 
-import { Icon } from 'src/components/common';
-
 import { Section, Header, ToggleButton, Body } from './style';
-import { glass, leaf } from '@nature/element';
-import { BUTTON_TYPE } from '../Button/type';
-import { useDarkModeTheme } from 'src/utils/storeUtils';
+import { Icon, glass, leaf, BUTTON_TYPE } from '@nature/design';
+import { useDarkModeTheme } from 'src/utils';
 
 type Props = {
   header: ReactNode;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyledDivider } from './style';
-import { color as COLOR } from '@nature/element';
+import { color as COLOR } from '@nature/design';
 
 export type IDivider = {
   color?: COLOR;

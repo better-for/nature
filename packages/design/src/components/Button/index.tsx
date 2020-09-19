@@ -7,7 +7,7 @@ import {
   ErroredButton
 } from './style';
 import { BUTTON_TYPE } from './type';
-import { leaf, color as COLOR } from '@nature/element';
+import { leaf, color as COLOR } from '@nature/design';
 import { IIcon } from '../IconBox';
 import { ButtonHTMLAttributes } from 'react';
 

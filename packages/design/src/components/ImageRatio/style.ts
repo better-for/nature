@@ -3,7 +3,7 @@ import { IImage } from './index';
 
 export const StyledImageContainer = styled.div``;
 
-export const StyledImageRatio = styled.div<IImage>`
+export const StyledImageRatio = styled.div<Omit<IImage, 'src'>>`
   display: flex;
   align-items: end;
   justify-content: center;

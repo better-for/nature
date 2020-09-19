@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react';
 import { useTranslation } from 'I18n';
 
 import { Container, Subject, Content, Wrapper, Cc, Li } from './style';
-import { Accordion } from 'src/components/common';
+import { Accordion } from 'src/components';
 
 type PostSection = {
   title: string;
