@@ -25,7 +25,7 @@ export type ICard = {
   button?: string;
   buttonColor?: color;
   buttonIcon?: string;
-  buttonIconSize?: glass | leaf;
+  buttonIconSize?: leaf;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const Card: FC<ICard> = ({

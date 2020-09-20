@@ -9,7 +9,7 @@ import {
   FoodChart,
   GreenhouseGas,
   GreenhouseEffect,
-  CarbonFootPrint
+  CarbonFootPrint,
 } from 'src/components';
 
 const Chart: I18nPage = observer(() => {
@@ -21,10 +21,10 @@ const Chart: I18nPage = observer(() => {
         <MainTitle>{t('Climatic change-related chart')}</MainTitle>
       </Main>
       <ChartContainer>
-        <GreenhouseGas />
-        <GreenhouseEffect />
-        <CarbonFootPrint />
-        <FoodChart />
+        <GreenhouseGas t={t} />
+        <GreenhouseEffect t={t} />
+        <CarbonFootPrint t={t} />
+        <FoodChart t={t} />
       </ChartContainer>
     </>
   );
@@ -33,5 +33,5 @@ const Chart: I18nPage = observer(() => {
 export default Chart;
 
 Chart.getInitialProps = async () => ({
-  namespacesRequired: ['common']
+  namespacesRequired: ['common'],
 });

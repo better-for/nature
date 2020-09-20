@@ -10,4 +10,3 @@ export { default as GreenhouseGas } from './GreenhouseGas';
 export { default as GreenhouseEffect } from './GreenhouseEffect';
 export { default as CarbonFootPrint } from './CarbonFootPrint';
 export { default as PostSection } from './PostSection';
-export { default as Accordion } from './Accordion';

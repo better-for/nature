@@ -1,60 +1,62 @@
-import React, { FC, ReactNode } from 'react';
-import { useTranslation } from 'I18n';
+import React, { FC } from 'react';
 
 import { Container, Subject, Content, Wrapper, Cc, Li } from './style';
-import { Accordion } from 'src/components';
+import { Accordion } from '@nature/design';
+import { TFunction } from 'next-i18next';
+import { Section } from 'src/constants';
 
-type PostSection = {
+export type IPostSection = {
   title: string;
-  data: { title: string; desc: string }[];
+  data: Section[];
   ccLink?: string;
   ccContent?: string;
-  todoList?: ReactNode;
+  t?: TFunction;
 };
 
-type InnerContent = Omit<PostSection, 'data' | 'ccContent' | 'ccLink'> & {
-  desc: string;
-};
+type InnerContent = Section & { t: TFunction };
 
-export const InnerContent: FC<InnerContent> = ({ title, desc, todoList }) => {
-  const { t } = useTranslation();
+export const InnerContent: FC<InnerContent> = ({
+  title,
+  desc,
+  todolist,
+  t,
+}) => {
   return (
     <Wrapper key={title}>
-      <Accordion header={t(title)}>
-        {t(desc)}
-        {todoList && (
+      <Accordion header={t ? t(title) : title}>
+        {t ? t(desc) : desc}
+        {todolist ? (
           <ul>
-            {todoList[title].map(item => (
-              <Li key={item}>{t(item)}</Li>
+            {todolist.map((item: string) => (
+              <Li key={item}>{t ? t(item) : item}</Li>
             ))}
           </ul>
-        )}
+        ) : null}
       </Accordion>
     </Wrapper>
   );
 };
 
-const PostSection: FC<PostSection> = ({
+const PostSection: FC<IPostSection> = ({
   title,
   data,
-  todoList,
   ccLink,
   ccContent,
-  children
+  children,
+  t,
 }) => {
-  const { t } = useTranslation();
-
   return (
     <Container>
-      <Subject>{t(title)}</Subject>
+      <Subject>{t ? t(title) : title}</Subject>
       <Content>
         {children}
-        {data.map(({ title, desc }) => (
+        {data.map(({ title, desc, todolist }) => (
           <InnerContent
             title={title}
             desc={desc}
             key={title}
-            todoList={todoList}
+            todolist={todolist}
+            t={t}
           />
         ))}
       </Content>

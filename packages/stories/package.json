@@ -18,8 +18,10 @@
     "react-is": "^16.13.1"
   },
   "dependencies": {
+    "@nature/client-web": "*",
     "@nature/design": "*",
     "@types/styled-components": "^5.1.3",
+    "next-i18next": "^6.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.0",

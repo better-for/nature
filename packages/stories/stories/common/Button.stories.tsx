@@ -13,7 +13,7 @@ export type Button = {
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default {
-  title: 'Example/Button',
+  title: 'Design System/common/Button',
   component: Button,
   argTypes: {
     color: {
@@ -42,7 +42,14 @@ export default {
   },
   decorators: [
     (Story) => (
-      <div style={{ margin: '3em' }}>
+      <div
+        style={{
+          margin: '3em',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <Story />
       </div>
     ),

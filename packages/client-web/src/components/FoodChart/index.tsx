@@ -11,13 +11,13 @@ import {
   ResponsiveContainer,
   ContentRenderer,
   LegendPayload,
-  TooltipPayload
+  TooltipPayload,
 } from 'recharts';
 import {
   foodData,
   FOOD_CHART_AXIS_LABEL,
   FOOD_CHART_DATA,
-  FoodData
+  FoodData,
 } from 'src/constants';
 import { extractRawData, sumTotalValue } from '@nature/design';
 import {
@@ -26,11 +26,12 @@ import {
   StyledLegend,
   Title,
   TooltopContainer,
-  Ul
+  Ul,
 } from './style';
-import { useTranslation } from 'I18n';
+import { TFunction } from 'next-i18next';
+import { checkHasT } from 'src/utils';
 
-const FoodChart: FC = () => {
+const FoodChart: FC<{ t?: TFunction }> = ({ t }) => {
   const {
     Food_product,
     Land_use_change,
@@ -39,21 +40,20 @@ const FoodChart: FC = () => {
     Processing,
     Transport,
     Packging,
-    Retail
+    Retail,
   } = FOOD_CHART_DATA;
 
-  const { t } = useTranslation();
   const [state, setstate] = useState<FoodData[]>([]);
-  const xLabel = t(FOOD_CHART_AXIS_LABEL.X);
-  const yLabel = t(FOOD_CHART_AXIS_LABEL.Y);
+  const xLabel = checkHasT(t, FOOD_CHART_AXIS_LABEL.X);
+  const yLabel = checkHasT(t, FOOD_CHART_AXIS_LABEL.Y);
 
   const renderLegend: ContentRenderer<{ payload: LegendPayload[] }> = ({
-    payload
+    payload,
   }) => (
     <Ul>
       {payload.map(({ color, value }) => (
         <li key={`item-${value}`} style={{ color }}>
-          {t(value)}
+          {checkHasT(t, value)}
         </li>
       ))}
     </Ul>
@@ -68,7 +68,8 @@ const FoodChart: FC = () => {
         {label}
         <LegendContainer>
           {payload.map(({ color, name, value }) => (
-            <StyledLegend key={`item-${name}`} style={{ color }}>{`${t(
+            <StyledLegend key={`item-${name}`} style={{ color }}>{`${checkHasT(
+              t,
               name
             )} : ${value}`}</StyledLegend>
           ))}
@@ -87,7 +88,9 @@ const FoodChart: FC = () => {
 
   return (
     <>
-      <Title>{t('The Carbon Footprint of the Food Supply Chain')}</Title>
+      <Title>
+        {checkHasT(t, 'The Carbon Footprint of the Food Supply Chain')}
+      </Title>
       <Container>
         <ResponsiveContainer width="100%" height={1400}>
           <BarChart
@@ -95,15 +98,15 @@ const FoodChart: FC = () => {
             layout="vertical"
             margin={{
               right: 20,
-              left: 20
+              left: 20,
             }}
           >
             <CartesianGrid strokeDasharray="4 4" />
             <XAxis
               type="number"
               domain={[
-                dataMin => Math.floor(dataMin),
-                dataMax => Math.ceil(dataMax)
+                (dataMin) => Math.floor(dataMin),
+                (dataMax) => Math.ceil(dataMax),
               ]}
               dy={10}
             >

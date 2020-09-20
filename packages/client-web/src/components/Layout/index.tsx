@@ -1,12 +1,11 @@
 import React, { FC, useState } from 'react';
 import { Header, OG } from 'src/components';
 import { GlobalStyle, ChildrenContainer } from './style';
-import { observer } from 'mobx-react';
 import { useScrollPosition, isBrowser } from '@nature/design';
 import { ogHeader } from 'src/constants';
 import { useDarkModeTheme } from 'src/utils';
 
-const Layout: FC = observer(({ children }) => {
+const Layout: FC = ({ children }) => {
   const { title, description, image } = ogHeader;
   const { isDarkTheme } = useDarkModeTheme();
   const [hideOnScroll, setHideOnScroll] = useState(true);
@@ -29,6 +28,6 @@ const Layout: FC = observer(({ children }) => {
       <ChildrenContainer>{children}</ChildrenContainer>
     </>
   );
-});
+};
 
 export default Layout;
