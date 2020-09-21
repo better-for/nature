@@ -8,8 +8,8 @@ const handle = app.getRequestHandler();
 const port = process.env.PORT || 8080;
 const options = {
   headers: {
-    'Content-Type': 'text/plain;charset=UTF-8'
-  }
+    'Content-Type': 'text/plain;charset=UTF-8',
+  },
 };
 
 (async () => {
@@ -17,6 +17,7 @@ const options = {
   const server = express();
 
   server.use(bodyParser.json());
+  server.use(bodyParser.urlencoded({ extended: true }));
   server.all('*', (req, res) => {
     return handle(req, res);
   });
@@ -27,7 +28,7 @@ const options = {
     res.status(200).sendFile('robots.txt', options)
   );
 
-  http.createServer(server).listen(port, err => {
+  http.createServer(server).listen(port, (err) => {
     if (err) throw err;
     console.log(`> Server is listening on port ${port}`);
   });

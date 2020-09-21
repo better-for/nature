@@ -22,7 +22,6 @@
     "dotenv": "^8.2.0",
     "http": "^0.0.1-security",
     "i18next": "^19.7.0",
-    "i18next-icu": "^1.4.2",
     "isomorphic-fetch": "^2.2.1",
     "lerna": "^3.22.1",
     "mobx": "^5.15.7",

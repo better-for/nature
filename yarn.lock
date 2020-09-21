@@ -8128,13 +8128,6 @@ i18next-http-middleware@^3.0.2:
   resolved "https://registry.yarnpkg.com/i18next-http-middleware/-/i18next-http-middleware-3.0.2.tgz#69b24e81f134c67d9a356fea43c2c09a507edcc4"
   integrity sha512-h6n6+4k6EbYjtACPSslEkpf3Qf404QpENGb87auMSA77QBna9dUBWNAzG3jmqzK9cV4p8ZjsQTrwMzu+xyYaXw==
 
-i18next-icu@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/i18next-icu/-/i18next-icu-1.4.2.tgz#2b79d1ac2c2d542725219beac34a74db15cd2ff9"
-  integrity sha512-EqHafx/sL8eoEowwqi5P6cXtLrzJXBKI4RmV+UaMXlpIJNfckVsq873F2KkMKkApxiw2ATj46C8MurmhMsHQGw==
-  dependencies:
-    intl-messageformat "2.2.0"
-
 i18next@^19.6.3, i18next@^19.7.0:
   version "19.7.0"
   resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.7.0.tgz#e637bbbf36481d34b7d5e6d3b04e1bb654bf2a26"
@@ -8397,18 +8390,6 @@ interpret@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
-
-intl-messageformat-parser@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-1.4.0.tgz#b43d45a97468cadbe44331d74bb1e8dea44fc075"
-  integrity sha1-tD1FqXRoytvkQzHXS7Ho3qRPwHU=
-
-intl-messageformat@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-2.2.0.tgz#345bcd46de630b7683330c2e52177ff5eab484fc"
-  integrity sha1-NFvNRt5jC3aDMwwuUhd/9eq0hPw=
-  dependencies:
-    intl-messageformat-parser "1.4.0"
 
 invariant@^2.2.2, invariant@^2.2.3, invariant@^2.2.4:
   version "2.2.4"
