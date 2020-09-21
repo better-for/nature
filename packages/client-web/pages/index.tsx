@@ -8,12 +8,13 @@ import { MainTitle } from 'src/components';
 
 import {
   Main,
+  Title,
   Point,
   Description,
   Row,
   SampleCard,
   ItemTitle,
-  ItemDescription
+  ItemDescription,
 } from 'src/style';
 
 const Home: I18nPage = observer(() => {
@@ -23,7 +24,7 @@ const Home: I18nPage = observer(() => {
     <>
       <Main>
         <MainTitle>
-          {t('Better for')}
+          <Title>{t('Better for')}</Title>
           <Point>{t('Nature')}</Point>
         </MainTitle>
         <Description>
@@ -47,5 +48,5 @@ const Home: I18nPage = observer(() => {
 export default Home;
 
 Home.getInitialProps = async () => ({
-  namespacesRequired: ['common']
+  namespacesRequired: ['common'],
 });
