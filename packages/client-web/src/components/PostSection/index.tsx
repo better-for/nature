@@ -13,7 +13,7 @@ export type IPostSection = {
   t?: TFunction;
 };
 
-type InnerContent = Section & { t: TFunction };
+type InnerContent = Section & { t?: TFunction };
 
 export const InnerContent: FC<InnerContent> = ({
   title,

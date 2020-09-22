@@ -1,7 +1,6 @@
 import React, { FC, AnchorHTMLAttributes } from 'react';
 import {
   StyledCard,
-  StyledIcon,
   StyledButton,
   StyledImage,
   StyledTitleSection,
@@ -9,11 +8,11 @@ import {
   StyledSubTitle,
   StyledParagraph,
 } from './style';
-import { leaf, glass, color } from '@nature/design';
+import { leaf, glass, color, Icon } from '@nature/design';
 
-export type ICard = {
-  url: string | null;
-  image?: string | null;
+export interface ICard extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  url?: string;
+  image?: string;
   imageRatio?: number;
   titleIcon?: string;
   titleIconSize?: glass | leaf;
@@ -26,7 +25,7 @@ export type ICard = {
   buttonColor?: color;
   buttonIcon?: string;
   buttonIconSize?: leaf;
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
+}
 
 const Card: FC<ICard> = ({
   url,
@@ -50,9 +49,7 @@ const Card: FC<ICard> = ({
       {!!image ? <StyledImage src={image} ratio={imageRatio} /> : null}
       {!!title ? (
         <StyledTitleSection>
-          {!!titleIcon ? (
-            <StyledIcon size={titleIconSize}>{titleIcon}</StyledIcon>
-          ) : null}
+          {!!titleIcon ? <Icon size={titleIconSize}>{titleIcon}</Icon> : null}
           {!!title ? <StyledTitle>{title}</StyledTitle> : null}
         </StyledTitleSection>
       ) : null}

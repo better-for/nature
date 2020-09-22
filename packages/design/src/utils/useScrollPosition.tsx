@@ -3,7 +3,7 @@ import { useRef, useLayoutEffect } from 'react';
 export const isBrowser = typeof window !== `undefined`;
 
 const getScrollPosition = ({
-  useWindow
+  useWindow,
 }: {
   useWindow: boolean;
 }): { x: number; y: number } => {
@@ -24,7 +24,7 @@ export const useScrollPosition = (
 ) => {
   const position = useRef(getScrollPosition({ useWindow }));
 
-  let throttleTimeout = null;
+  let throttleTimeout: null | number = null;
 
   const callBack = () => {
     const currPos = getScrollPosition({ useWindow });
@@ -37,7 +37,7 @@ export const useScrollPosition = (
     const handleScroll = () => {
       if (wait) {
         if (throttleTimeout === null) {
-          throttleTimeout = setTimeout(callBack, wait);
+          throttleTimeout = window.setTimeout(callBack, wait);
         }
       } else {
         callBack();

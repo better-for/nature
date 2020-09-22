@@ -17,7 +17,7 @@ const Blog: I18nPage = observer(() => {
     uiStore: { blogStore },
   } = useStore();
   const { blogsData, fetchBlogs, status } = blogStore;
-  const [blogList, setBlogList] = useState<Blogs>([]);
+  const [blogList, setBlogList] = useState<Blogs['data']>([]);
 
   useEffect(() => {
     fetchBlogs();

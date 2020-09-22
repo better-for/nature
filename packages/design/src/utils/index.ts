@@ -1,3 +1,5 @@
+import { TFunction } from 'next-i18next';
+
 export type FoodData = {
   'Food product': string;
   'Land use change': string;
@@ -9,19 +11,33 @@ export type FoodData = {
   Retail: string;
 };
 
-export const extractRawData = (input: string, t: Function): FoodData[] => {
+export type Type = [
+  'Food product',
+  'Land use change',
+  'Animal Feed',
+  'Farm',
+  'Processing',
+  'Transport',
+  'Packging',
+  'Retail'
+];
+
+export const extractRawData = (
+  input: string,
+  t: TFunction | undefined
+): FoodData[] => {
   const dividedRawData = input
     .split(/\r?\n/)
-    .map(el => el.split(',').filter(Boolean));
+    .map((el) => el.split(',').filter(Boolean));
 
-  const dataTitle = dividedRawData.slice()[0];
+  const dataTitles = dividedRawData.slice()[0];
 
-  const output = dividedRawData.slice(1).map(item =>
+  const output = dividedRawData.slice(1).map((item) =>
     item.reduce((acc, curr, i) => {
       if (i === 0) {
-        acc[dataTitle[i]] = t(curr);
+        acc[(dataTitles as Type)[i]] = t ? t(curr) : curr;
       } else {
-        acc[dataTitle[i]] = curr;
+        acc[(dataTitles as Type)[i]] = curr;
       }
       return acc;
     }, {} as FoodData)

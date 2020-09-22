@@ -11,7 +11,13 @@ const Layout: FC = ({ children }) => {
   const [hideOnScroll, setHideOnScroll] = useState(true);
 
   useScrollPosition(
-    ({ prevPos, currPos }) => {
+    ({
+      prevPos,
+      currPos,
+    }: {
+      prevPos: { x: number; y: number };
+      currPos: { x: number; y: number };
+    }) => {
       const isShow = currPos.y < prevPos.y;
       if (isShow !== hideOnScroll) setHideOnScroll(isShow);
     },

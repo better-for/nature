@@ -1,11 +1,11 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
 import RootStore from 'src/store/RootStore';
 import { useDarkMode } from '@nature/design';
 
 const rootStore = new RootStore();
-const rootStoreContext = createContext<RootStore>(null);
+const rootStoreContext = createContext<RootStore | null>(null);
 
-export const StoreProvider = ({ children }) => {
+export const StoreProvider = ({ children }: { children: ReactNode }) => {
   return (
     <rootStoreContext.Provider value={rootStore}>
       {children}
@@ -16,9 +16,13 @@ export const StoreProvider = ({ children }) => {
 const DarkModeContext = createContext<{
   isDarkTheme: boolean;
   toggleTheme: () => void;
-}>(null);
+} | null>(null);
 
-export const DarkModeContextProvider = ({ children }) => {
+export const DarkModeContextProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}) => {
   const [isDarkTheme, toggleTheme] = useDarkMode();
   return (
     <DarkModeContext.Provider value={{ isDarkTheme, toggleTheme }}>

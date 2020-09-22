@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, ButtonHTMLAttributes } from 'react';
 import {
   StyledContainedButton,
   StyledOutLinedButton,
@@ -8,15 +8,14 @@ import {
 } from './style';
 import { BUTTON_TYPE } from './type';
 import { leaf, color as COLOR } from '@nature/design';
-import { ButtonHTMLAttributes } from 'react';
 
-export type IButton = {
+export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   icon?: string;
   color?: COLOR;
   buttonType?: BUTTON_TYPE;
   iconSize?: leaf;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+}
 
 const Button: FC<IButton> = ({
   children,
@@ -24,27 +23,28 @@ const Button: FC<IButton> = ({
   color = COLOR.secondary,
   icon,
   iconSize = leaf._5,
-  ...props
+  onClick,
+  ...prop
 }) => {
   if (!icon && !children) return <ErroredButton>🤷‍</ErroredButton>;
   switch (buttonType) {
     case BUTTON_TYPE.CONTAINED:
       return (
-        <StyledContainedButton icon={icon} color={color} {...props}>
+        <StyledContainedButton icon={icon} color={color} {...prop}>
           {!!icon ? <StyledIcon size={iconSize}>{icon}</StyledIcon> : null}
           {children}
         </StyledContainedButton>
       );
     case BUTTON_TYPE.OUTLINED:
       return (
-        <StyledOutLinedButton icon={icon} color={color} {...props}>
+        <StyledOutLinedButton icon={icon} color={color} {...prop}>
           {!!icon ? <StyledIcon size={iconSize}>{icon}</StyledIcon> : null}
           {children}
         </StyledOutLinedButton>
       );
     case BUTTON_TYPE.TEXT:
       return (
-        <StyledTextButton icon={icon} color={color} {...props}>
+        <StyledTextButton icon={icon} color={color} {...prop}>
           {!!icon ? <StyledIcon size={iconSize}>{icon}</StyledIcon> : null}
           {children}
         </StyledTextButton>

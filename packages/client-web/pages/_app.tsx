@@ -6,9 +6,16 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from '@nature/design';
 import { appWithTranslation } from 'I18n';
 import { Layout } from 'src/components';
+import { NextPageContext, NextComponentType } from 'next';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({
+    Component,
+    ctx,
+  }: {
+    Component: NextComponentType;
+    ctx: NextPageContext;
+  }) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
