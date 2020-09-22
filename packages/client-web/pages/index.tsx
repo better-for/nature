@@ -1,6 +1,5 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation, Link } from 'I18n';
 
 import { LINK_LIST } from 'src/constants';

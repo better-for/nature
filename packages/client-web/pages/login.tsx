@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
-import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation } from 'I18n';
 import { signIn, signOut, useSession } from 'next-auth/client';
 
@@ -14,7 +13,7 @@ import {
   Email,
   SignInButton,
   SignOutButton,
-  UserCard
+  UserCard,
 } from 'src/style';
 
 declare global {
@@ -37,8 +36,8 @@ const Login: I18nPage = observer(() => {
       loginButton: {
         color: 'white',
         type: 3,
-        height: 40
-      }
+        height: 40,
+      },
     });
     naverLogin.init();
 
@@ -68,7 +67,7 @@ const Login: I18nPage = observer(() => {
           <p>
             {!session && (
               <SignInButton
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   signIn('facebook');
                 }}
@@ -84,7 +83,7 @@ const Login: I18nPage = observer(() => {
                 <Email>{session.user.email || session.user.name}</Email>
                 <a
                   href="/api/auth/signout"
-                  onClick={e => {
+                  onClick={(e) => {
                     e.preventDefault();
                     signOut();
                   }}
@@ -104,6 +103,6 @@ export default Login;
 
 Login.getInitialProps = async () => {
   return {
-    namespacesRequired: ['common']
+    namespacesRequired: ['common'],
   };
 };

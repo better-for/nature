@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react';
-import 'mobx-react-lite/batchingForReactDom';
 import { useTranslation, I18nPage } from 'I18n';
 
 import { MainTitle } from 'src/components';
@@ -15,7 +14,7 @@ const Blog: I18nPage = observer(() => {
   const { t } = useTranslation();
 
   const {
-    uiStore: { blogStore }
+    uiStore: { blogStore },
   } = useStore();
   const { blogsData, fetchBlogs, status } = blogStore;
   const [blogList, setBlogList] = useState<Blogs>([]);
@@ -56,7 +55,7 @@ const Blog: I18nPage = observer(() => {
 
 Blog.getInitialProps = async () => {
   return {
-    namespacesRequired: ['common']
+    namespacesRequired: ['common'],
   };
 };
 

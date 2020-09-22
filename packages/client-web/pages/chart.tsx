@@ -1,6 +1,5 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import 'mobx-react-lite/batchingForReactDom';
 import { I18nPage, useTranslation } from 'I18n';
 
 import { ChartContainer, Main } from 'src/style';

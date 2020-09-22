@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "next-i18next": "^6.0.2",
     "polished": "^3.6.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

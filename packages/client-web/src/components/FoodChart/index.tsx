@@ -9,8 +9,6 @@ import {
   Legend,
   Label,
   ResponsiveContainer,
-  ContentRenderer,
-  LegendPayload,
   TooltipPayload,
 } from 'recharts';
 import {
@@ -19,7 +17,7 @@ import {
   FOOD_CHART_DATA,
   FoodData,
 } from 'src/constants';
-import { extractRawData, sumTotalValue } from '@nature/design';
+import { extractRawData, sumTotalValue, color as COLOR } from '@nature/design';
 import {
   Container,
   LegendContainer,
@@ -29,54 +27,14 @@ import {
   Ul,
 } from './style';
 import { TFunction } from 'next-i18next';
-import { checkHasT } from 'src/utils';
+import { checkHasT, setChartColor, useDarkModeTheme } from 'src/utils';
 
 const FoodChart: FC<{ t?: TFunction }> = ({ t }) => {
-  const {
-    Food_product,
-    Land_use_change,
-    Animal_Feed,
-    Farm,
-    Processing,
-    Transport,
-    Packging,
-    Retail,
-  } = FOOD_CHART_DATA;
-
   const [state, setstate] = useState<FoodData[]>([]);
+  const { isDarkTheme } = useDarkModeTheme();
+  const fillColor = isDarkTheme ? COLOR.white : COLOR.black;
   const xLabel = checkHasT(t, FOOD_CHART_AXIS_LABEL.X);
   const yLabel = checkHasT(t, FOOD_CHART_AXIS_LABEL.Y);
-
-  const renderLegend: ContentRenderer<{ payload: LegendPayload[] }> = ({
-    payload,
-  }) => (
-    <Ul>
-      {payload.map(({ color, value }) => (
-        <li key={`item-${value}`} style={{ color }}>
-          {checkHasT(t, value)}
-        </li>
-      ))}
-    </Ul>
-  );
-
-  const renderTooltip: ContentRenderer<{
-    payload: TooltipPayload[];
-    label: string;
-  }> = ({ payload, label }) => {
-    return (
-      <TooltopContainer>
-        {label}
-        <LegendContainer>
-          {payload.map(({ color, name, value }) => (
-            <StyledLegend key={`item-${name}`} style={{ color }}>{`${checkHasT(
-              t,
-              name
-            )} : ${value}`}</StyledLegend>
-          ))}
-        </LegendContainer>
-      </TooltopContainer>
-    );
-  };
 
   useEffect(() => {
     const resolvedData = extractRawData(foodData, t);
@@ -110,24 +68,68 @@ const FoodChart: FC<{ t?: TFunction }> = ({ t }) => {
               ]}
               dy={10}
             >
-              <Label value={xLabel} position="top" />
+              <Label
+                value={xLabel}
+                position="bottom"
+                style={{ fontStyle: 'italic', fill: fillColor }}
+              />
             </XAxis>
             <YAxis
-              dataKey={Food_product}
+              dataKey={FOOD_CHART_DATA.Food_product}
               type="category"
               tick={{ fontSize: 12 }}
             >
-              <Label value={yLabel} position="left" angle={-90} />
+              <Label
+                value={yLabel}
+                position="left"
+                angle={-90}
+                style={{ fontStyle: 'italic', fill: fillColor }}
+              />
             </YAxis>
-            <Tooltip content={renderTooltip} />
-            <Legend content={renderLegend} />
-            <Bar dataKey={Land_use_change} stackId="a" fill="#1864ab" />
-            <Bar dataKey={Animal_Feed} stackId="a" fill="#0b7285" />
-            <Bar dataKey={Farm} stackId="a" fill="#087f5b" />
-            <Bar dataKey={Processing} stackId="a" fill="#2b8a3e" />
-            <Bar dataKey={Transport} stackId="a" fill="#5c940d" />
-            <Bar dataKey={Packging} stackId="a" fill="#e67700" />
-            <Bar dataKey={Retail} stackId="a" fill="#666666" />
+            <Tooltip
+              content={({
+                payload,
+                label,
+              }: {
+                payload: TooltipPayload[];
+                label: string;
+              }) => {
+                return (
+                  <TooltopContainer>
+                    {label}
+                    <LegendContainer>
+                      {payload.map(({ color, name, value }) => (
+                        <StyledLegend
+                          key={`item-${name}`}
+                          style={{ color }}
+                        >{`${checkHasT(t, name)} : ${value}`}</StyledLegend>
+                      ))}
+                    </LegendContainer>
+                  </TooltopContainer>
+                );
+              }}
+            />
+            <Legend
+              content={({ payload }) => (
+                <Ul>
+                  {payload
+                    ? payload.map(({ color, value }) => (
+                        <li key={`item-${value}`} style={{ color }}>
+                          {checkHasT(t, value)}
+                        </li>
+                      ))
+                    : null}
+                </Ul>
+              )}
+            />
+            {Object.values(FOOD_CHART_DATA).map((item) => (
+              <Bar
+                dataKey={item}
+                stackId="bar"
+                fill={setChartColor(item)}
+                key={item}
+              />
+            ))}
           </BarChart>
         </ResponsiveContainer>
       </Container>
