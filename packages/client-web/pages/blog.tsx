@@ -35,19 +35,30 @@ const Blog: I18nPage = observer(() => {
         </MainTitle>
       </Main>
       <CardContainer>
-        {status === ActionStatus.Request && <StyledLogo width={glass._40} />}
-        {status === ActionStatus.Success &&
-          blogList.map(({ title, url, id, description }) => (
-            <Card
-              rel="noopener noreferrer"
-              target="_blank"
-              url={url}
-              title={title}
-              paragraph={description}
-              paragraphLineClamp={3}
-              key={id}
-            />
-          ))}
+        {status === ActionStatus.Request && (
+          <div id="loading-start" aria-live="assertive" role="alert">
+            <StyledLogo width={glass._40} />
+          </div>
+        )}
+        {status === ActionStatus.Success && (
+          <div
+            id="loading-end"
+            aria-live="assertive"
+            style={{ display: 'flex', flexWrap: 'wrap' }}
+          >
+            {blogList.map(({ title, url, id, description }) => (
+              <Card
+                rel="noopener noreferrer"
+                target="_blank"
+                url={url}
+                title={title}
+                paragraph={description}
+                paragraphLineClamp={3}
+                key={id}
+              />
+            ))}
+          </div>
+        )}
       </CardContainer>
     </>
   );

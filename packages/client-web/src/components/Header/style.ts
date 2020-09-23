@@ -55,6 +55,7 @@ export const Anchor = styled.a`
   display: flex;
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 `;
 
 export const FloatContainer = styled.div`

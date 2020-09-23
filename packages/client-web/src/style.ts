@@ -71,7 +71,7 @@ export const Row = styled.div`
   }
 `;
 
-export const SampleCard = styled.button`
+export const SampleCard = styled.a`
   padding: ${(p) => p.theme.unit.leaf._4};
   width: ${(p) => p.theme.unit.glass._31};
   text-align: left;
@@ -79,6 +79,7 @@ export const SampleCard = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  outline: none;
   & > * ~ * {
     margin-top: ${(p) => p.theme.unit.leaf._3};
   }

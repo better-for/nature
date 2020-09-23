@@ -27,7 +27,6 @@ export const Ul = styled.ul`
   top: ${(p) => p.theme.unit.glass._3};
   @media ${(p) => p.theme.device.mobile} {
     flex-direction: column;
-    top: 0;
   }
 `;
 

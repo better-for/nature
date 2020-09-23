@@ -9,6 +9,7 @@ import {
   StyledParagraph,
 } from './style';
 import { leaf, glass, color, Icon } from '@nature/design';
+import { OffScreen } from '../style';
 
 export interface ICard extends AnchorHTMLAttributes<HTMLAnchorElement> {
   url?: string;
@@ -50,7 +51,12 @@ const Card: FC<ICard> = ({
       {!!title ? (
         <StyledTitleSection>
           {!!titleIcon ? <Icon size={titleIconSize}>{titleIcon}</Icon> : null}
-          {!!title ? <StyledTitle>{title}</StyledTitle> : null}
+          {!!title ? (
+            <>
+              <StyledTitle aria-hidden="true">{title}</StyledTitle>
+              <OffScreen>{title}</OffScreen>
+            </>
+          ) : null}
         </StyledTitleSection>
       ) : null}
       {!!subTitle ? (

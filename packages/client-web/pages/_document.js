@@ -33,7 +33,25 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ko">
         <Head>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-54516992-1"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments)}
+                gtag("js", new Date());
+                gtag("config", "UA-54516992-1");
+              `,
+            }}
+          ></script>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            name="google-site-verification"
+            content="iqRNIL_d0ZBv4gxuxBquEdKy9RT3dhjWvFVi2QkibCc"
+          />
           <link rel="shortcut icon" href={favicon} type="image/x-icon" />
           <link rel="icon" href={favicon} type="image/x-icon" />
           <link rel="apple-touch-icon" href={favicon} />

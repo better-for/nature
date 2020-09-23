@@ -90,7 +90,7 @@ export const StyledCard = styled.a`
   margin: 0 ${(p) => p.theme.unit.leaf._2} ${(p) => p.theme.unit.leaf._4};
   padding: ${(p) => p.theme.unit.leaf._4} 0;
   box-sizing: border-box;
-
+  outline: none;
   @media ${(p) => p.theme.device.tablet} {
     min-width: 40%;
     flex: 1 1 40%;

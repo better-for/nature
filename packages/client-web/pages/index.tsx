@@ -33,7 +33,7 @@ const Home: I18nPage = observer(() => {
       <Row>
         {LINK_LIST.map(({ link, title, description }) => (
           <Link href={link} key={title}>
-            <SampleCard>
+            <SampleCard as="button">
               <ItemTitle>{t(title)}</ItemTitle>
               <ItemDescription>{t(description)}</ItemDescription>
             </SampleCard>

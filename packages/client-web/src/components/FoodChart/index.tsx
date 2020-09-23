@@ -98,7 +98,7 @@ const FoodChart: FC<{ t?: TFunction }> = ({ t }) => {
                   <TooltopContainer>
                     {label}
                     <LegendContainer>
-                      {payload.map(({ color, name, value }) => (
+                      {payload.slice(1).map(({ color, name, value }) => (
                         <StyledLegend
                           key={`item-${name}`}
                           style={{ color }}
@@ -113,7 +113,7 @@ const FoodChart: FC<{ t?: TFunction }> = ({ t }) => {
               content={({ payload }) => (
                 <Ul>
                   {payload
-                    ? payload.map(({ color, value }) => (
+                    ? payload.slice(1).map(({ color, value }) => (
                         <li key={`item-${value}`} style={{ color }}>
                           {checkHasT(t, value)}
                         </li>
