@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
         <Head>
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-54516992-1"
+            src="https://www.googletagmanager.com/gtag/js?id=UA-170287798-1"
           ></script>
           <script
             dangerouslySetInnerHTML={{
@@ -43,8 +43,8 @@ export default class MyDocument extends Document {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){window.dataLayer.push(arguments)}
                 gtag("js", new Date());
-                gtag("config", "UA-54516992-1");
-              `,
+                gtag("config", "UA-170287798-1");
+            `,
             }}
           ></script>
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
