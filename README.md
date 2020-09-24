@@ -1,25 +1,29 @@
-# Better for Nature 🏔
+<p align="center">
+  <img src="https://better-for.vercel.app/static/og_image.png" width="600">
+</p>
 
-채식 식당 찾기 🍽
+## 🏔  Better for Nature
 
-## Dev Stack
+### 자연, 환경과 관련된 정보, 블로그를 보여드립니다! 
 
-### Common
+- [better-for.vercel.app](https://better-for.vercel.app/)
+
+### Dev Stack
+
+__Common__
 
 - TypeScript
 - monorepo
   - Lerna
 
-### Client
+__Client__
 
-- ReactJS
-  - Hooks
+- React
 - MobX
 - NextJS
 - StyledComponent
+- Storybook
 
-### Server
+__Server__
 
-- NodeJS
-- AWS
-  - MySQL
+- vercel

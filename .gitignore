@@ -14,9 +14,6 @@
 # production
 /build
 
-# misc
-.env*
-
 # Created by https://www.gitignore.io/api/node,macos,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,macos,visualstudiocode
 
@@ -116,6 +113,7 @@ typings/
 # dotenv environment variables file
 .env
 .env.test
+.env.development
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -150,3 +148,5 @@ typings/
 .history
 
 # End of https://www.gitignore.io/api/node,macos,visualstudiocode
+
+.vercel
