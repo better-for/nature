@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://better-for-static.vercel.app/og_image.png" width="600">
+  <img src="https://better-for.vercel.app/static/og_image.png" width="600">
 </p>
 
 ## 🏔  Better for Nature
